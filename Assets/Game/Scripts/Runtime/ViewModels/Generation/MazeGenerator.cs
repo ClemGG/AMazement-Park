@@ -6,9 +6,26 @@ namespace Project.ViewModels.Generation
 {
     public class MazeGenerator : MonoBehaviour
     {
+        [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
         [field: SerializeField] public CustomMazeSettingsSO Settings { get; set; }
         public IDrawableGrid Grid { get; set; }
         public IDrawMethod DrawMethod { get; set; }
+
+
+        private void OnApplicationQuit()
+        {
+            Cleanup();
+        }
+
+        private void Start()
+        {
+            if (GenerateOnStart)
+            {
+                Settings = Resources.Load<CustomMazeSettingsSO>("Settings/Custom");
+                Settings.DrawMode = DrawMode.Mesh;
+                Execute();
+            }
+        }
 
 
         [ContextMenu("Cleanup")]

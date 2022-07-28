@@ -9,8 +9,11 @@ public class ScriptableObjectDrawer : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
+
         // Draw label
         EditorGUI.PropertyField(position, property, label, true);
+
+        if (property.objectReferenceValue is null) return;
 
         // Draw foldout arrow
         if (property.objectReferenceValue != null)
