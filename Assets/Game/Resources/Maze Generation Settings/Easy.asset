@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665a4014d07c24d4193809f69bdfe451, type: 3}
+  m_Name: Easy
+  m_EditorClassIdentifier: 
+  <DrawMode>k__BackingField: 0
+  <GenerationType>k__BackingField: 2
+  <GridSize>k__BackingField: {x: 10, y: 10}
+  <MeshCellSize>k__BackingField: {x: 5, y: 5}
+  <RoomSize>k__BackingField: {x: 5, y: 5}
+  <BiasTowardsRooms>k__BackingField: 0
+  <LambdaSelection>k__BackingField: 0
+  <Inset>k__BackingField: 0
+  <BraidRate>k__BackingField: 1
+  <HoustonSwapPercent>k__BackingField: 0.5
+  <ImageAsset>k__BackingField: {fileID: 0}
+  <AsciiMask>k__BackingField: {fileID: 0}
+  <Extension>k__BackingField: .png
