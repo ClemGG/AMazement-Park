@@ -1,0 +1,54 @@
+namespace Project.StateMachine
+{
+    public class #SCRIPTNAME# : BaseState<TContext, TInput>
+    {
+        #region Private Fields
+
+        #endregion
+
+
+        #region Constructor & IPooled
+
+        public #SCRIPTNAME#()
+        {
+            //Change _isRootState here.
+            //If it is false and you don't use this constructor for anything else, you can delete it.
+            //_isRootState = true;
+        }
+
+        #endregion
+
+
+        #region State Methods
+
+        protected override void Enter()
+        {
+            
+        }
+        protected override void Exit()
+        {
+            
+        }
+        protected override void Update()
+        {
+            
+        }
+        protected override void FixedUpdate() 
+        {
+            
+        }
+        protected override void CheckSwitchStates()
+        {
+            
+        }
+        protected override void InitSubState()
+        {
+            
+        } 
+
+        #endregion
+
+        #region Private Methods
+        #endregion
+    }
+}

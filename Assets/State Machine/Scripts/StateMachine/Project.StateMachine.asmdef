@@ -1,0 +1,16 @@
+{
+    "name": "Project.StateMachine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:28e56e16b0db37b4c84c2b044a0ba440"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

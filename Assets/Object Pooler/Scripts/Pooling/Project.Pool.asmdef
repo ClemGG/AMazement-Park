@@ -2,11 +2,7 @@
     "name": "Project.Pooling",
     "rootNamespace": "",
     "references": [],
-    "includePlatforms": [
-        "Editor",
-        "WindowsStandalone32",
-        "WindowsStandalone64"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
