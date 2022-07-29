@@ -1,9 +1,11 @@
 using Project.Models.Maze;
 using Project.Procedural.MazeGeneration;
 using UnityEngine;
+using Project.Models.Game.Enums;
 
 namespace Project.ViewModels.Generation
 {
+    //I don't use IDemo because I don't want to redraw the SO in the Inspector
     public class MazeGenerator : MonoBehaviour
     {
         [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
@@ -17,14 +19,22 @@ namespace Project.ViewModels.Generation
             Cleanup();
         }
 
+        //In the Game scene, automatically loads the level
+        [ContextMenu("Execute Generation Algorithm On Start")]
         private void Start()
         {
             if (GenerateOnStart)
             {
-                Settings = Resources.Load<CustomMazeSettingsSO>("Settings/Custom");
-                Settings.DrawMode = DrawMode.Mesh;
-                Execute();
+                Execute(GameSession.DifficultyLevel);
             }
+        }
+
+        //In the 2D scene, generates the level when the player presses the "Generate Maze" button
+        public void Execute(Difficulty difficulty) 
+        {
+            Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/{difficulty}");
+            Settings.DrawMode = DrawMode.Mesh;
+            Execute();
         }
 
 
