@@ -9,7 +9,8 @@ namespace Project.ViewModels.Generation
     public class MazeGenerator : MonoBehaviour
     {
         [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
-        [field: SerializeField] public CustomMazeSettingsSO Settings { get; set; }
+        [field: SerializeField] public bool ShowLongestPaths { get; set; } = false;
+        [field: SerializeField, ReadOnly] public CustomMazeSettingsSO Settings { get; set; }
         public IDrawableGrid Grid { get; set; }
         public IDrawMethod DrawMethod { get; set; }
 
@@ -25,15 +26,15 @@ namespace Project.ViewModels.Generation
         {
             if (GenerateOnStart)
             {
-                Execute(GameSession.DifficultyLevel);
+                Execute(GameSession.DifficultyLevel, DrawMode.Mesh);
             }
         }
 
         //In the 2D scene, generates the level when the player presses the "Generate Maze" button
-        public void Execute(Difficulty difficulty) 
+        public void Execute(Difficulty difficulty, DrawMode drawMode) 
         {
             Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/{difficulty}");
-            Settings.DrawMode = DrawMode.Mesh;
+            Settings.DrawMode = drawMode;
             Execute();
         }
 
@@ -60,7 +61,7 @@ namespace Project.ViewModels.Generation
 
         private void SetupGrid()
         {
-            Grid = new ColoredGrid(Settings);
+            Grid = ShowLongestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
         }
 
         private void Generate()
