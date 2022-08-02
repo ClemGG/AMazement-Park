@@ -2,6 +2,8 @@ using Project.Models.Maze;
 using Project.Procedural.MazeGeneration;
 using UnityEngine;
 using Project.Models.Game.Enums;
+using System.Collections;
+using System;
 
 namespace Project.ViewModels.Generation
 {
@@ -15,13 +17,14 @@ namespace Project.ViewModels.Generation
         public IDrawMethod DrawMethod { get; set; }
 
 
-        private void OnApplicationQuit()
-        {
-            Cleanup();
-        }
+        //This class will draw the maze asynchronously.
+        //As the maze gets bigger, the game might freeze for a long time.
+        //This allows us to mitigate this issue and display the progress on screen.
+        private Progress<GenerationProgressReport> Progress { get; set; }
+        private ProgressVisualizer ProgressVisualizer { get; set; } = new();
+
 
         //In the Game scene, automatically loads the level
-        [ContextMenu("Execute Generation Algorithm On Start")]
         private void Start()
         {
             if (GenerateOnStart)
@@ -35,27 +38,34 @@ namespace Project.ViewModels.Generation
         {
             Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/{difficulty}");
             Settings.DrawMode = drawMode;
-            Execute();
+            ExecuteAsync();
         }
 
 
-        [ContextMenu("Cleanup")]
         public void Cleanup()
         {
             if (DrawMethod is not null)
             {
                 DrawMethod.Cleanup();
             }
+
+            StopAllCoroutines();
+            ProgressVisualizer.Cleanup();
+            OnProgressDone();
         }
 
 
-        [ContextMenu("Execute Generation Algorithm")]
-        public void Execute()
+        public void ExecuteAsync()
+        {
+            StopAllCoroutines();
+            StartCoroutine(ExecuteAsyncCo());
+        }
+
+        private IEnumerator ExecuteAsyncCo()
         {
             SetupGrid();
-            Generate();
-            Draw();
-
+            yield return GenerateAsync();
+            DrawAsync();
         }
 
 
@@ -64,21 +74,63 @@ namespace Project.ViewModels.Generation
             Grid = ShowLongestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
         }
 
-        private void Generate()
+        public IEnumerator GenerateAsync()
         {
             IGeneration genAlg = InterfaceFactory.GetGenerationAlgorithm(Settings);
-            genAlg.Execute(Grid);
+            genAlg.Report = new("Generation");
 
-            //TODO : Change this to start distances at Player position
+            Progress = new();
+            Progress.ProgressChanged += OnGenerationProgressChanged;
+            yield return StartCoroutine(genAlg.ExecuteAsync(Grid, Progress));
+            Grid.Braid();
+
             Cell start = Grid[Grid.Rows / 2, Grid.Columns / 2];
             Grid.SetDistances(start.GetDistances());
 
         }
 
-        private void Draw()
+
+        public void DrawAsync()
         {
+            SceneLoader.LoadSceneForDrawMode(Settings.DrawMode);
             DrawMethod = InterfaceFactory.GetDrawMode(Settings);
-            DrawMethod.Draw(Grid);
+            DrawMethod.Report = new("Rendering");
+
+            Progress = new();
+            Progress.ProgressChanged += OnDrawProgressChanged;
+            StartCoroutine(DrawMethod.DrawAsync(Grid, Progress));
+        }
+
+        private void OnDrawProgressChanged(object sender, GenerationProgressReport e)
+        {
+            ProgressVisualizer.DisplayDrawProgress(e);
+            if (Mathf.Approximately(e.ProgressPercentage, 1f))
+            {
+                OnDrawProgressDone();
+            }
+        }
+
+        private void OnGenerationProgressChanged(object sender, GenerationProgressReport e)
+        {
+            ProgressVisualizer.DisplayGenerationProgress(e);
+            if (Mathf.Approximately(e.ProgressPercentage, 1f))
+            {
+                OnGenerationProgressDone();
+            }
+        }
+
+        private void OnProgressDone()
+        {
+            OnDrawProgressDone();
+            OnGenerationProgressDone();
+        }
+        private void OnDrawProgressDone()
+        {
+            Progress.ProgressChanged -= OnDrawProgressChanged;
+        }
+        private void OnGenerationProgressDone()
+        {
+            Progress.ProgressChanged -= OnGenerationProgressChanged;
         }
     }
 }

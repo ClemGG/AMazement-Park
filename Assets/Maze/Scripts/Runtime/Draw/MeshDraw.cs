@@ -1,9 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Project.Procedural.MazeGeneration
 {
-    public class MeshDraw : IDrawMethod<Color>
+    public class MeshDraw : IDrawMethod<Color>, IDrawMethodAsync<Color>
     {
 
         #region Mesh Fields
@@ -28,6 +29,7 @@ namespace Project.Procedural.MazeGeneration
 
         #endregion
 
+        public GenerationProgressReport Report { get; set; } = new();
 
         public MeshDraw(GenerationSettingsSO settings)
         {
@@ -52,7 +54,58 @@ namespace Project.Procedural.MazeGeneration
             }
         }
 
-        public void Draw(IDrawableGrid<Color> grid)
+
+        public IEnumerator DrawAsync(IDrawableGrid<Color> grid, System.IProgress<GenerationProgressReport> progress)
+        {
+            //We create 1 Mesh for each surface
+            //so that none reach the limit of triangles allowed by Unity.
+            Mesh[] meshes = new Mesh[4];
+            for (int i = 0; i < meshes.Length; i++)
+            {
+                meshes[i] = new Mesh
+                {
+                    name = $"Maze mesh {i + 1}",
+                    indexFormat = UnityEngine.Rendering.IndexFormat.UInt32  //Allows us to get more triangles
+                };
+
+                _newVertices.Clear();
+                _newUVs.Clear();
+                _newTriangles.Clear();
+
+                GenerateMesh(i, grid);
+
+
+
+                meshes[i].vertices = _newVertices.ToArray();
+                meshes[i].uv = _newUVs.ToArray();
+                meshes[i].SetTriangles(_newTriangles, 0);
+
+                meshes[i].RecalculateNormals();
+
+                MeshFilter mf = MazeObj.GetChild(i).GetComponent<MeshFilter>();
+                MeshCollider mc = MazeObj.GetChild(i).GetComponent<MeshCollider>();
+                mf.mesh = meshes[i];
+
+                //The Floor & Ceiling meshes do not have a MeshCollider for better performances
+                if (mc != null)
+                    mc.sharedMesh = meshes[i];
+
+
+                Report.ProgressPercentage = (float)((i+1) * 100 / meshes.Length) / 100f;
+                Report.UpdateTrackTime(Time.deltaTime);
+                progress.Report(Report);
+
+                yield return null;
+            }
+
+            //cleanup memory
+            _newVertices.Clear();
+            _newUVs.Clear();
+            _newTriangles.Clear();
+        }
+
+
+        public void DrawSync(IDrawableGrid<Color> grid)
         {
             //We create 1 Mesh for each surface
             //so that none reach the limit of triangles allowed by Unity.

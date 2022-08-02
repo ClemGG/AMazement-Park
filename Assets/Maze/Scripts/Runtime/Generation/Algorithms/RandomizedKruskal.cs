@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Project.Procedural.MazeGeneration
 {
@@ -6,6 +9,8 @@ namespace Project.Procedural.MazeGeneration
     //on the grid in their own set.
     public class RandomizedKruskal : IGeneration
     {
+        public GenerationProgressReport Report { get; set; } = new();
+
         private class State
         {
             public List<Cell[]> Neighbors { get; }
@@ -66,7 +71,7 @@ namespace Project.Procedural.MazeGeneration
         }
 
 
-        public void Execute(IGrid grid, Cell start = null)
+        public void ExecuteSync(IGrid grid, Cell start = null)
         {
             State state = new(grid);
 
@@ -80,6 +85,33 @@ namespace Project.Procedural.MazeGeneration
                 {
                     state.Merge(pair[0], pair[1]);
                 }
+            }
+        }
+
+
+
+        public IEnumerator ExecuteAsync(IGrid grid, IProgress<GenerationProgressReport> progress, Cell start = null)
+        {
+            
+            List<Cell> linkedCells = new();
+
+            State state = new(grid);
+
+            List<Cell[]> shuffledNeighbors = state.Neighbors.Shuffle();
+            int count = shuffledNeighbors.Count;
+            while (shuffledNeighbors.Count > 0)
+            {
+                Cell[] pair = shuffledNeighbors[shuffledNeighbors.Count - 1];
+                shuffledNeighbors.Remove(pair);
+
+                if (state.CanMerge(pair[0], pair[1]))
+                {
+                    state.Merge(pair[0], pair[1]);
+                }
+                Report.ProgressPercentage = (float)((count - shuffledNeighbors.Count) * 100 / grid.Size()) / 100f;
+                Report.UpdateTrackTime(Time.deltaTime);
+                progress.Report(Report);
+                yield return null;
             }
         }
     }

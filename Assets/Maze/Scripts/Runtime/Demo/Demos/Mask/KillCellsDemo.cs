@@ -20,7 +20,7 @@ namespace Project.Procedural.MazeGeneration
         {
             Cell start = Grid[1, 1];
             RecursiveBacktracker algorithm = new();
-            algorithm.Execute(Grid, start);
+            algorithm.ExecuteSync(Grid, start);
 
             Grid.SetDistances(start.GetDistances());
         }
@@ -29,7 +29,7 @@ namespace Project.Procedural.MazeGeneration
         {
             SceneLoader.LoadSceneForDrawMode(Settings.DrawMode);
             DrawMethod = InterfaceFactory.GetDrawMode(Settings);
-            DrawMethod.Draw(Grid);
+            DrawMethod.DrawSync(Grid);
         }
 
 

@@ -1,10 +1,12 @@
 #if UNITY_EDITOR
+using System.Collections;
 using UnityEngine;
 
 namespace Project.Procedural.MazeGeneration
 {
-    public class ConsoleDraw : IDrawMethod, IDrawMethod<string>
+    public class ConsoleDraw : IDrawMethod<string>, IDrawMethodAsync<string>
     {
+        public GenerationProgressReport Report { get; set; } = new();
 
         public void Cleanup()
         {
@@ -15,9 +17,23 @@ namespace Project.Procedural.MazeGeneration
         }
 
 
-        public void Draw(IDrawableGrid<string> grid)
+        public void DrawSync(IDrawableGrid<string> grid)
         {
             Debug.Log(grid.ToString());
+        }
+
+        //Honestly, the progress Report is not necessary here.
+        //But we still do it to showcase how it works and to have at least something to show to the user.
+        public IEnumerator DrawAsync(IDrawableGrid<string> grid, System.IProgress<GenerationProgressReport> progress)
+        {
+            Report.StartTrackTime();
+
+            DrawSync(grid);
+            Report.ProgressPercentage = 1f;
+            Report.StopTrackTime();
+            progress.Report(Report);
+
+            yield return null;
         }
     }
 }

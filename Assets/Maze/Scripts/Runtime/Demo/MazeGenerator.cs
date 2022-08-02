@@ -9,8 +9,7 @@ namespace Project.Procedural.MazeGeneration
         public IDrawableGrid Grid { get; set; }
         public IDrawMethod DrawMethod { get; set; }
 
-
-        [ContextMenu("Cleanup")]
+        [ContextMenu("Cleanup Sync")]
         public void Cleanup()
         {
             if(DrawMethod is not null)
@@ -20,7 +19,7 @@ namespace Project.Procedural.MazeGeneration
         }
 
 
-        [ContextMenu("Execute Generation Algorithm")]
+        [ContextMenu("Execute Sync")]
         public void Execute()
         {
             SetupGrid();
@@ -37,7 +36,7 @@ namespace Project.Procedural.MazeGeneration
         {
             SceneLoader.LoadSceneForDrawMode(Settings.DrawMode);
             DrawMethod = InterfaceFactory.GetDrawMode(Settings);
-            DrawMethod.Draw(Grid);
+            DrawMethod.DrawSync(Grid);
         }
     }
 }

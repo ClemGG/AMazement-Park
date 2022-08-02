@@ -4,15 +4,14 @@ namespace Project.Procedural.MazeGeneration
     {
         public override void SetupGrid()
         {
-            if (Settings.ImageAsset == null)
+            if (Settings.ImageMask == null)
             {
                 Grid = new ColoredGrid(Settings);
             }
             else
             {
-                Mask m = Mask.FromImgFile(Settings.ImageAsset, Settings.Extension);
-                Grid = new MaskedGrid(m.Rows, m.Columns);
-                (Grid as MaskedGrid).SetMask(m);
+                Mask m = Mask.FromImgFile(Settings.ImageMask, Settings.Extension);
+                Grid = new MaskedGrid(m);
             }
         }
 
@@ -20,7 +19,7 @@ namespace Project.Procedural.MazeGeneration
         {
             IGeneration genAlg = InterfaceFactory.GetGenerationAlgorithm(Settings);
             Cell start = Grid[Grid.Rows / 2, Grid.Columns / 2];
-            genAlg.Execute(Grid);
+            genAlg.ExecuteSync(Grid);
 
             
 
@@ -31,7 +30,7 @@ namespace Project.Procedural.MazeGeneration
         {
             SceneLoader.LoadSceneForDrawMode(Settings.DrawMode);
             DrawMethod = InterfaceFactory.GetDrawMode(Settings);
-            DrawMethod.Draw(Grid);
+            DrawMethod.DrawSync(Grid);
         }
     }
 }

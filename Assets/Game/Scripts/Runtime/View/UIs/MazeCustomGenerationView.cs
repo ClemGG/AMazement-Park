@@ -3,6 +3,7 @@ using Project.Procedural.MazeGeneration;
 using UnityEngine;
 using UnityEngine.UI;
 using Project.Models.Game.Enums;
+using UnityEngine.SceneManagement;
 
 public class MazeCustomGenerationView : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     [field: SerializeField, ReadOnly] private CustomMazeSettingsSO Settings { get; set; }
     [field: SerializeField] private bool ShowLongestPaths { get; set; } = false;
+
+    private Project.ViewModels.Generation.MazeGenerator Generator { get; set; }
 
     #endregion
 
@@ -55,6 +58,8 @@ public class MazeCustomGenerationView : MonoBehaviour
         //We are in the UI Custom mode, so we need to change the draw mode
         Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/Custom");
         Settings.DrawMode = DrawMode.UIImage;
+
+        Generator = FindObjectOfType<Project.ViewModels.Generation.MazeGenerator>();
     }
 
 
@@ -62,11 +67,25 @@ public class MazeCustomGenerationView : MonoBehaviour
     //Methods used by the UI elements in the scene
     #region UI Elements
 
+    public void PlayMazeBtn()
+    {
+        SceneManager.LoadSceneAsync("3D scene");
+    }
+
+    public void ReturnToMenuBtn()
+    {
+        SceneManager.LoadSceneAsync("Menu scene");
+    }
+
+    public void CancelGenerationBtn()
+    {
+        Generator.Cleanup();
+    }
+
     public void GenerateMazeBtn()
     {
-        var generator = FindObjectOfType<Project.ViewModels.Generation.MazeGenerator>();
-        generator.ShowLongestPaths = ShowLongestPaths;
-        generator.Execute(GameSession.DifficultyLevel, DrawMode.UIImage);
+        Generator.ShowLongestPaths = ShowLongestPaths;
+        Generator.Execute(GameSession.DifficultyLevel, DrawMode.UIImage);
     }
 
 

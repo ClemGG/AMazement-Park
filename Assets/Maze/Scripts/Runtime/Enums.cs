@@ -1,9 +1,7 @@
-
 using System;
 
 namespace Project.Procedural.MazeGeneration
 {
-    //Make sure the enum name matches the algorithm class name
     public enum GenerationType : byte
     {
         Random,
@@ -31,10 +29,16 @@ namespace Project.Procedural.MazeGeneration
         UIImage,
         Mesh,
     }
+
+    public enum GrowingTreeLambda : byte
+    {
+        Random,
+        LastCell,
+        FirstCell,
+        FirstAndLastMix,
+    }
+
 }
-
-
-
 
 
 

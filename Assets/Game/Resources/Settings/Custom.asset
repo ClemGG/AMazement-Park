@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665a4014d07c24d4193809f69bdfe451, type: 3}
   m_Name: Custom
   m_EditorClassIdentifier: 
-  <DrawMode>k__BackingField: 2
+  <DrawMode>k__BackingField: 1
   <GenerationType>k__BackingField: 2
   <GridSize>k__BackingField: {x: 10, y: 10}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
@@ -20,8 +20,9 @@ MonoBehaviour:
   <BiasTowardsRooms>k__BackingField: 0
   <LambdaSelection>k__BackingField: 0
   <Inset>k__BackingField: 0
-  <BraidRate>k__BackingField: 1
+  <BraidRate>k__BackingField: 0
   <HoustonSwapPercent>k__BackingField: 0.5
-  <ImageAsset>k__BackingField: {fileID: 0}
+  <ImageMask>k__BackingField: {fileID: 0}
   <AsciiMask>k__BackingField: {fileID: 0}
   <Extension>k__BackingField: .png
+  <DifficultyLevel>k__BackingField: 4

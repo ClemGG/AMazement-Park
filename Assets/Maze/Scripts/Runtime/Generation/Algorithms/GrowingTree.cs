@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Project.Procedural.MazeGeneration
 {
@@ -10,7 +12,7 @@ namespace Project.Procedural.MazeGeneration
     public class GrowingTree : IGeneration
     {
         private Func<List<Cell>, Cell> Lambda { get; }
-
+        public GenerationProgressReport Report { get; set; } = new();
 
         public GrowingTree(GenerationSettingsSO generationSettings)
         {
@@ -21,22 +23,22 @@ namespace Project.Procedural.MazeGeneration
         /// <summary>
         /// This will let us choose how to select the Cells from the active list
         /// </summary>
-        private Func<List<Cell>, Cell> SetLambda(int lambdaIndex) => lambdaIndex switch
+        private Func<List<Cell>, Cell> SetLambda(GrowingTreeLambda lambdaType) => lambdaType switch
         {
             //Selects a cell at random (executes Simple Prim)
-            0 => (active) => active.Sample(),
+            GrowingTreeLambda.Random => (active) => active.Sample(),
             //Selects the last cell (executes Recursive Backtracker)
-            1 => (active) => active.Last(),
+            GrowingTreeLambda.LastCell => (active) => active.Last(),
             //Selects the first cell (creates elongated corridors)
-            2 => (active) => active.First(),
+            GrowingTreeLambda.FirstCell => (active) => active.First(),
             //Mixes between the Recursive Backtracker and the Simple Prim
-            3 => (active) => (2.Sample() == 0) ? active.Sample() : active.Last(),
+            GrowingTreeLambda.FirstAndLastMix => (active) => (2.Sample() == 0) ? active.First() : active.Last(),
             _ => null,
         };
 
 
 
-        public void Execute(IGrid grid, Cell start = null)
+        public void ExecuteSync(IGrid grid, Cell start = null)
         {
             start ??= grid.RandomCell();
 
@@ -58,6 +60,44 @@ namespace Project.Procedural.MazeGeneration
                 {
                     active.Remove(cell);
                 }
+            }
+        }
+
+
+
+
+
+        public IEnumerator ExecuteAsync(IGrid grid, IProgress<GenerationProgressReport> progress, Cell start = null)
+        {
+            
+            List<Cell> linkedCells = new();
+
+            start ??= grid.RandomCell();
+            List<Cell> active = new() { start };
+
+            while (active.Any())
+            {
+                Cell cell = Lambda.Invoke(active);
+                Cell[] availableNeighbors = cell.Neighbors.Where(n => n.Links.Count == 0).ToArray();
+
+                if (availableNeighbors.Any())
+                {
+                    Cell neighbor = availableNeighbors.Sample();
+
+                    cell.Link(neighbor);
+                    active.Add(neighbor);
+
+                    linkedCells.Add(cell);
+                }
+                else
+                {
+                    active.Remove(cell);
+                }
+
+                Report.ProgressPercentage = (float)(linkedCells.Count * 100 / grid.Size()) / 100f;
+                Report.UpdateTrackTime(Time.deltaTime);
+                progress.Report(Report);
+                yield return null;
             }
         }
     }

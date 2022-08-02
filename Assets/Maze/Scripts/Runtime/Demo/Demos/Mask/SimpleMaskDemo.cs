@@ -8,14 +8,13 @@ namespace Project.Procedural.MazeGeneration
             Mask m = new(Settings);
             m[0, 0] = m[2, 2] = m[4, 4] = false;
 
-            Grid = new MaskedGrid(Settings);
-            (Grid as MaskedGrid).SetMask(m);
+            Grid = new MaskedGrid(m);
         }
 
         public override void Generate()
         {
             RecursiveBacktracker algorithm = new();
-            algorithm.Execute(Grid);
+            algorithm.ExecuteSync(Grid);
         }
     }
 }

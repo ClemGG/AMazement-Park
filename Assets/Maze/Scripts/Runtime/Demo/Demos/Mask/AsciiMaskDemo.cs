@@ -12,14 +12,13 @@ namespace Project.Procedural.MazeGeneration
 
             Mask m = Mask.FromText(Settings.AsciiMask.name);
 
-            Grid = new MaskedGrid(m.Rows, m.Columns);
-            (Grid as MaskedGrid).SetMask(m);
+            Grid = new MaskedGrid(m);
         }
 
         public override void Generate()
         {
             RecursiveBacktracker algorithm = new();
-            algorithm.Execute(Grid);
+            algorithm.ExecuteSync(Grid);
         }
     }
 }

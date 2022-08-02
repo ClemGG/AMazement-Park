@@ -23,7 +23,7 @@ namespace Project.Procedural.MazeGeneration
         [field: SerializeField] public bool BiasTowardsRooms { get; private set; } = false;
 
         [field: Tooltip("Used by the Growing Tree Algorithm to select different ways to process the unvisited Cells.")]
-        [field: SerializeField, Range(0, 3)] public int LambdaSelection { get; private set; } = 0;
+        [field: SerializeField] public GrowingTreeLambda LambdaSelection { get; private set; } = GrowingTreeLambda.Random;
 
 
         [field: Tooltip("Generate space between walls. This field is a percentage.")]
@@ -38,7 +38,7 @@ namespace Project.Procedural.MazeGeneration
         [field: SerializeField, Range(0f, 1f)] public float HoustonSwapPercent { get; private set; } = .5f;
 
         [field: Tooltip("The Texture to use for masking the grid's cells.")]
-        [field: SerializeField] public Texture2D ImageAsset { get; private set; }
+        [field: SerializeField] public Texture2D ImageMask { get; private set; }
 
         [field: Tooltip("The txt file to use for masking the grid's cells.")]
         [field: SerializeField] public TextAsset AsciiMask { get; private set; }
@@ -50,8 +50,9 @@ namespace Project.Procedural.MazeGeneration
 
         private void OnValidate()
         {
-            GridSize = new(Mathf.Clamp(GridSize.x, 1, 100), Mathf.Clamp(GridSize.y, 1, 100));
-            RoomSize = new(Mathf.Clamp(RoomSize.x, 1, 100), Mathf.Clamp(RoomSize.y, 1, 100));
+            //Above 30, we start to see slowdows because of the UI instantiation
+            GridSize = new(Mathf.Clamp(GridSize.x, 1, 30), Mathf.Clamp(GridSize.y, 1, 30));
+            RoomSize = new(Mathf.Clamp(RoomSize.x, 1, 30), Mathf.Clamp(RoomSize.y, 1, 30));
         }
 
 #endif

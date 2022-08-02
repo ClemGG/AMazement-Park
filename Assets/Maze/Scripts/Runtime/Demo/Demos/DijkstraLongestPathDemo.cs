@@ -16,7 +16,7 @@ namespace Project.Procedural.MazeGeneration
         {
             IGeneration genAlg = InterfaceFactory.GetGenerationAlgorithm(Settings);
             Cell start = Grid[0, 0];
-            genAlg.Execute(Grid, start);
+            genAlg.ExecuteSync(Grid, start);
 
             Distances distances = start.GetDistances();
             (Cell newStart, int distance) = distances.Max();
@@ -29,7 +29,7 @@ namespace Project.Procedural.MazeGeneration
         public override void Draw()
         {
             DrawMethod = new ConsoleDraw();
-            DrawMethod.Draw(Grid);
+            DrawMethod.DrawSync(Grid);
         }
     }
 }
