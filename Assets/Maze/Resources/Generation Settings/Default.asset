@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8a80083063e634db52d48d5cd5d272, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  <DrawMode>k__BackingField: 0
-  <GenerationType>k__BackingField: 0
-  <GridSize>k__BackingField: {x: 4, y: 4}
+  <DrawMode>k__BackingField: 1
+  <GenerationType>k__BackingField: 8
+  <GridSize>k__BackingField: {x: 30, y: 30}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
   <RoomSize>k__BackingField: {x: 5, y: 5}
-  <BiasTowardsRooms>k__BackingField: 0
+  <BiasTowardsRooms>k__BackingField: 1
   <LambdaSelection>k__BackingField: 2
   <Inset>k__BackingField: 0
   <BraidRate>k__BackingField: 0
-  <HoustonSwapPercent>k__BackingField: 0.5
-  <ImageAsset>k__BackingField: {fileID: 0}
+  <HoustonSwapPercent>k__BackingField: 0.25
+  <ImageMask>k__BackingField: {fileID: 0}
   <AsciiMask>k__BackingField: {fileID: 0}
   <Extension>k__BackingField: .png

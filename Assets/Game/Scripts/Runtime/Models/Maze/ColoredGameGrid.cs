@@ -12,6 +12,7 @@ namespace Project.Models.Maze
         {
         }
 
+
         public UnityEngine.Color Draw(Cell cell)
         {
             int distance = Distances[cell];

@@ -71,7 +71,21 @@ namespace Project.ViewModels.Generation
 
         private void SetupGrid()
         {
-            Grid = ShowLongestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
+            if (Settings.AsciiMask || Settings.ImageMask)
+            {
+                Mask m = Settings.ImageMask ?
+                         Mask.FromImgFile(Settings.ImageMask, Settings.Extension) :
+                         Settings.AsciiMask ?
+                         Mask.FromText(Settings.AsciiMask.name) :
+                         new(Settings);
+
+
+                Grid = ShowLongestPaths ? new MaskedColoredGameGrid(m) : new MaskedGameGrid(m);
+            }
+            else
+            {
+                Grid = ShowLongestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
+            }
         }
 
         public IEnumerator GenerateAsync()

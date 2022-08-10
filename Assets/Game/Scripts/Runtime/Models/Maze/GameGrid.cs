@@ -12,9 +12,11 @@ namespace Project.Models.Maze
         {
         }
 
+
+
         public UnityEngine.Color Draw(Cell cell)
         {
-            return UnityEngine.Color.black;
+            return new(.25f, .25f, .25f, 1f);
         }
     }
 }

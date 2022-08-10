@@ -39,6 +39,7 @@ namespace Project.Procedural.MazeGeneration
 
         public override string ToString()
         {
+            Debug.Log(ReportName);
             return string.Format($"{ReportName} completion: {ProgressPercentage * 100f}%; Time elapsed: {TimeElapsed:0.00}s");
         }
     }
