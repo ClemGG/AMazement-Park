@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/Custom mode scene.unity
+    guid: 61005e7430405a34ca0ed87d1b9531cd
+  - enabled: 1
+    path: Assets/Game/Scenes/Menu scene.unity
+    guid: 7e522feb4d0057545a19a39cb86e3c0d
+  - enabled: 1
+    path: Assets/Game/Scenes/3D scene.unity
+    guid: 0c0523b0218637b40a00a949ea4f5f72
+  - enabled: 0
     path: Assets/Game/Scenes/test scene.unity
     guid: 09482cfd15823234c9b20e0639b3a39e
   m_configObjects: {}

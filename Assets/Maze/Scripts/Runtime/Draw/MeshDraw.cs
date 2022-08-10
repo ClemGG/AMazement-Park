@@ -95,13 +95,14 @@ namespace Project.Procedural.MazeGeneration
                 Report.UpdateTrackTime(Time.deltaTime);
                 progress.Report(Report);
 
-                yield return null;
             }
 
             //cleanup memory
             _newVertices.Clear();
             _newUVs.Clear();
             _newTriangles.Clear();
+
+            yield return null;
         }
 
 

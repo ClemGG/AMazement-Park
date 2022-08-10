@@ -9,6 +9,7 @@ public class ProgressVisualizer
     #region UI Fields
     private static Slider _progressFill;
     private static TextMeshProUGUI _progressText;
+    private static GameObject _progressCanvas;
 
     private static Slider ProgressFill
     {
@@ -24,6 +25,14 @@ public class ProgressVisualizer
         {
             if (!_progressText) _progressText = GameObject.Find("progress text").GetComponent<TextMeshProUGUI>();
             return _progressText;
+        }
+    }
+    private static GameObject ProgressCanvas
+    {
+        get
+        {
+            if (!_progressCanvas) _progressCanvas = GameObject.Find("Progress canvas");
+            return _progressCanvas;
         }
     }
 
@@ -47,5 +56,10 @@ public class ProgressVisualizer
     {
         ProgressFill.value = 0f;
         ProgressText.text = "";
+    }
+
+    public void HideCanvas()
+    {
+        ProgressCanvas.SetActive(false);
     }
 }

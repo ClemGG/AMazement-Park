@@ -121,6 +121,7 @@ namespace Project.ViewModels.Generation
             if (Mathf.Approximately(e.ProgressPercentage, 1f))
             {
                 OnDrawProgressDone();
+                ProgressVisualizer.HideCanvas();
             }
         }
 
