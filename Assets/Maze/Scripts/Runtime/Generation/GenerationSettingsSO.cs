@@ -8,7 +8,7 @@ namespace Project.Procedural.MazeGeneration
 
         [field: SerializeField] public DrawMode DrawMode { get; set; } = DrawMode.Console;
 
-        [field: SerializeField] public GenerationType GenerationType { get; private set; } = GenerationType.BinaryTree;
+        [field: SerializeField] public GenerationType GenerationType { get; set; } = GenerationType.BinaryTree;
 
         [field: SerializeField] public Vector2Int GridSize { get; private set; } = new(10, 10);
 

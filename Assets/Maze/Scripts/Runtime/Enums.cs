@@ -72,4 +72,17 @@ public static class Enums
             action.Invoke(value);
         }
     }
+
+    public static T GetEnumFromName<T>(string name) where T : Enum
+    {
+        foreach (T value in ValuesOf<T>())
+        {
+            if(value.ToString() == name)
+            {
+                return value;
+            }
+        }
+
+        return default;
+    }
 }

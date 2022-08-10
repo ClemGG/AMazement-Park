@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Custom
   m_EditorClassIdentifier: 
   <DrawMode>k__BackingField: 1
-  <GenerationType>k__BackingField: 8
+  <GenerationType>k__BackingField: 0
   <GridSize>k__BackingField: {x: 10, y: 10}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
   <RoomSize>k__BackingField: {x: 5, y: 5}

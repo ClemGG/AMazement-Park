@@ -63,6 +63,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     //The Toggle is just a preference thing, in case the user wants to use
     //an easier way to draw a mask.
     [SerializeField] private TextMeshProUGUI MaskNameField;
+    [SerializeField] private Toggle ShowLongestPathsField;
 
     #endregion
 
@@ -136,6 +137,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Generator = FindObjectOfType<Project.ViewModels.Generation.MazeGenerator>();
 
         SetAlgorithmOptions();
+        OnAlgorithmFieldValueChanged();
     }
 
 
@@ -160,6 +162,28 @@ public class MazeCustomGenerationView : MonoBehaviour
         }
     }
 
+    public void OnAlgorithmFieldValueChanged()
+    {
+        string algName = "";
+        if (Settings.AsciiMask || Settings.ImageMask)
+        {
+            algName = MaskAlgOptions[AlgorithmField.value].text.Replace(" ", "");
+        }
+        else
+        {
+            algName = AllAlgOptions[AlgorithmField.value].text.Replace(" ", "");
+        }
+
+        Settings.GenerationType = GetEnumFromName<GenerationType>(algName);
+    }
+
+
+
+
+    public void OnShowPathsFieldValueChanged()
+    {
+        ShowLongestPaths = ShowLongestPathsField.isOn;
+    }
 
     public void PlayMazeBtn()
     {
