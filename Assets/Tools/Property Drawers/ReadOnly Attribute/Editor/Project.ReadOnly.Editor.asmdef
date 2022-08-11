@@ -1,11 +1,11 @@
 {
-    "name": "Project.EditorTools",
+    "name": "Project.ReadOnly.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:cb6d60a4c489bd64ab95265152829fc0"
+    ],
     "includePlatforms": [
-        "Editor",
-        "WindowsStandalone32",
-        "WindowsStandalone64"
+        "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

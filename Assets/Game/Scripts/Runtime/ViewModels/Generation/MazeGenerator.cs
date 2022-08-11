@@ -72,12 +72,12 @@ namespace Project.ViewModels.Generation
 
         private void SetupGrid()
         {
-            if (Settings.AsciiMask || Settings.ImageMask)
+            if (Settings.AsciiMaskName != "" || Settings.ImageMask)
             {
                 Mask m = Settings.ImageMask ?
                          Mask.FromImgFile(Settings.ImageMask, Settings.Extension) :
-                         Settings.AsciiMask ?
-                         Mask.FromText(Settings.AsciiMask.name) :
+                         Settings.AsciiMaskName != "" ?
+                         Mask.FromText(Settings.AsciiMaskName) :
                          new(Settings);
 
 
@@ -92,7 +92,7 @@ namespace Project.ViewModels.Generation
         public IEnumerator GenerateAsync()
         {
             IGeneration genAlg = InterfaceFactory.GetGenerationAlgorithm(Settings);
-            genAlg.Report = new(Settings.GenerationType.ToString().AddSpaces());
+            genAlg.Report = new(genAlg.GetType().Name.ToString().AddSpaces());
 
             Progress = new();
             Progress.ProgressChanged += OnGenerationProgressChanged;

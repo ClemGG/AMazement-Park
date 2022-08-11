@@ -35,7 +35,7 @@ namespace Project.Procedural.MazeGeneration
 
         public static Mask FromText(string fileName)
         {
-            List<string> lines = File.ReadAllLines($"{Application.dataPath}/Maze/StreamingAssets/Masks/{fileName}.txt").ToList();
+            List<string> lines = File.ReadAllLines($"{Application.streamingAssetsPath}/Masks/{fileName}.txt").ToList();
             //Removes any whitespace or special characters we don't want
             foreach (string line in lines)
             {
@@ -70,7 +70,7 @@ namespace Project.Procedural.MazeGeneration
         }
         public static Mask FromImgFile(Texture2D imageAsset, string extension)
         {
-            byte[] texData = File.ReadAllBytes($"{Application.dataPath}/Maze/StreamingAssets/Masks/{imageAsset.name}{extension}");
+            byte[] texData = File.ReadAllBytes($"{Application.streamingAssetsPath}/Masks/{imageAsset.name}{extension}");
 
             Texture2D tex = new(2, 2);
             tex.LoadImage(texData);

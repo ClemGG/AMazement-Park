@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using System.Collections;
 using UnityEngine;
 
@@ -37,5 +36,3 @@ namespace Project.Procedural.MazeGeneration
         }
     }
 }
-
-#endif

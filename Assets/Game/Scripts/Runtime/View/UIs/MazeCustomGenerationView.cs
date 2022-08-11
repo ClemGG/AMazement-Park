@@ -8,6 +8,7 @@ using TMPro;
 using System.Collections.Generic;
 using static Enums;
 using static Project.Services.StringFormatterService;
+using System.IO;
 
 public class MazeCustomGenerationView : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private TMP_InputField InsetNumberField;
     [SerializeField] private TMP_InputField BraidRateNumberField;
     [SerializeField] private TMP_InputField HoustonSwapPercentNumberField;
+    [SerializeField] private TMP_InputField MaskField;
 
     //The mosnter's fields, from to to bottom
     [SerializeField] private Slider Monster1Field;
@@ -61,7 +63,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     //and give the player an option to browse his computer to add a custom mask.
     //The Toggle is just a preference thing, in case the user wants to use
     //an easier way to draw a mask.
-    [SerializeField] private TextMeshProUGUI MaskNameField;
+    [SerializeField] private TextMeshProUGUI MaskLabel;
     [SerializeField] private Toggle ShowLongestPathsField;
 
     #endregion
@@ -141,9 +143,13 @@ public class MazeCustomGenerationView : MonoBehaviour
         }
     }
 
+    private List<string> _allowedExtensions = new() { ".txt", ".png", ".jpg", ".jpeg", ".jpe", ".jfif" };
+
+
     #endregion
 
 
+    #region Init
 
     void Start()
     {
@@ -160,6 +166,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         InitSettings();
 
         Generator = FindObjectOfType<Project.ViewModels.Generation.MazeGenerator>();
+
 
         SetAlgorithmOptions();
         OnAlgorithmFieldValueChanged();
@@ -182,8 +189,10 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.HoustonSwapPercent = .5f;
         Settings.ImageMask = null;
         Settings.AsciiMask = null;
+        Settings.AsciiMaskName = "";
     }
 
+    #endregion
 
 
     //Methods used by the UI elements in the scene
@@ -317,6 +326,43 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.HoustonSwapPercent = value;
     }
 
+    public void BrowseBtn()
+    {
+        string path = $"{Application.streamingAssetsPath}/Masks/{MaskField.text}";
+        string extension = Path.GetExtension(path);
+        if (!File.Exists(path) || (!_allowedExtensions.Contains(extension)))
+        {
+            print(File.Exists(path) + " " + _allowedExtensions.Contains(extension));
+            MaskLabel.text = "<color=#ff0000>Wrong file name</color>";
+        }
+        else
+        {
+            switch (extension)
+            {
+                case ".txt":
+                    Settings.AsciiMaskName = MaskField.text.Replace(".txt", "");
+                    break;
+                default:
+                    using(FileStream stream = File.OpenRead(path))
+                    {
+                        byte[] texData = File.ReadAllBytes(path);
+                        Texture2D tex = new(2, 2);
+                        tex.LoadImage(texData);
+                        Settings.ImageMask = tex;
+                        Settings.Extension = extension;
+                    }
+                    break;
+            }
+            MaskLabel.text = "<color=#00ff00>Mask loaded!</color>";
+        }
+    }
+    public void ClearMaskBtn()
+    {
+        MaskLabel.text = "<color=#ffffff>Mask: None</color>";
+        MaskField.text = "";
+        Settings.ImageMask = null;
+        Settings.AsciiMask = null;
+    }
 
     public void PlayMazeBtn()
     {

@@ -128,6 +128,8 @@ namespace Project.StateMachine
             }
 
             return sb.ToString();
+#else
+            return _curSubState.ToString(sb);
 #endif
         }
         /// <summary>
