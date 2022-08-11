@@ -2483,6 +2483,38 @@ PrefabInstance:
       propertyPath: m_CharacterLimit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterNumberFieldEndEdit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3199469094992664162, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_Name
       value: The Omniscient
@@ -2582,6 +2614,38 @@ PrefabInstance:
     - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_MaxValue
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterFieldValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4209998982847995287, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_text
@@ -2871,6 +2935,38 @@ PrefabInstance:
       propertyPath: m_CharacterLimit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterNumberFieldEndEdit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3199469094992664162, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_Name
       value: The Changeling
@@ -2966,6 +3062,38 @@ PrefabInstance:
     - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_MaxValue
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterFieldValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4209998982847995287, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_text
@@ -3618,6 +3746,38 @@ PrefabInstance:
       propertyPath: m_CharacterLimit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterNumberFieldEndEdit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3199469094992664162, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_Name
       value: Embuscade
@@ -3713,6 +3873,38 @@ PrefabInstance:
     - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_MaxValue
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterFieldValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4209998982847995287, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_text
@@ -5151,16 +5343,18 @@ MonoBehaviour:
   BraidRateNumberField: {fileID: 541396649}
   HoustonSwapPercentNumberField: {fileID: 1079808025}
   MaskField: {fileID: 322516727}
-  Monster1Field: {fileID: 3199469094601482642}
-  Monster2Field: {fileID: 663828508}
-  Monster3Field: {fileID: 1029997025}
-  Monster4Field: {fileID: 764499157}
-  Monster5Field: {fileID: 1765562897}
-  Monster1NumberField: {fileID: 3199469094601482641}
-  Monster2NumberField: {fileID: 663828507}
-  Monster3NumberField: {fileID: 1029997024}
-  Monster4NumberField: {fileID: 764499156}
-  Monster5NumberField: {fileID: 1765562896}
+  MonsterFields:
+  - {fileID: 3199469094601482642}
+  - {fileID: 663828508}
+  - {fileID: 1029997025}
+  - {fileID: 764499157}
+  - {fileID: 1765562897}
+  MonsterNumberFields:
+  - {fileID: 3199469094601482641}
+  - {fileID: 663828507}
+  - {fileID: 1029997024}
+  - {fileID: 764499156}
+  - {fileID: 1765562896}
   MaskLabel: {fileID: 1732695721}
   ShowLongestPathsField: {fileID: 1049841841}
 --- !u!4 &1470567647
@@ -5667,6 +5861,38 @@ PrefabInstance:
       propertyPath: m_CharacterLimit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterNumberFieldEndEdit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3199469094992664162, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_Name
       value: The Cheater
@@ -5762,6 +5988,38 @@ PrefabInstance:
     - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_MaxValue
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterFieldValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4209998982847995287, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_text
@@ -6928,6 +7186,34 @@ PrefabInstance:
       propertyPath: m_CharacterLimit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterNumberFieldEndEdit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3199469094992664162, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_Name
       value: The Hunter
@@ -7023,6 +7309,34 @@ PrefabInstance:
     - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_MaxValue
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMonsterFieldValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4209998982847995287, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_text

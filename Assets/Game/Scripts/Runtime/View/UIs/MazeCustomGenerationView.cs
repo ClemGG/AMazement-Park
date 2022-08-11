@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using static Enums;
 using static Project.Services.StringFormatterService;
 using System.IO;
-using System;
 
 public class MazeCustomGenerationView : MonoBehaviour
 {
@@ -66,17 +65,10 @@ public class MazeCustomGenerationView : MonoBehaviour
     [Space(10)]
 
     //The mosnter's fields, from to to bottom
-    [SerializeField] private Slider Monster1Field;
-    [SerializeField] private Slider Monster2Field;
-    [SerializeField] private Slider Monster3Field;
-    [SerializeField] private Slider Monster4Field;
-    [SerializeField] private Slider Monster5Field;
 
-    [SerializeField] private TMP_InputField Monster1NumberField;
-    [SerializeField] private TMP_InputField Monster2NumberField;
-    [SerializeField] private TMP_InputField Monster3NumberField;
-    [SerializeField] private TMP_InputField Monster4NumberField;
-    [SerializeField] private TMP_InputField Monster5NumberField;
+    [SerializeField] private Slider[] MonsterFields;
+
+    [SerializeField] private TMP_InputField[] MonsterNumberFields;
 
     [Space(10)]
 
@@ -447,8 +439,21 @@ public class MazeCustomGenerationView : MonoBehaviour
         OnAlgorithmFieldValueChanged();
     }
 
+    public void OnMonsterFieldValueChanged(int index)
+    {
+        int value = (int)MonsterFields[index].value;
+        GameSession.ActivityLevels[index] = value;
+        MonsterNumberFields[index].text = value.ToString();
+    }
+    public void OnMonsterNumberFieldEndEdit(int index)
+    {
+        int value = int.Parse(MonsterNumberFields[index].text);
+        value = Mathf.Clamp(value, 0, (int)MonsterFields[index].maxValue);
 
-
+        MonsterNumberFields[index].text = value.ToString();
+        MonsterFields[index].value = value;
+        GameSession.ActivityLevels[index] = value;
+    }
 
     public void PlayMazeBtn()
     {
