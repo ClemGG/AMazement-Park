@@ -302,6 +302,21 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.BraidRate = value;
     }
 
+    public void OnHoustonFieldValueChanged()
+    {
+        Settings.HoustonSwapPercent = HoustonSwapPercentField.value;
+        HoustonSwapPercentNumberField.text = $"{HoustonSwapPercentField.value:0.00}";
+    }
+    public void OnHoustonNumberFieldEndEdit()
+    {
+        float value = float.Parse(HoustonSwapPercentNumberField.text);
+        value = Mathf.Clamp(value, 0f, 1f);
+        HoustonSwapPercentNumberField.text = value.ToString();
+        HoustonSwapPercentField.value = value;
+
+        Settings.HoustonSwapPercent = value;
+    }
+
 
     public void PlayMazeBtn()
     {
