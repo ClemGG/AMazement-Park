@@ -205,7 +205,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     {
         AlgorithmField.ClearOptions();
 
-        if (Settings.AsciiMask || Settings.ImageMask)
+        if (Settings.AsciiMaskName != "" || Settings.ImageMask)
         {
             AlgorithmField.AddOptions(MaskAlgOptions);
         }
@@ -354,6 +354,8 @@ public class MazeCustomGenerationView : MonoBehaviour
                     break;
             }
             MaskLabel.text = "<color=#00ff00>Mask loaded!</color>";
+
+            SetAlgorithmOptions();
         }
     }
     public void ClearMaskBtn()
@@ -362,7 +364,13 @@ public class MazeCustomGenerationView : MonoBehaviour
         MaskField.text = "";
         Settings.ImageMask = null;
         Settings.AsciiMask = null;
+        Settings.AsciiMaskName = "";
+
+        SetAlgorithmOptions();
     }
+
+
+
 
     public void PlayMazeBtn()
     {
