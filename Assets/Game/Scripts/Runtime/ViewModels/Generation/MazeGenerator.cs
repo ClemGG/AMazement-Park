@@ -72,14 +72,19 @@ namespace Project.ViewModels.Generation
 
         private void SetupGrid()
         {
-            if (Settings.AsciiMaskName != "" || Settings.ImageMask)
+            if (Settings.MaskName != "")
             {
-                Mask m = Settings.ImageMask ?
-                         Mask.FromImgFile(Settings.ImageMask, Settings.Extension) :
-                         Settings.AsciiMaskName != "" ?
-                         Mask.FromText(Settings.AsciiMaskName) :
-                         new(Settings);
+                Mask m;
+                switch (Settings.Extension)
+                {
+                    case ".txt":
+                        m = Mask.FromText(Settings.MaskName);
+                        break;
+                    default:
+                        m = Mask.FromImgFile(Settings.MaskName, Settings.Extension);
+                        break;
 
+                }
 
                 Grid = ShowLongestPaths ? new MaskedColoredGameGrid(m) : new MaskedGameGrid(m);
             }

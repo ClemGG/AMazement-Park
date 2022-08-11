@@ -8,7 +8,7 @@ namespace Project.Models.Maze
     public class CustomMazeSettingsSO : GenerationSettingsSO
     {
         [field: SerializeField] public Difficulty DifficultyLevel { get; set; } = Difficulty.Custom;
-        [field: SerializeField] public string AsciiMaskName { get; set; }
+        [field: SerializeField] public string MaskName { get; set; }
 
     }
 }

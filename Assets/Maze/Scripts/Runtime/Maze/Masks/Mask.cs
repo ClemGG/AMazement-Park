@@ -84,7 +84,37 @@ namespace Project.Procedural.MazeGeneration
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    Color pixel = tex.GetPixel(j, rows-1-i);
+                    Color pixel = tex.GetPixel(j, rows - 1 - i);
+                    if (pixel == Color.black)
+                    {
+                        m[i, j] = false;
+                    }
+                    else
+                    {
+                        m[i, j] = true;
+                    }
+                }
+            }
+
+            return m;
+        }
+        public static Mask FromImgFile(string imageAssetName, string extension)
+        {
+            byte[] texData = File.ReadAllBytes($"{Application.streamingAssetsPath}/Masks/{imageAssetName}{extension}");
+
+            Texture2D tex = new(2, 2);
+            tex.LoadImage(texData);
+
+            int rows = tex.height;
+            int cols = tex.width;
+            Mask m = new(rows, cols);
+
+            //Masks all cells representing a black pixel
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    Color pixel = tex.GetPixel(j, rows - 1 - i);
                     if (pixel == Color.black)
                     {
                         m[i, j] = false;

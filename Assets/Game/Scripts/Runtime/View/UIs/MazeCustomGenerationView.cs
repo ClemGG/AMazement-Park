@@ -79,7 +79,6 @@ public class MazeCustomGenerationView : MonoBehaviour
     private readonly string[] _maskAlgNames = new string[]
     {
         GenerationType.AldousBroder.ToString().AddSpaces(),
-        GenerationType.Eller.ToString().AddSpaces(),
         GenerationType.GrowingTree.ToString().AddSpaces(),
         GenerationType.Houston.ToString().AddSpaces(),
         GenerationType.HuntAndKill.ToString().AddSpaces(),
@@ -189,7 +188,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.HoustonSwapPercent = .5f;
         Settings.ImageMask = null;
         Settings.AsciiMask = null;
-        Settings.AsciiMaskName = "";
+        Settings.MaskName = "";
     }
 
     #endregion
@@ -205,7 +204,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     {
         AlgorithmField.ClearOptions();
 
-        if (Settings.AsciiMaskName != "" || Settings.ImageMask)
+        if (Settings.MaskName != "")
         {
             AlgorithmField.AddOptions(MaskAlgOptions);
         }
@@ -217,7 +216,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     public void OnAlgorithmFieldValueChanged()
     {
         string algName = "";
-        if (Settings.AsciiMask || Settings.ImageMask)
+        if (Settings.MaskName != "")
         {
             algName = MaskAlgOptions[AlgorithmField.value].text.Replace(" ", "");
         }
@@ -337,25 +336,12 @@ public class MazeCustomGenerationView : MonoBehaviour
         }
         else
         {
-            switch (extension)
-            {
-                case ".txt":
-                    Settings.AsciiMaskName = MaskField.text.Replace(".txt", "");
-                    break;
-                default:
-                    using(FileStream stream = File.OpenRead(path))
-                    {
-                        byte[] texData = File.ReadAllBytes(path);
-                        Texture2D tex = new(2, 2);
-                        tex.LoadImage(texData);
-                        Settings.ImageMask = tex;
-                        Settings.Extension = extension;
-                    }
-                    break;
-            }
+            Settings.MaskName = MaskField.text.Replace(extension, "");
+            Settings.Extension = extension;
             MaskLabel.text = "<color=#00ff00>Mask loaded!</color>";
 
             SetAlgorithmOptions();
+            OnAlgorithmFieldValueChanged();
         }
     }
     public void ClearMaskBtn()
@@ -364,9 +350,10 @@ public class MazeCustomGenerationView : MonoBehaviour
         MaskField.text = "";
         Settings.ImageMask = null;
         Settings.AsciiMask = null;
-        Settings.AsciiMaskName = "";
+        Settings.MaskName = "";
 
         SetAlgorithmOptions();
+        OnAlgorithmFieldValueChanged();
     }
 
 
