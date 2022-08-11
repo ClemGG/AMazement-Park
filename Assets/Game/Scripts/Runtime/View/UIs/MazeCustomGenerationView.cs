@@ -33,7 +33,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private TMP_InputField RoomSizeXField;
     [SerializeField] private TMP_InputField RoomSizeYField;
 
-    [SerializeField] private Toggle BiasTwardsRoomsField;
+    [SerializeField] private Toggle BiasTowardsRoomsField;
     [SerializeField] private TMP_Dropdown LambdaSelectionField;
     [SerializeField] private Slider InsetField;
     [SerializeField] private Slider BraidRateField;
@@ -228,7 +228,10 @@ public class MazeCustomGenerationView : MonoBehaviour
 
         Settings.RoomSize = new(Settings.RoomSize.x, value);
     }
-
+    public void OnBiasFieldValueChanged()
+    {
+        Settings.BiasTowardsRooms = BiasTowardsRoomsField.isOn;
+    }
 
 
     public void PlayMazeBtn()

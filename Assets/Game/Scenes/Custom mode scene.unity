@@ -4780,7 +4780,7 @@ MonoBehaviour:
   GridSizeYField: {fileID: 737986472}
   RoomSizeXField: {fileID: 1452252454}
   RoomSizeYField: {fileID: 1155179238}
-  BiasTwardsRoomsField: {fileID: 4181738222424148681}
+  BiasTowardsRoomsField: {fileID: 4181738222424148681}
   LambdaSelectionField: {fileID: 1190503941}
   InsetField: {fileID: 441469228}
   BraidRateField: {fileID: 79556242}
@@ -6998,6 +6998,34 @@ PrefabInstance:
     - target: {fileID: 4181738221183142789, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1470567646}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnBiasFieldValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MazeCustomGenerationView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181738221183142790, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
