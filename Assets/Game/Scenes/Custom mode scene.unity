@@ -3880,7 +3880,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 761560414640034101, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Text
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 761560414640034101, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_CharacterLimit
@@ -4470,7 +4470,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 761560414640034101, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Text
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 761560414640034101, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_CharacterLimit

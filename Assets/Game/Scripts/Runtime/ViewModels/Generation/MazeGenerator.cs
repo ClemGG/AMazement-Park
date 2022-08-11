@@ -4,6 +4,7 @@ using UnityEngine;
 using Project.Models.Game.Enums;
 using System.Collections;
 using System;
+using static Project.Services.StringFormatterService;
 
 namespace Project.ViewModels.Generation
 {
@@ -91,7 +92,7 @@ namespace Project.ViewModels.Generation
         public IEnumerator GenerateAsync()
         {
             IGeneration genAlg = InterfaceFactory.GetGenerationAlgorithm(Settings);
-            genAlg.Report = new("Generation");
+            genAlg.Report = new(Settings.GenerationType.ToString().AddSpaces());
 
             Progress = new();
             Progress.ProgressChanged += OnGenerationProgressChanged;

@@ -146,7 +146,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.DrawMode = DrawMode.UIImage;
         Settings.GenerationType = GenerationType.Random;
         Settings.GridSize = new(10, 10);
-        Settings.RoomSize = new(4, 4);  //GridSize/2-1, otherwise we have a chance to create a single room
+        Settings.RoomSize = new(5, 5);
         Settings.BiasTowardsRooms = false;
         Settings.LambdaSelection = GrowingTreeLambda.Random;
         Settings.Inset = 0f;
@@ -215,7 +215,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     public void OnRoomSizeXFieldEndEdit()
     {
         int value = int.Parse(RoomSizeXField.text);
-        value = Mathf.Clamp(value, 1, Settings.GridSize.y/2 -1);
+        value = Mathf.Clamp(value, 1, 30);
         RoomSizeXField.text = value.ToString();
 
         Settings.RoomSize = new(value, Settings.RoomSize.y);
@@ -223,7 +223,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     public void OnRoomSizeYFieldEndEdit()
     {
         int value = int.Parse(RoomSizeYField.text);
-        value = Mathf.Clamp(value, 1, Settings.GridSize.y/2 - 1);
+        value = Mathf.Clamp(value, 1, 30);
         RoomSizeYField.text = value.ToString();
 
         Settings.RoomSize = new(Settings.RoomSize.x, value);
