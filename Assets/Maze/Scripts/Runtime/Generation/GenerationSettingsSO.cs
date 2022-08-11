@@ -10,40 +10,40 @@ namespace Project.Procedural.MazeGeneration
 
         [field: SerializeField] public GenerationType GenerationType { get; set; } = GenerationType.BinaryTree;
 
-        [field: SerializeField] public Vector2Int GridSize { get; private set; } = new(10, 10);
+        [field: SerializeField] public Vector2Int GridSize { get; set; } = new(10, 10);
 
         [field: Tooltip("Used in 3D for the width and height of a Cell in the Mesh.")]
-        [field: SerializeField] public Vector2Int MeshCellSize { get; private set; } = new(5, 5);
+        [field: SerializeField] public Vector2Int MeshCellSize { get; set; } = new(5, 5);
 
 
         [field: Tooltip("Used by the Recursive Division Algorithm to stop the process if a room is smaller than this size.")]
-        [field: SerializeField] public Vector2Int RoomSize { get; private set; } = new(5, 5);
+        [field: SerializeField] public Vector2Int RoomSize { get; set; } = new(5, 5);
 
         [field: Tooltip("Used by the Recursive Division Algorithm. If true, will create many more rooms than corridors in the maze.")]
-        [field: SerializeField] public bool BiasTowardsRooms { get; private set; } = false;
+        [field: SerializeField] public bool BiasTowardsRooms { get; set; } = false;
 
         [field: Tooltip("Used by the Growing Tree Algorithm to select different ways to process the unvisited Cells.")]
-        [field: SerializeField] public GrowingTreeLambda LambdaSelection { get; private set; } = GrowingTreeLambda.Random;
+        [field: SerializeField] public GrowingTreeLambda LambdaSelection { get; set; } = GrowingTreeLambda.Random;
 
 
         [field: Tooltip("Generate space between walls. This field is a percentage.")]
-        [field: SerializeField, Range(0f, .5f)] public float Inset { get; private set; } = 0f;
+        [field: SerializeField, Range(0f, .5f)] public float Inset { get; set; } = 0f;
 
         [field: Tooltip("Removes deadens to create loops in the maze. This field is a percentage.")]
-        [field: SerializeField, Range(0f, 1f)] public float BraidRate { get; private set; } = 1f;
+        [field: SerializeField, Range(0f, 1f)] public float BraidRate { get; set; } = 1f;
 
         [field: Tooltip("Used by the Houston Algorithm." +
                         "Once the AB alg has visited a number of cells above that percentage, " +
                         "it will use the Wilson Algorithm. This field is a percentage (0 is Wilson & 1 is Aldous-Broder).")]
-        [field: SerializeField, Range(0f, 1f)] public float HoustonSwapPercent { get; private set; } = .5f;
+        [field: SerializeField, Range(0f, 1f)] public float HoustonSwapPercent { get; set; } = .5f;
 
         [field: Tooltip("The Texture to use for masking the grid's cells.")]
-        [field: SerializeField] public Texture2D ImageMask { get; private set; }
+        [field: SerializeField] public Texture2D ImageMask { get; set; }
 
         [field: Tooltip("The txt file to use for masking the grid's cells.")]
-        [field: SerializeField] public TextAsset AsciiMask { get; private set; }
+        [field: SerializeField] public TextAsset AsciiMask { get; set; }
 
-        [field: SerializeField] public string Extension { get; private set; } = ".png";
+        [field: SerializeField] public string Extension { get; set; } = ".png";
 
 
 #if UNITY_EDITOR

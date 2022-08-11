@@ -34,13 +34,12 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private TMP_InputField RoomSizeYField;
 
     [SerializeField] private Toggle BiasTwardsRoomsField;
-    [SerializeField] private Slider LambdaSelectionField;
+    [SerializeField] private TMP_Dropdown LambdaSelectionField;
     [SerializeField] private Slider InsetField;
     [SerializeField] private Slider BraidRateField;
     [SerializeField] private Slider HoustonSwapPercentField;
 
     //Used to modify the slider values directly
-    [SerializeField] private TMP_InputField LambdaSelectionNumberField;
     [SerializeField] private TMP_InputField InsetNumberField;
     [SerializeField] private TMP_InputField BraidRateNumberField;
     [SerializeField] private TMP_InputField HoustonSwapPercentNumberField;
@@ -132,12 +131,29 @@ public class MazeCustomGenerationView : MonoBehaviour
     {
         //We are in the UI Custom mode, so we need to change the draw mode
         Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/Custom");
-        Settings.DrawMode = DrawMode.UIImage;
+
+        InitSettings();
 
         Generator = FindObjectOfType<Project.ViewModels.Generation.MazeGenerator>();
 
         SetAlgorithmOptions();
         OnAlgorithmFieldValueChanged();
+    }
+
+    //Reset all values to default each time we enter custom mode
+    private void InitSettings()
+    {
+        Settings.DrawMode = DrawMode.UIImage;
+        Settings.GenerationType = GenerationType.Random;
+        Settings.GridSize = new(10, 10);
+        Settings.RoomSize = new(5, 5);
+        Settings.BiasTowardsRooms = false;
+        Settings.LambdaSelection = GrowingTreeLambda.Random;
+        Settings.Inset = 0f;
+        Settings.BraidRate = 0f;
+        Settings.HoustonSwapPercent = .5f;
+        Settings.ImageMask = null;
+        Settings.AsciiMask = null;
     }
 
 
@@ -178,12 +194,24 @@ public class MazeCustomGenerationView : MonoBehaviour
     }
 
 
-
-
-    public void OnShowPathsFieldValueChanged()
+    public void OnGridSizeXFieldEndEdit() 
     {
-        ShowLongestPaths = ShowLongestPathsField.isOn;
+        int value = int.Parse(GridSizeXField.text);
+        value = Mathf.Clamp(value, 10, 30);
+        GridSizeXField.text = value.ToString();
+
+        Settings.GridSize = new(value, Settings.GridSize.y);
     }
+    public void OnGridSizeYFieldEndEdit() 
+    {
+        int value = int.Parse(GridSizeYField.text);
+        value = Mathf.Clamp(value, 10, 30);
+        GridSizeYField.text = value.ToString();
+
+        Settings.GridSize = new(Settings.GridSize.x, value);
+    }
+
+
 
     public void PlayMazeBtn()
     {
@@ -204,6 +232,11 @@ public class MazeCustomGenerationView : MonoBehaviour
     {
         Generator.ShowLongestPaths = ShowLongestPaths;
         Generator.Execute(GameSession.DifficultyLevel, DrawMode.UIImage);
+    }
+
+    public void OnShowPathsFieldValueChanged()
+    {
+        ShowLongestPaths = ShowLongestPathsField.isOn;
     }
 
 

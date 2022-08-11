@@ -8,5 +8,6 @@ namespace Project.Models.Maze
     public class CustomMazeSettingsSO : GenerationSettingsSO
     {
         [field: SerializeField] public Difficulty DifficultyLevel { get; set; } = Difficulty.Custom;
+
     }
 }
