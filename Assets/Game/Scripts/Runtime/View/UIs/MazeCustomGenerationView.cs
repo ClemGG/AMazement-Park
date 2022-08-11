@@ -178,7 +178,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.BiasTowardsRooms = false;
         Settings.LambdaSelection = GrowingTreeLambda.Random;
         Settings.Inset = 0f;
-        Settings.BraidRate = 0f;
+        Settings.BraidRate = 1f;
         Settings.HoustonSwapPercent = .5f;
         Settings.ImageMask = null;
         Settings.AsciiMask = null;
@@ -285,6 +285,21 @@ public class MazeCustomGenerationView : MonoBehaviour
         InsetField.value = value;
 
         Settings.Inset = value;
+    }
+
+    public void OnBraidRateFieldValueChanged()
+    {
+        Settings.BraidRate = BraidRateField.value;
+        BraidRateNumberField.text = $"{BraidRateField.value:0.00}";
+    }
+    public void OnBraidRateNumberFieldEndEdit()
+    {
+        float value = float.Parse(BraidRateNumberField.text);
+        value = Mathf.Clamp(value, 0f, 1f);
+        BraidRateNumberField.text = value.ToString();
+        BraidRateField.value = value;
+
+        Settings.BraidRate = value;
     }
 
 
