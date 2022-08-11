@@ -72,6 +72,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     //_maskAlgNames contains only the algorithms compatible with masks
     private List<TMP_Dropdown.OptionData> _allAlgOptions = new();
     private List<TMP_Dropdown.OptionData> _maskAlgOptions = new();
+    private List<TMP_Dropdown.OptionData> _lambdaOptions = new();
     private readonly string[] _allAlgNames = ValuesToString<GenerationType>().AddSpaces();
     private readonly string[] _maskAlgNames = new string[]
     {
@@ -85,6 +86,13 @@ public class MazeCustomGenerationView : MonoBehaviour
         GenerationType.SimplifiedPrim.ToString().AddSpaces(),
         GenerationType.TruePrim.ToString().AddSpaces(),
         GenerationType.Wilson.ToString().AddSpaces(),
+    };
+    private readonly string[] _lambdaNames = new string[]
+    {
+            GrowingTreeLambda.Random.ToString().AddSpaces(),
+            GrowingTreeLambda.LastCell.ToString().AddSpaces(),
+            GrowingTreeLambda.FirstCell.ToString().AddSpaces(),
+            GrowingTreeLambda.FirstAndLastMix.ToString().AddSpaces(),
     };
 
     private List<TMP_Dropdown.OptionData> AllAlgOptions
@@ -117,17 +125,34 @@ public class MazeCustomGenerationView : MonoBehaviour
             return _maskAlgOptions;
         }
     }
+    private List<TMP_Dropdown.OptionData> LambdaOptions
+    {
+        get
+        {
+            if (_lambdaOptions.Count == 0)
+            {
+                for (int i = 0; i < _lambdaNames.Length; i++)
+                {
+                    _lambdaOptions.Add(new(_lambdaNames[i]));
+                }
+            }
+
+            return _lambdaOptions;
+        }
+    }
 
     #endregion
+
+
 
     void Start()
     {
         GameSession.DifficultyLevel = Difficulty.Custom;
 
-        GetComponents();
+        InitComponents();
     }
 
-    private void GetComponents()
+    private void InitComponents()
     {
         //We are in the UI Custom mode, so we need to change the draw mode
         Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/Custom");
@@ -138,6 +163,9 @@ public class MazeCustomGenerationView : MonoBehaviour
 
         SetAlgorithmOptions();
         OnAlgorithmFieldValueChanged();
+
+        SetLambdaOptions();
+        OnLambdaFieldValueChanged();
     }
 
     //Reset all values to default each time we enter custom mode
@@ -177,7 +205,6 @@ public class MazeCustomGenerationView : MonoBehaviour
             AlgorithmField.AddOptions(AllAlgOptions);
         }
     }
-
     public void OnAlgorithmFieldValueChanged()
     {
         string algName = "";
@@ -192,7 +219,7 @@ public class MazeCustomGenerationView : MonoBehaviour
 
         Settings.GenerationType = GetEnumFromName<GenerationType>(algName);
     }
-
+    
 
     public void OnGridSizeXFieldEndEdit()
     {
@@ -231,6 +258,18 @@ public class MazeCustomGenerationView : MonoBehaviour
     public void OnBiasFieldValueChanged()
     {
         Settings.BiasTowardsRooms = BiasTowardsRoomsField.isOn;
+    }
+
+
+    private void SetLambdaOptions()
+    {
+        LambdaSelectionField.ClearOptions();
+        LambdaSelectionField.AddOptions(LambdaOptions);
+    }
+    public void OnLambdaFieldValueChanged()
+    {
+        string algName = LambdaSelectionField.captionText.text.Replace(" ", "");
+        Settings.LambdaSelection = GetEnumFromName<GrowingTreeLambda>(algName);
     }
 
 

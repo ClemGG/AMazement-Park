@@ -5730,7 +5730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3149591991828522284, guid: c1e817d4833c6cd4f9454ee2a6d8e790, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnAlgorithmFieldValueChanged
+      value: OnLambdaFieldValueChanged
       objectReference: {fileID: 0}
     - target: {fileID: 3149591991828522284, guid: c1e817d4833c6cd4f9454ee2a6d8e790, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
