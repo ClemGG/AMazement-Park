@@ -950,7 +950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588125749037653515, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_text
-      value: "0.50\u200B"
+      value: "\u200B"
       objectReference: {fileID: 0}
     - target: {fileID: 3873089308121233248, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Name
@@ -1882,7 +1882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588125749037653515, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_text
-      value: "0\u200B"
+      value: "1\u200B"
       objectReference: {fileID: 0}
     - target: {fileID: 3873089308121233248, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Name
@@ -4231,6 +4231,10 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1588125749037653515, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
+      propertyPath: m_text
+      value: "5\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 3873089308121233248, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Name
       value: RoomSizeYField
@@ -4877,6 +4881,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1588125749037653515, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
+      propertyPath: m_text
+      value: "5\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 3873089308121233248, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Name
       value: RoomSizeXField
@@ -5120,6 +5128,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Settings>k__BackingField: {fileID: 0}
   <ShowLongestPaths>k__BackingField: 0
+  Slot0: {fileID: 754379470}
+  Slot1: {fileID: 1720125456}
+  Slot2: {fileID: 234563727}
+  Slot3: {fileID: 558043806}
+  Slot4: {fileID: 1273484569}
+  Slot5: {fileID: 1998820998}
+  Slot6: {fileID: 159691283}
+  Slot7: {fileID: 68012139}
+  Slot8: {fileID: 240539102}
   AlgorithmField: {fileID: 2100548829823229872}
   GridSizeXField: {fileID: 2503991769901925455}
   GridSizeYField: {fileID: 737986472}

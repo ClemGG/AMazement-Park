@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using static Enums;
 using static Project.Services.StringFormatterService;
 using System.IO;
+using System;
 
 public class MazeCustomGenerationView : MonoBehaviour
 {
@@ -26,6 +27,18 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     //If a field is not represented here, it means it must be assigned the correct values in the Inspector
 
+    [SerializeField] private GameObject Slot0;  //Algorithm
+    [SerializeField] private GameObject Slot1;  //Grid Size
+    [SerializeField] private GameObject Slot2;  //Room Size
+    [SerializeField] private GameObject Slot3;  //Bias
+    [SerializeField] private GameObject Slot4;  //Lambda
+    [SerializeField] private GameObject Slot5;  //Inset
+    [SerializeField] private GameObject Slot6;  //Braid
+    [SerializeField] private GameObject Slot7;  //Houston
+    [SerializeField] private GameObject Slot8;  //Mask
+
+    [Space(10)]
+
     [SerializeField] private TMP_Dropdown AlgorithmField;
 
     [SerializeField] private TMP_InputField GridSizeXField;
@@ -34,17 +47,23 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private TMP_InputField RoomSizeXField;
     [SerializeField] private TMP_InputField RoomSizeYField;
 
+    [Space(10)]
+
     [SerializeField] private Toggle BiasTowardsRoomsField;
     [SerializeField] private TMP_Dropdown LambdaSelectionField;
     [SerializeField] private Slider InsetField;
     [SerializeField] private Slider BraidRateField;
     [SerializeField] private Slider HoustonSwapPercentField;
 
+    [Space(10)]
+
     //Used to modify the slider values directly
     [SerializeField] private TMP_InputField InsetNumberField;
     [SerializeField] private TMP_InputField BraidRateNumberField;
     [SerializeField] private TMP_InputField HoustonSwapPercentNumberField;
     [SerializeField] private TMP_InputField MaskField;
+
+    [Space(10)]
 
     //The mosnter's fields, from to to bottom
     [SerializeField] private Slider Monster1Field;
@@ -58,6 +77,8 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private TMP_InputField Monster3NumberField;
     [SerializeField] private TMP_InputField Monster4NumberField;
     [SerializeField] private TMP_InputField Monster5NumberField;
+
+    [Space(10)]
 
     //We'll use dropdowns to look for the default assets in the game folder,
     //and give the player an option to browse his computer to add a custom mask.
@@ -226,8 +247,78 @@ public class MazeCustomGenerationView : MonoBehaviour
         }
 
         Settings.GenerationType = GetEnumFromName<GenerationType>(algName);
+        ShowAndHideSlots();
     }
-    
+
+    //Hides the sections of the UI irrelevant to the current algorithm
+    private void ShowAndHideSlots()
+    {
+        Slot0.SetActive(true);
+        Slot1.SetActive(true);
+        Slot2.SetActive(true);
+        Slot3.SetActive(true);
+        Slot4.SetActive(true);
+        Slot5.SetActive(true);
+        Slot6.SetActive(true);
+        Slot7.SetActive(true);
+        Slot8.SetActive(true);
+
+        switch (Settings.GenerationType)
+        {
+            case 
+            GenerationType.BinaryTree or 
+            GenerationType.Sidewinder or
+            GenerationType.Eller:
+                Slot2.SetActive(false);
+                Slot3.SetActive(false);
+                Slot4.SetActive(false);
+                Slot7.SetActive(false);
+                Slot8.SetActive(false);
+                break;
+            case 
+            GenerationType.AldousBroder or 
+            GenerationType.Wilson or
+            GenerationType.HuntAndKill or
+            GenerationType.RecursiveBacktracker or
+            GenerationType.RandomizedKruskal or
+            GenerationType.SimplifiedPrim or
+            GenerationType.TruePrim:
+                Slot2.SetActive(false);
+                Slot3.SetActive(false);
+                Slot4.SetActive(false);
+                Slot7.SetActive(false);
+                break;
+
+            case GenerationType.Houston:
+                Slot2.SetActive(false);
+                Slot3.SetActive(false);
+                Slot4.SetActive(false);
+                break;
+
+            case GenerationType.GrowingTree:
+                Slot2.SetActive(false);
+                Slot3.SetActive(false);
+                Slot7.SetActive(false);
+                break;
+
+            case GenerationType.RecursiveDivision:
+                Slot4.SetActive(false);
+                Slot7.SetActive(false);
+                Slot8.SetActive(false);
+                break;
+
+            case GenerationType.OneRoom:
+                Slot2.SetActive(false);
+                Slot3.SetActive(false);
+                Slot4.SetActive(false);
+                Slot5.SetActive(false);
+                Slot6.SetActive(false);
+                Slot7.SetActive(false);
+                break;
+            default:
+                break;
+        }
+    }
 
     public void OnGridSizeXFieldEndEdit()
     {
