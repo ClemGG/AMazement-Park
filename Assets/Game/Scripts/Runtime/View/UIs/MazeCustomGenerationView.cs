@@ -272,6 +272,21 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.LambdaSelection = GetEnumFromName<GrowingTreeLambda>(algName);
     }
 
+    public void OnInsetFieldValueChanged()
+    {
+        Settings.Inset = InsetField.value;
+        InsetNumberField.text = $"{InsetField.value:0.00}";
+    }
+    public void OnInsetNumberFieldEndEdit()
+    {
+        float value = float.Parse(InsetNumberField.text);
+        value = Mathf.Clamp(value, 0f, .35f);
+        InsetNumberField.text = value.ToString();
+        InsetField.value = value;
+
+        Settings.Inset = value;
+    }
+
 
     public void PlayMazeBtn()
     {
