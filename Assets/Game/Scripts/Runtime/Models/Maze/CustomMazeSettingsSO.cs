@@ -10,6 +10,7 @@ namespace Project.Models.Maze
         [field: SerializeField] public Difficulty DifficultyLevel { get; set; } = Difficulty.Custom;
         [field: SerializeField] public string MaskName { get; set; }
 
+        //In order : Hunter, Omniscient, Embuscade, Useless Moron, Cheater
         //The Hostility levels for each monster.
         /*
          * - 1 : Disabled
@@ -21,6 +22,10 @@ namespace Project.Models.Maze
            - 5 : The monsters are always in Attack mode and their countdonws are reduced to the minimum (used in Nightmare mode).
          */
         [field: SerializeField] public int[] ActivityLevels { get; set; } = new int[5];
+
+
+        //In order : Key, Map and Tracker
+        [field: SerializeField] public bool[] ActiveItems { get; set; } = new bool[3];
 
     }
 }

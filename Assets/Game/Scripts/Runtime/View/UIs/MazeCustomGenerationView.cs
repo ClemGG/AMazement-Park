@@ -70,6 +70,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private Slider[] MonsterFields;
 
     [SerializeField] private Transform[] MonsterFillJauges;
+    [SerializeField] private GameObject[] ItemCrosses;
 
     [Space(10)]
 
@@ -210,6 +211,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.AsciiMask = null;
         Settings.MaskName = "";
         Settings.ActivityLevels = new int[5] { 3, 3, 3, 3, 2 };
+        Settings.ActiveItems = new bool[3] { true, true, true };
     }
 
     #endregion
@@ -453,7 +455,6 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.ActivityLevels[index] = value;
         UpdateMonsterJauges(index);
     }
-
     private void UpdateMonsterJauges(int index)
     {
         Transform jauge = MonsterFillJauges[index];
@@ -464,6 +465,12 @@ public class MazeCustomGenerationView : MonoBehaviour
             img.gameObject.SetActive(i < value);
             img.color = MonsteJaugeGradient.Evaluate((float)(i+1) / 5f);
         }
+    }
+
+    public void EnableItemBtn(int index)
+    {
+        Settings.ActiveItems[index] = !Settings.ActiveItems[index];
+        ItemCrosses[index].SetActive(!ItemCrosses[index].activeSelf);
     }
 
 
