@@ -16,6 +16,7 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     [field: SerializeField, ReadOnly] private CustomMazeSettingsSO Settings { get; set; }
     [field: SerializeField] private bool ShowLongestPaths { get; set; } = false;
+    [field: SerializeField] private Gradient MonsteJaugeGradient { get; set; }
 
     private Project.ViewModels.Generation.MazeGenerator Generator { get; set; }
 
@@ -68,7 +69,7 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     [SerializeField] private Slider[] MonsterFields;
 
-    [SerializeField] private TMP_InputField[] MonsterNumberFields;
+    [SerializeField] private Transform[] MonsterFillJauges;
 
     [Space(10)]
 
@@ -185,6 +186,12 @@ public class MazeCustomGenerationView : MonoBehaviour
 
         SetLambdaOptions();
         OnLambdaFieldValueChanged();
+
+        //Init monster jauges
+        for (int i = 0; i < MonsterFillJauges.Length; i++)
+        {
+            UpdateMonsterJauges(i);
+        }
     }
 
     //Reset all values to default each time we enter custom mode
@@ -202,6 +209,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.ImageMask = null;
         Settings.AsciiMask = null;
         Settings.MaskName = "";
+        Settings.ActivityLevels = new int[5] { 3, 3, 3, 3, 2 };
     }
 
     #endregion
@@ -442,18 +450,22 @@ public class MazeCustomGenerationView : MonoBehaviour
     public void OnMonsterFieldValueChanged(int index)
     {
         int value = (int)MonsterFields[index].value;
-        GameSession.ActivityLevels[index] = value;
-        MonsterNumberFields[index].text = value.ToString();
+        Settings.ActivityLevels[index] = value;
+        UpdateMonsterJauges(index);
     }
-    public void OnMonsterNumberFieldEndEdit(int index)
-    {
-        int value = int.Parse(MonsterNumberFields[index].text);
-        value = Mathf.Clamp(value, 0, (int)MonsterFields[index].maxValue);
 
-        MonsterNumberFields[index].text = value.ToString();
-        MonsterFields[index].value = value;
-        GameSession.ActivityLevels[index] = value;
+    private void UpdateMonsterJauges(int index)
+    {
+        Transform jauge = MonsterFillJauges[index];
+        int value = (int)MonsterFields[index].value;
+        for (int i = 0; i < jauge.childCount; i++)
+        {
+            Image img = jauge.GetChild(i).GetComponent<Image>();
+            img.gameObject.SetActive(i < value);
+            img.color = MonsteJaugeGradient.Evaluate((float)(i+1) / 5f);
+        }
     }
+
 
     public void PlayMazeBtn()
     {
