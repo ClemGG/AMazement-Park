@@ -5,6 +5,7 @@ using Project.Models.Game.Enums;
 using System.Collections;
 using System;
 using static Project.Services.StringFormatterService;
+using static Project.Procedural.MazeGeneration.Distances;
 
 namespace Project.ViewModels.Generation
 {

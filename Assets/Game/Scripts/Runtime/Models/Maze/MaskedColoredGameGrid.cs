@@ -2,7 +2,7 @@ using Project.Procedural.MazeGeneration;
 
 namespace Project.Models.Maze
 {
-    public class MaskedColoredGameGrid : ColoredGameGrid,IMaskable
+    public class MaskedColoredGameGrid : ColoredGameGrid, IMaskable
     {
         public Mask Mask { get; set; }
 

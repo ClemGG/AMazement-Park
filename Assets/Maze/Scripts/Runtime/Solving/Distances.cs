@@ -88,5 +88,20 @@ namespace Project.Procedural.MazeGeneration
             return (maxCell, maxDst);
         }
 
+
+        public static Distances Combine(Distances d1, Distances d2)
+        {
+            Distances combined = new(d1.Root);
+            foreach (Cell cell in d1.GetAllCells())
+            {
+                combined.Cells[cell] = d1[cell];
+            }
+            foreach (Cell cell in d2.GetAllCells())
+            {
+                combined[cell] = d2[cell];
+            }
+
+            return combined;
+        }
     }
 }
