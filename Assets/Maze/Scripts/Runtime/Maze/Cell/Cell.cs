@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Project.Procedural.MazeGeneration
@@ -7,6 +6,7 @@ namespace Project.Procedural.MazeGeneration
     {
         public int Row { get; }
         public int Column { get; }
+        public bool IsOnBestPath { get; set; }
 
         public Cell North { get; set; }
         public Cell South { get; set; }

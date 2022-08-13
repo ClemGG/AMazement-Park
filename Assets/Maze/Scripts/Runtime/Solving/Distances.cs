@@ -89,7 +89,8 @@ namespace Project.Procedural.MazeGeneration
         }
 
 
-        public static Distances Combine(Distances d1, Distances d2)
+        //The boolean will allow us to draw the cells on a best path with a different color
+        public static Distances Combine(Distances d1, Distances d2, bool setAsBestPath = false)
         {
             Distances combined = new(d1.Root);
             foreach (Cell cell in d1.GetAllCells())
@@ -98,6 +99,7 @@ namespace Project.Procedural.MazeGeneration
             }
             foreach (Cell cell in d2.GetAllCells())
             {
+                cell.IsOnBestPath = setAsBestPath;
                 combined[cell] = d2[cell];
             }
 

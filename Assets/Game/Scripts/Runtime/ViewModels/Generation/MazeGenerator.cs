@@ -107,6 +107,11 @@ namespace Project.ViewModels.Generation
 
             Cell start = Grid[Grid.Rows / 2, Grid.Columns / 2];
             Grid.SetDistances(start.GetDistances());
+            Cell end = Grid[0, 0];
+            Cell end2 = Grid[0, 3];
+            Distances startDistances = start.GetDistances();
+            Grid.SetDistances(Combine(startDistances, startDistances.PathTo(end), true));
+            Grid.SetDistances(Combine(startDistances, startDistances.PathTo(end2), true));
 
         }
 
