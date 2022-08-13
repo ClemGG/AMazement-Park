@@ -71,6 +71,7 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     [SerializeField] private Transform[] MonsterFillJauges;
     [SerializeField] private GameObject[] ItemCrosses;
+    [SerializeField] private GameObject[] MonsterCrosses;
 
     [Space(10)]
 
@@ -465,6 +466,8 @@ public class MazeCustomGenerationView : MonoBehaviour
             img.gameObject.SetActive(i < value);
             img.color = MonsteJaugeGradient.Evaluate((float)(i+1) / 5f);
         }
+
+        MonsterCrosses[index].gameObject.SetActive(value == 1);
     }
 
     public void EnableItemBtn(int index)
