@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58084c73a95969c4eb4803f24401910a, type: 3}
-  m_Name: Player
+  m_Name: e3_Embuscade
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 0
-  <Name>k__BackingField: Player
-  <Icon>k__BackingField: {fileID: 21300000, guid: 90045a7723f800f4ab4ddb258fff17bb, type: 3}
+  <ID>k__BackingField: 3
+  <Name>k__BackingField: Embuscade
+  <Icon>k__BackingField: {fileID: 21300000, guid: de725cc101ae35f43b4fce244ccb4311, type: 3}

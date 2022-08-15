@@ -111,6 +111,16 @@ namespace Project.Procedural.MazeGeneration
             return distances;
         }
 
-
+        public void GetAllCellsBeyondDistance(IGrid grid, int distance, List<Cell> list)
+        {
+            Distances distances = GetDistances();
+            foreach (Cell cell in distances.GetAllCells())
+            {
+                if(distances[cell] >= distance)
+                {
+                    list.Add(cell);
+                }
+            }
+        }
     }
 }

@@ -249,11 +249,20 @@ namespace Project.ViewModels.Draw
             float doubleI = inset * 2f;
             cellSize -= doubleI;
 
-
-            DrawCell(new Vector2(cellSize, cellSize),
-                    new Vector3(x2, -y2, 0),
-                    //Color.black);
-                    color);
+            CellHolder ch = GameSession.GetCellHolder(cell);
+            if (ch.Occupied)
+            {
+                DrawGameCell(new Vector2(cellSize, cellSize),
+                             new Vector3(x2, -y2, 0),
+                             ch);
+            }
+            else
+            {
+                DrawCell(new Vector2(cellSize, cellSize),
+                        new Vector3(x2, -y2, 0),
+                        //Color.black);
+                        color);
+            }
 
             //Draws 2 imgs to fill the outer regions of the cell
             if (cell.IsLinked(cell.North))
@@ -375,9 +384,19 @@ namespace Project.ViewModels.Draw
 
         private void DisplayCellImgWithoutInset(int i, int j, float cellSize, Color color)
         {
-            DrawCell(new Vector2(cellSize, cellSize),
-                new Vector3(cellSize * j, -cellSize * i, 0),
-                color);
+            CellHolder ch = GameSession.GetCellHolder(i, j);
+            if (ch.Occupied)
+            {
+                DrawGameCell(new Vector2(cellSize, cellSize),
+                             new Vector3(cellSize * j, -cellSize * i, 0),
+                             ch);
+            }
+            else
+            {
+                DrawCell(new Vector2(cellSize, cellSize),
+                    new Vector3(cellSize * j, -cellSize * i, 0),
+                    color);
+            }
         }
 
 
@@ -448,8 +467,7 @@ namespace Project.ViewModels.Draw
         private void DrawGameCell(Vector2 size, Vector3 anchoredPos, CellHolder cellHolder)
         {
             RectTransform cellImg = DrawCell(size, anchoredPos, Color.white);
-
-            Sprite s = cellHolder.ObjectsOnThisCell[cellHolder.ObjectsOnThisCell.Count-1].Icon;
+            Sprite s = cellHolder.ObjectsOnThisCell[^1].Icon;
             cellImg.GetComponent<Image>().sprite = s;
         }
 

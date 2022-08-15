@@ -7,12 +7,16 @@ using System;
 using static Project.Services.StringFormatterService;
 using static Project.Procedural.MazeGeneration.Distances;
 using Project.Models.Game;
+using System.Collections.Generic;
 
 namespace Project.ViewModels.Generation
 {
     //I don't use IDemo because I don't want to redraw the SO in the Inspector
     public class MazeGenerator : MonoBehaviour
     {
+
+        #region Fields
+
         [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
         [field: SerializeField] public bool ShowBestPaths { get; set; } = false;
         [field: SerializeField, ReadOnly] public CustomMazeSettingsSO Settings { get; set; }
@@ -25,7 +29,12 @@ namespace Project.ViewModels.Generation
         //This allows us to mitigate this issue and display the progress on screen.
         private Progress<GenerationProgressReport> Progress { get; set; }
         private ProgressVisualizer ProgressVisualizer { get; set; } = new();
+        private List<Cell> _occupiedCells = new(9); //used to combine the paths
 
+        #endregion
+
+
+        #region Mono
 
         //In the Game scene, automatically loads the level
         private void Start()
@@ -71,6 +80,11 @@ namespace Project.ViewModels.Generation
             DrawAsync();
         }
 
+        #endregion
+
+
+
+        #region Generate
 
         private void SetupGrid()
         {
@@ -106,20 +120,101 @@ namespace Project.ViewModels.Generation
             yield return StartCoroutine(genAlg.ExecuteAsync(Grid, Progress));
             Grid.Braid();
 
-            AddMonstersAndItemsToGrid();
 
-            Cell start = Grid[Grid.Rows / 2, Grid.Columns / 2];
-            Grid.SetDistances(start.GetDistances());
+            //Displays the entities in the maze
+            Cell start = Grid.RandomCell();
+            AddMonstersAndItemsToGrid(start);
+            Grid.SetDistances(GetDistancesOfAllEntities(start));
         }
 
-        private void AddMonstersAndItemsToGrid()
+        private void AddMonstersAndItemsToGrid(Cell start)
         {
             GameSession.Init(Grid);
 
+
+            var entities = Resources.LoadAll("Entities");
+            Character[] characters = new Character[6];
+            Item[] items = new Item[4];
+            for (int i = 0; i < 6; i++)
+            {
+                characters[i] = entities[i] as Character;
+            }
+            for (int i = 6; i < 10; i++)
+            {
+                items[i-6] = entities[i] as Item;
+            }
+
+            //Get all Cells at least [GridSize /2] Cells away from the Player
+            List<Cell> farthestCells = new();
+            start.GetAllCellsBeyondDistance(Grid,
+                                            Mathf.Min(Grid.Rows, Grid.Columns) / 2,
+                                            farthestCells);
+            
+
+
             //Add player
-            IEntity player = Resources.Load<Character>("Textures/Entities/Player");
-            Cell randomCell = Grid.RandomCell();
+            IEntity player = characters[0];
+            GameSession.AddEntityToCell(start, player);
+            _occupiedCells.Add(start);
+
+
+            //Add exit
+            IEntity exit = items[^1];
+
+            Cell randomCell = farthestCells.Sample();
+            GameSession.AddEntityToCell(randomCell, exit);
+            farthestCells.Remove(randomCell);
+            _occupiedCells.Add(randomCell);
+
+            //Add monsters
+            for (int i = 1; i < characters.Length; i++)
+            {
+                if (Settings.ActivityLevels[i - 1] > 1)
+                {
+                    IEntity monster = characters[i];
+
+                    randomCell = farthestCells.Sample();
+                    GameSession.AddEntityToCell(randomCell, monster);
+                    farthestCells.Remove(randomCell);
+                    _occupiedCells.Add(randomCell);
+                }
+            }
+
+            //Add items
+            for (int i = 0; i < items.Length-1; i++)
+            {
+                if (Settings.ActiveItems[i] is true)
+                {
+                    IEntity item = items[i];
+
+                    randomCell = farthestCells.Sample();
+                    GameSession.AddEntityToCell(randomCell, item);
+                    farthestCells.Remove(randomCell);
+                    _occupiedCells.Add(randomCell);
+                }
+            }
         }
+
+
+
+        private Distances GetDistancesOfAllEntities(Cell start)
+        {
+            Distances distances = start.GetDistances();
+
+            foreach (Cell cell in _occupiedCells)
+            {
+                if (cell != start)
+                {
+                    distances = Combine(distances, distances.PathTo(cell), true);
+                }
+            }
+
+            return distances;
+        }
+
+        #endregion
+
+        #region Draw
 
         public void DrawAsync()
         {
@@ -164,5 +259,7 @@ namespace Project.ViewModels.Generation
         {
             Progress.ProgressChanged -= OnGenerationProgressChanged;
         }
+
+        #endregion
     }
 }
