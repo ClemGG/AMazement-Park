@@ -67,6 +67,7 @@ namespace Project.ViewModels.Draw
 
         public GenerationProgressReport Report { get; set; } = new();
         private CustomMazeSettingsSO Settings { get; }
+        private IGrid _grid;
 
         public UIImageDraw(GenerationSettingsSO settings)
         {
@@ -105,6 +106,8 @@ namespace Project.ViewModels.Draw
         public IEnumerator DrawAsync(IDrawableGrid<Color> grid, System.IProgress<GenerationProgressReport> progress)
         {
             _async = true;
+            _grid = grid;
+
             Cleanup();
 
             float cellSize = Mathf.Min(Bg.rect.width / grid.Columns, Bg.rect.height / grid.Rows);
@@ -246,14 +249,13 @@ namespace Project.ViewModels.Draw
             float doubleI = inset * 2f;
             cellSize -= doubleI;
 
-            //Draws the img for the center of the cell
+
             DrawCell(new Vector2(cellSize, cellSize),
-                new Vector3(x2, -y2, 0),
-                //Color.black);
-                color);
+                    new Vector3(x2, -y2, 0),
+                    //Color.black);
+                    color);
 
-
-            //Draws 4 imgs to fill the outer regions of the cell
+            //Draws 2 imgs to fill the outer regions of the cell
             if (cell.IsLinked(cell.North))
             {
                 DrawCell(new Vector2(cellSize, doubleI),
@@ -424,7 +426,7 @@ namespace Project.ViewModels.Draw
 
 
 
-        private void DrawCell(Vector2 size, Vector3 anchoredPos, Color col)
+        private RectTransform DrawCell(Vector2 size, Vector3 anchoredPos, Color col)
         {
             RectTransform cellImg = MazePrefabs.UIImagePooler.GetFromPool<GameObject>("cell ui img").GetComponent<RectTransform>();
             cellImg.SetParent(Tiles);
@@ -438,6 +440,17 @@ namespace Project.ViewModels.Draw
 
             cellImg.GetComponent<Image>().color = col;
             cellImg.gameObject.SetActive(!_async);
+
+            return cellImg;
+        }
+
+        //Used if there is a Character or an Item to display on this Cell
+        private void DrawGameCell(Vector2 size, Vector3 anchoredPos, CellHolder cellHolder)
+        {
+            RectTransform cellImg = DrawCell(size, anchoredPos, Color.white);
+
+            Sprite s = cellHolder.ObjectsOnThisCell[cellHolder.ObjectsOnThisCell.Count-1].Icon;
+            cellImg.GetComponent<Image>().sprite = s;
         }
 
         private void DrawLine(Vector2 anchor, Vector2 pivot, Vector2 size, Vector3 anchoredPos)

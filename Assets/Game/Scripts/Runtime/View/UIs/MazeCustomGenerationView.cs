@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using static Enums;
 using static Project.Services.StringFormatterService;
 using System.IO;
+using Project.ViewModels;
 
 public class MazeCustomGenerationView : MonoBehaviour
 {

@@ -6,6 +6,7 @@ using System.Collections;
 using System;
 using static Project.Services.StringFormatterService;
 using static Project.Procedural.MazeGeneration.Distances;
+using Project.Models.Game;
 
 namespace Project.ViewModels.Generation
 {
@@ -105,10 +106,20 @@ namespace Project.ViewModels.Generation
             yield return StartCoroutine(genAlg.ExecuteAsync(Grid, Progress));
             Grid.Braid();
 
+            AddMonstersAndItemsToGrid();
+
             Cell start = Grid[Grid.Rows / 2, Grid.Columns / 2];
             Grid.SetDistances(start.GetDistances());
         }
 
+        private void AddMonstersAndItemsToGrid()
+        {
+            GameSession.Init(Grid);
+
+            //Add player
+            IEntity player = Resources.Load<Character>("Textures/Entities/Player");
+            Cell randomCell = Grid.RandomCell();
+        }
 
         public void DrawAsync()
         {
