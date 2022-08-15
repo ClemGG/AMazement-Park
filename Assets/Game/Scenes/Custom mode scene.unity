@@ -1091,7 +1091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_Name
-      value: 'Show longest paths:'
+      value: 'Show best paths:'
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_Pivot.x
@@ -1179,7 +1179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709159, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_text
-      value: 'Show longest paths:'
+      value: 'Show best paths:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104085604160709159, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+      propertyPath: m_fontSize
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
@@ -4320,7 +4324,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4181738221183142788, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
       propertyPath: m_Name
-      value: ShowLongestPathsField
+      value: ShowBestPathsField
       objectReference: {fileID: 0}
     - target: {fileID: 4181738221183142789, guid: ed97a8af3b43aaf41abec5c257cf6856, type: 3}
       propertyPath: m_Pivot.x
@@ -5667,7 +5671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Settings>k__BackingField: {fileID: 0}
-  <ShowLongestPaths>k__BackingField: 0
+  <ShowBestPaths>k__BackingField: 0
   <MonsteJaugeGradient>k__BackingField:
     serializedVersion: 2
     key0: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -15,7 +15,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     #region Public Fields
 
     [field: SerializeField, ReadOnly] private CustomMazeSettingsSO Settings { get; set; }
-    [field: SerializeField] private bool ShowLongestPaths { get; set; } = false;
+    [field: SerializeField] private bool ShowBestPaths { get; set; } = false;
     [field: SerializeField] private Gradient MonsteJaugeGradient { get; set; }
 
     private Project.ViewModels.Generation.MazeGenerator Generator { get; set; }
@@ -479,11 +479,13 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     public void PlayMazeBtn()
     {
+        Generator.Cleanup();
         SceneManager.LoadSceneAsync("3D scene");
     }
 
     public void ReturnToMenuBtn()
     {
+        Generator.Cleanup();
         SceneManager.LoadSceneAsync("Menu scene");
     }
 
@@ -494,13 +496,13 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     public void GenerateMazeBtn()
     {
-        Generator.ShowLongestPaths = ShowLongestPaths;
+        Generator.ShowBestPaths = ShowBestPaths;
         Generator.Execute(GameSession.DifficultyLevel, DrawMode.UIImage);
     }
 
     public void OnShowPathsFieldValueChanged()
     {
-        ShowLongestPaths = ShowLongestPathsField.isOn;
+        ShowBestPaths = ShowLongestPathsField.isOn;
     }
 
 

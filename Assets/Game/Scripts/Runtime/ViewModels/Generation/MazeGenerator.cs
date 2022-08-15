@@ -13,7 +13,7 @@ namespace Project.ViewModels.Generation
     public class MazeGenerator : MonoBehaviour
     {
         [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
-        [field: SerializeField] public bool ShowLongestPaths { get; set; } = false;
+        [field: SerializeField] public bool ShowBestPaths { get; set; } = false;
         [field: SerializeField, ReadOnly] public CustomMazeSettingsSO Settings { get; set; }
         public IDrawableGrid Grid { get; set; }
         public IDrawMethod DrawMethod { get; set; }
@@ -87,11 +87,11 @@ namespace Project.ViewModels.Generation
 
                 }
 
-                Grid = ShowLongestPaths ? new MaskedColoredGameGrid(m) : new MaskedGameGrid(m);
+                Grid = ShowBestPaths ? new MaskedColoredGameGrid(m) : new MaskedGameGrid(m);
             }
             else
             {
-                Grid = ShowLongestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
+                Grid = ShowBestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
             }
         }
 
@@ -107,19 +107,13 @@ namespace Project.ViewModels.Generation
 
             Cell start = Grid[Grid.Rows / 2, Grid.Columns / 2];
             Grid.SetDistances(start.GetDistances());
-            Cell end = Grid[0, 0];
-            Cell end2 = Grid[0, 3];
-            Distances startDistances = start.GetDistances();
-            Grid.SetDistances(Combine(startDistances, startDistances.PathTo(end), true));
-            Grid.SetDistances(Combine(startDistances, startDistances.PathTo(end2), true));
-
         }
 
 
         public void DrawAsync()
         {
             SceneLoader.LoadSceneForDrawMode(Settings.DrawMode);
-            DrawMethod = InterfaceFactory.GetDrawMode(Settings);
+            DrawMethod = GameInterfaceFactory.GetGameDrawMode(Settings);
             DrawMethod.Report = new("Rendering");
 
             Progress = new();

@@ -1,9 +1,7 @@
 {
     "name": "Project.Core",
     "rootNamespace": "",
-    "references": [
-        ""
-    ],
+    "references": [],
     "includePlatforms": [
         "Editor",
         "WindowsStandalone32",
