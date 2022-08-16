@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fad472e0b8a1049a6a6d2ec4a7d5f6, type: 3}
   m_Name: e8_Tracker
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 0
-  <Name>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 0}
+  <ID>k__BackingField: 8
+  <Name>k__BackingField: Motion Tracker
+  <Icon>k__BackingField: {fileID: 21300000, guid: cec43929646ae1f4f94a760cea304680, type: 3}

@@ -123,6 +123,7 @@ namespace Project.ViewModels.Generation
 
             //Displays the entities in the maze
             Cell start = Grid.RandomCell();
+            _occupiedCells.Clear();
             AddMonstersAndItemsToGrid(start);
             Grid.SetDistances(GetDistancesOfAllEntities(start));
         }

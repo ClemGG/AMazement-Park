@@ -10,7 +10,7 @@ namespace Project.ViewModels
     {
         public static Difficulty DifficultyLevel { get; set; } = Difficulty.Custom;
         public static IGrid Grid { get; set; }
-        public static CellHolder[] AllOccupableCells { get; set; }
+        public static CellHolder[][] CellsSlots { get; set; }
 
         #region Init
 
@@ -18,27 +18,26 @@ namespace Project.ViewModels
         {
             Grid = grid;
 
-            //The array will automatically size up correctly
-            //even if we have a mask on the grid
-            int size = grid.Size();
-            AllOccupableCells = new CellHolder[size];
+            CellsSlots = new CellHolder[grid.Rows][];
             for (int i = 0; i < grid.Rows; i++)
             {
+                CellsSlots[i] = new CellHolder[grid.Columns];
+
                 for (int j = 0; j < grid.Columns; j++)
                 {
                     Cell c = grid[i, j];
-                    if (c is not null)
+                    if (c != null)
                     {
-                        AllOccupableCells[i * j] = new(c);
+                        CellsSlots[i][j] = new(c);
                     }
                 }
             }
         }
 
-        public static void Dispose()
+        public static void Cleanup()
         {
             Grid = null;
-            AllOccupableCells = null;
+            CellsSlots = null;
         }
 
         #endregion
@@ -46,13 +45,16 @@ namespace Project.ViewModels
 
         #region Cell Entities
 
+        //These methods will allow us to move the items and characters
+        //at different locations and display their position accurately
+        //on the map.
         public static CellHolder GetCellHolder(Cell c)
         {
-            return AllOccupableCells[c.Row * c.Column];
+            return CellsSlots[c.Row][c.Column];
         }
         public static CellHolder GetCellHolder(int i, int j)
         {
-            return AllOccupableCells[i * j];
+            return CellsSlots[i][j];
         }
 
         public static void AddEntityToCell(Cell c, IEntity e)
@@ -74,10 +76,10 @@ namespace Project.ViewModels
 
         public static IEnumerable<Cell> GetAllOccupiedCells()
         {
-            for (int i = 0; i < AllOccupableCells.Length; i++)
+            foreach (Cell cell in Grid.EachCell())
             {
-                CellHolder ch = AllOccupableCells[i];
-                if (ch is not null && ch.Occupied)
+                CellHolder ch = GetCellHolder(cell); 
+                if (ch.Occupied)
                 {
                     yield return ch.Cell;
                 }

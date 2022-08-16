@@ -445,7 +445,7 @@ namespace Project.ViewModels.Draw
 
 
 
-        private RectTransform DrawCell(Vector2 size, Vector3 anchoredPos, Color col)
+        private Image DrawCell(Vector2 size, Vector3 anchoredPos, Color col)
         {
             RectTransform cellImg = MazePrefabs.UIImagePooler.GetFromPool<GameObject>("cell ui img").GetComponent<RectTransform>();
             cellImg.SetParent(Tiles);
@@ -457,18 +457,20 @@ namespace Project.ViewModels.Draw
             cellImg.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size.x);
             cellImg.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size.y);
 
-            cellImg.GetComponent<Image>().color = col;
+            Image i = cellImg.GetComponent<Image>();
+            i.sprite = null;
+            i.color = col;
             cellImg.gameObject.SetActive(!_async);
 
-            return cellImg;
+            return i;
         }
 
         //Used if there is a Character or an Item to display on this Cell
         private void DrawGameCell(Vector2 size, Vector3 anchoredPos, CellHolder cellHolder)
         {
-            RectTransform cellImg = DrawCell(size, anchoredPos, Color.white);
+            Image cellImg = DrawCell(size, anchoredPos, Color.white);
             Sprite s = cellHolder.ObjectsOnThisCell[^1].Icon;
-            cellImg.GetComponent<Image>().sprite = s;
+            cellImg.sprite = s;
         }
 
         private void DrawLine(Vector2 anchor, Vector2 pivot, Vector2 size, Vector3 anchoredPos)

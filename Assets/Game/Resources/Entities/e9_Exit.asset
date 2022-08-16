@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fad472e0b8a1049a6a6d2ec4a7d5f6, type: 3}
   m_Name: e9_Exit
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 0
-  <Name>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 0}
+  <ID>k__BackingField: 9
+  <Name>k__BackingField: Exit
+  <Icon>k__BackingField: {fileID: 21300000, guid: 01fed9e1f2c31bb4ebe58a2f167620c1, type: 3}
