@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -292,7 +292,6 @@ GameObject:
   m_Component:
   - component: {fileID: 808032436}
   - component: {fileID: 808032435}
-  - component: {fileID: 808032434}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -300,14 +299,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &808032434
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808032433}
-  m_Enabled: 1
 --- !u!20 &808032435
 Camera:
   m_ObjectHideFlags: 0
@@ -461,8 +452,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 500, y: 1, z: 500}
-  m_Center: {x: 247.5, y: -0.5, z: 247.5}
+  m_Size: {x: 155, y: 1, z: 155}
+  m_Center: {x: 70, y: -0.5, z: 70}
 --- !u!1 &1167589294
 GameObject:
   m_ObjectHideFlags: 0

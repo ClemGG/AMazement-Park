@@ -76,7 +76,21 @@ namespace Project.ViewModels.Draw
                 _newUVs.Clear();
                 _newTriangles.Clear();
 
-                Report.ReportName = "Mesh Building";
+                switch (i)
+                {
+                    case 0:
+                        Report.ReportName = "Floor Building";
+                        break;
+                    case 1:
+                        Report.ReportName = "Ceiling Building";
+                        break;
+                    case 2:
+                        Report.ReportName = "Walls Building";
+                        break;
+                    case 3:
+                        Report.ReportName = "Back walls Building";
+                        break;
+                }
                 yield return GenerateMeshCo(i, grid, progress);
                 Report.ReportName = "Rendering";
 
@@ -116,6 +130,8 @@ namespace Project.ViewModels.Draw
             float cellWidth = _meshCellSize.x;
             float cellHeight = _meshCellSize.y;
             _inset = cellWidth * _inset;
+
+            int count = 0;
 
             for (int i = 0; i < grid.Rows; i++)
             {
@@ -168,7 +184,8 @@ namespace Project.ViewModels.Draw
 
                     //The 101f is a hack to prevent the progress canvas from dissapearing immediately,
                     //but rather when the meshes are all assigned.
-                    Report.ProgressPercentage = (float)((i + 1) * (j + 1) * 100 / grid.Size()) / 101f;
+                    Report.ProgressPercentage = (float)(count * 100 / grid.Size()) / 101f;
+                    count++;
                     Report.UpdateTrackTime(Time.deltaTime);
                     progress.Report(Report);
                     yield return null;
