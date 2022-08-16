@@ -254,11 +254,13 @@ namespace Project.ViewModels.Generation
         }
         private void OnDrawProgressDone()
         {
-            Progress.ProgressChanged -= OnDrawProgressChanged;
+            if(Progress != null)
+                Progress.ProgressChanged -= OnDrawProgressChanged;
         }
         private void OnGenerationProgressDone()
         {
-            Progress.ProgressChanged -= OnGenerationProgressChanged;
+            if(Progress != null)
+                Progress.ProgressChanged -= OnGenerationProgressChanged;
         }
 
         #endregion

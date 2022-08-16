@@ -54,6 +54,8 @@ public class ProgressVisualizer
 
     public void Cleanup()
     {
+        if (!ProgressCanvas) return;
+
         ProgressFill.value = 0f;
         ProgressText.text = "";
     }

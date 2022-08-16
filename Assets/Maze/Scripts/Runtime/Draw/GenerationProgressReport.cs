@@ -12,7 +12,7 @@ namespace Project.Procedural.MazeGeneration
         //From 0 to 1
         public float ProgressPercentage { get; set; } = 0f;
         public float TimeElapsed { get; set; } = 0f;
-        private string ReportName { get; set; } = "Algorithm"; //Don't forget to assign this
+        public string ReportName { get; set; } = "Algorithm"; //Don't forget to assign this
 
         public GenerationProgressReport(string reportName = "Algorithm")
         {

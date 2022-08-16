@@ -76,7 +76,9 @@ namespace Project.ViewModels.Draw
                 _newUVs.Clear();
                 _newTriangles.Clear();
 
+                Report.ReportName = "Mesh Building";
                 yield return GenerateMeshCo(i, grid, progress);
+                Report.ReportName = "Rendering";
 
 
 
@@ -164,7 +166,7 @@ namespace Project.ViewModels.Draw
                     }
 
 
-                    //The 101f is a bit cheating, we don't want the progress canvas to dissapear immediately,
+                    //The 101f is a hack to prevent the progress canvas from dissapearing immediately,
                     //but rather when the meshes are all assigned.
                     Report.ProgressPercentage = (float)((i + 1) * (j + 1) * 100 / grid.Size()) / 101f;
                     Report.UpdateTrackTime(Time.deltaTime);
@@ -322,6 +324,16 @@ namespace Project.ViewModels.Draw
                 Matrix4x4.TRS(new Vector3(x2, 0, -z2),
                               rot,
                               new Vector3(cellSize, cellSize, 1)));
+
+            //spawn entity
+            CellHolder ch = GameSession.GetCellHolder(cell);
+            if (ch.Occupied)
+            {
+                Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab, 
+                    new Vector3(cell.Column * cellSize, 0f, cell.Row * cellSize), 
+                    Quaternion.identity);
+            }
+
 
             //Draws 4 imgs to fill the outer regions of the cell
             if (cell.IsLinked(cell.North))
@@ -503,6 +515,16 @@ namespace Project.ViewModels.Draw
                 Matrix4x4.TRS(new Vector3(j * cellWidth, 0, -i * cellWidth),
                               Quaternion.LookRotation(Vector3.up),
                               new Vector3(cellWidth, cellWidth, 1)));
+
+
+            //spawn entity
+            CellHolder ch = GameSession.GetCellHolder(cell);
+            if (ch.Occupied)
+            {
+                Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                    new Vector3(cell.Column * cellWidth, 0f, cell.Row * cellWidth),
+                    Quaternion.identity);
+            }
         }
 
         private void AddCeilingWithoutInset(Cell cell, float cellWidth, float cellHeight, int i, int j)

@@ -7,5 +7,6 @@ namespace Project.Models.Game
         public int ID { get; set; }
         public string Name { get; set; }
         public Sprite Icon { get; set; }
+        [field: SerializeField] public GameObject Prefab { get; set; }
     }
 }
