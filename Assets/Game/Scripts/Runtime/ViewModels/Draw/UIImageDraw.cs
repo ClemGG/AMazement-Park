@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Project.Models.Maze;
 using Project.Procedural.MazeGeneration;
+using Project.ViewModels.Maze;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -249,7 +250,7 @@ namespace Project.ViewModels.Draw
             float doubleI = inset * 2f;
             cellSize -= doubleI;
 
-            CellHolder ch = GameSession.GetCellHolder(cell);
+            CellHolder ch = MazeManager.GetCellHolder(cell);
             if (ch.Occupied)
             {
                 DrawGameCell(new Vector2(cellSize, cellSize),
@@ -384,7 +385,7 @@ namespace Project.ViewModels.Draw
 
         private void DisplayCellImgWithoutInset(int i, int j, float cellSize, Color color)
         {
-            CellHolder ch = GameSession.GetCellHolder(i, j);
+            CellHolder ch = MazeManager.GetCellHolder(i, j);
             if (ch.Occupied)
             {
                 DrawGameCell(new Vector2(cellSize, cellSize),

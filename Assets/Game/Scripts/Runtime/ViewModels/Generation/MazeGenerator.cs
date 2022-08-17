@@ -20,6 +20,7 @@ namespace Project.ViewModels.Generation
 
         [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
         [field: SerializeField] public bool ShowBestPaths { get; set; } = false;
+        [field: SerializeField] public bool ShowHeatMap { get; set; } = false;
         [field: SerializeField, ReadOnly] public CustomMazeSettingsSO Settings { get; set; }
         public IDrawableGrid Grid { get; set; }
         public IDrawMethod DrawMethod { get; set; }
@@ -103,11 +104,11 @@ namespace Project.ViewModels.Generation
 
                 }
 
-                Grid = ShowBestPaths ? new MaskedColoredGameGrid(m) : new MaskedGameGrid(m);
+                Grid = ShowHeatMap ? new MaskedColoredGameGrid(m) : new MaskedGameGrid(m);
             }
             else
             {
-                Grid = ShowBestPaths ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
+                Grid = ShowHeatMap ? new ColoredGameGrid(Settings) : new GameGrid(Settings);
             }
         }
 
@@ -207,7 +208,7 @@ namespace Project.ViewModels.Generation
             {
                 if (cell != start)
                 {
-                    distances = Combine(distances, distances.PathTo(cell), true);
+                    distances = Combine(distances, distances.PathTo(cell), ShowBestPaths);
                 }
             }
 

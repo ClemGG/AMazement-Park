@@ -16,7 +16,11 @@ namespace Project.Models.Maze
 
         public virtual UnityEngine.Color Draw(Cell cell)
         {
-            return new(.25f, .25f, .25f, 1f);
+            //Displays the path to the exit, monster or item in a dark green color
+            if (cell.IsOnBestPath)
+                return new(0f, .75f, 0f, 1f);
+            else
+                return new(.25f, .25f, .25f, 1f);
         }
     }
 }

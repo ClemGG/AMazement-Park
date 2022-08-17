@@ -17,6 +17,7 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     [field: SerializeField, ReadOnly] private CustomMazeSettingsSO Settings { get; set; }
     [field: SerializeField] private bool ShowBestPaths { get; set; } = false;
+    [field: SerializeField] private bool ShowHeatMap { get; set; } = false;
     [field: SerializeField] private Gradient MonsteJaugeGradient { get; set; }
 
     private Project.ViewModels.Generation.MazeGenerator Generator { get; set; }
@@ -84,6 +85,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     //an easier way to draw a mask.
     [SerializeField] private TextMeshProUGUI MaskLabel;
     [SerializeField] private Toggle ShowLongestPathsField;
+    [SerializeField] private Toggle ShowHeatMapField;
 
     #endregion
 
@@ -171,8 +173,6 @@ public class MazeCustomGenerationView : MonoBehaviour
 
     void Start()
     {
-        GameSession.DifficultyLevel = Difficulty.Custom;
-
         InitComponents();
     }
 
@@ -180,8 +180,11 @@ public class MazeCustomGenerationView : MonoBehaviour
     {
         //We are in the UI Custom mode, so we need to change the draw mode
         Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/Custom");
-
         InitSettings();
+        GameSession.Settings = Settings;
+        GameSession.DifficultyLevel = Difficulty.Custom;
+
+
 
         Generator = FindObjectOfType<Project.ViewModels.Generation.MazeGenerator>();
 
@@ -517,12 +520,17 @@ public class MazeCustomGenerationView : MonoBehaviour
     public void GenerateMazeBtn()
     {
         Generator.ShowBestPaths = ShowBestPaths;
+        Generator.ShowHeatMap = ShowHeatMap;
         Generator.Execute(GameSession.DifficultyLevel, DrawMode.UIImage);
     }
 
     public void OnShowPathsFieldValueChanged()
     {
         ShowBestPaths = ShowLongestPathsField.isOn;
+    }
+    public void OnShowHeatMapFieldValueChanged()
+    {
+        ShowHeatMap = ShowHeatMapField.isOn;
     }
 
 

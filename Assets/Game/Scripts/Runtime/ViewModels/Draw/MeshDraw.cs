@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Project.Models.Maze;
 using Project.Procedural.MazeGeneration;
+using Project.ViewModels.Maze;
 using UnityEngine;
 
 namespace Project.ViewModels.Draw
@@ -343,7 +344,7 @@ namespace Project.ViewModels.Draw
                               new Vector3(cellSize, cellSize, 1)));
 
             //spawn entity
-            CellHolder ch = GameSession.GetCellHolder(cell);
+            CellHolder ch = MazeManager.GetCellHolder(cell);
             if (ch.Occupied)
             {
                 Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab, 
@@ -535,7 +536,7 @@ namespace Project.ViewModels.Draw
 
 
             //spawn entity
-            CellHolder ch = GameSession.GetCellHolder(cell);
+            CellHolder ch = MazeManager.GetCellHolder(cell);
             if (ch.Occupied)
             {
                 Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
