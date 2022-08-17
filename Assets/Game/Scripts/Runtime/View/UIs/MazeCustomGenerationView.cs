@@ -55,6 +55,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private Slider InsetField;
     [SerializeField] private Slider BraidRateField;
     [SerializeField] private Slider HoustonSwapPercentField;
+    [SerializeField] private Slider PlayerFOVField;
 
     [Space(10)]
 
@@ -62,6 +63,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     [SerializeField] private TMP_InputField InsetNumberField;
     [SerializeField] private TMP_InputField BraidRateNumberField;
     [SerializeField] private TMP_InputField HoustonSwapPercentNumberField;
+    [SerializeField] private TMP_InputField PlayerFOVNumberField;
     [SerializeField] private TMP_InputField MaskField;
 
     [Space(10)]
@@ -214,6 +216,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.MaskName = "";
         Settings.ActivityLevels = new int[5] { 3, 3, 3, 3, 2 };
         Settings.ActiveItems = new bool[3] { true, true, true };
+        Settings.PlayerFOV = 7f;
     }
 
     #endregion
@@ -476,6 +479,22 @@ public class MazeCustomGenerationView : MonoBehaviour
         Settings.ActiveItems[index] = !Settings.ActiveItems[index];
         ItemCrosses[index].SetActive(!ItemCrosses[index].activeSelf);
     }
+
+    public void OnPlayerFOVFieldValueChanged()
+    {
+        Settings.PlayerFOV = PlayerFOVField.value;
+        PlayerFOVNumberField.text = $"{PlayerFOVField.value:0}";
+    }
+    public void OnPlayerFOVNumberFieldEndEdit()
+    {
+        float value = float.Parse(PlayerFOVNumberField.text);
+        value = Mathf.Clamp(value, 3f, 9f);
+        PlayerFOVNumberField.text = value.ToString();
+        PlayerFOVField.value = value;
+
+        Settings.PlayerFOV = value;
+    }
+
 
 
     public void PlayMazeBtn()

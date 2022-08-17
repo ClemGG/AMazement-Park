@@ -27,5 +27,8 @@ namespace Project.Models.Maze
         //In order : Key, Map and Tracker
         [field: SerializeField] public bool[] ActiveItems { get; set; } = new bool[3];
 
+
+        [field: SerializeField, Range(3f, 9f)] public float PlayerFOV { get; set; } = 7f;
+
     }
 }
