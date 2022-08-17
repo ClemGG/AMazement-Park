@@ -8,6 +8,7 @@ using static Project.Services.StringFormatterService;
 using static Project.Procedural.MazeGeneration.Distances;
 using Project.Models.Game;
 using System.Collections.Generic;
+using Project.ViewModels.Maze;
 
 namespace Project.ViewModels.Generation
 {
@@ -130,7 +131,7 @@ namespace Project.ViewModels.Generation
 
         private void AddMonstersAndItemsToGrid(Cell start)
         {
-            GameSession.Init(Grid);
+            MazeManager.Init(Grid);
 
 
             var entities = Resources.LoadAll("Entities");
@@ -155,7 +156,7 @@ namespace Project.ViewModels.Generation
 
             //Add player
             IEntity player = characters[0];
-            GameSession.AddEntityToCell(start, player);
+            MazeManager.AddEntityToCell(start, player);
             _occupiedCells.Add(start);
 
 
@@ -163,7 +164,7 @@ namespace Project.ViewModels.Generation
             IEntity exit = items[^1];
 
             Cell randomCell = farthestCells.Sample();
-            GameSession.AddEntityToCell(randomCell, exit);
+            MazeManager.AddEntityToCell(randomCell, exit);
             farthestCells.Remove(randomCell);
             _occupiedCells.Add(randomCell);
 
@@ -175,7 +176,7 @@ namespace Project.ViewModels.Generation
                     IEntity monster = characters[i];
 
                     randomCell = farthestCells.Sample();
-                    GameSession.AddEntityToCell(randomCell, monster);
+                    MazeManager.AddEntityToCell(randomCell, monster);
                     farthestCells.Remove(randomCell);
                     _occupiedCells.Add(randomCell);
                 }
@@ -189,7 +190,7 @@ namespace Project.ViewModels.Generation
                     IEntity item = items[i];
 
                     randomCell = farthestCells.Sample();
-                    GameSession.AddEntityToCell(randomCell, item);
+                    MazeManager.AddEntityToCell(randomCell, item);
                     farthestCells.Remove(randomCell);
                     _occupiedCells.Add(randomCell);
                 }
