@@ -20,7 +20,7 @@ namespace Project.Services
 
             foreach (string extension in _allowedExtensions)
             {
-                FileInfo[] infos = dir.GetFiles($"*.{extension}");
+                FileInfo[] infos = dir.GetFiles($"*{extension}");
                 foreach (FileInfo f in infos)
                 {
                     /*The nameContent contains the dimension of the maze.
@@ -33,6 +33,11 @@ namespace Project.Services
                         _names.Add(f.Name);
                     }
                 }
+            }
+            if (_names.Count == 0)
+            {
+                //Debug.LogError("Error : No valid mask in the StreamingAssets folder. Defaulting to asciimask.txt");
+                return ("asciimask", ".txt");
             }
             string randomName = _names.Sample();
             string ext = $".{randomName.Split('.')[1]}";

@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1029558609990316574, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: m_Name
-      value: Player (ASCII)
+      value: Player (ASCII) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3106006350808465126, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -170,6 +170,18 @@ PrefabInstance:
     - target: {fileID: 5442333152083023311, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671451248426043361, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
+      propertyPath: MoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671451248426043361, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
+      propertyPath: SprintSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671451248426043361, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
+      propertyPath: RotationSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}

@@ -71,7 +71,6 @@ namespace Project.Services
 
         private static void SetNormalSettings(CustomMazeSettingsSO settings)
         {
-            settings.GenerationType = GenerationType.Random;
 
             //If we have 25% chance, we add a mask and we change the gen type
             //to an algorithm that can handle dead cells in the maze.
@@ -82,6 +81,12 @@ namespace Project.Services
                 settings.MaskName = maskName;
                 settings.Extension = extension;
                 settings.GenerationType = _maskAlgs.Sample();
+            }
+            else
+            {
+                settings.MaskName = "";
+                settings.Extension = "";
+                settings.GenerationType = GenerationType.Random;
             }
 
             settings.GridSize = new(15, 15);
@@ -100,8 +105,6 @@ namespace Project.Services
 
         private static void SetHardSettings(CustomMazeSettingsSO settings)
         {
-            settings.GenerationType = GenerationType.Random;
-
             //If we have 50% chance, we add a mask and we change the gen type
             //to an algorithm that can handle dead cells in the maze.
             int randMaskChance = 4.Sample();
@@ -111,6 +114,12 @@ namespace Project.Services
                 settings.MaskName = maskName;
                 settings.Extension = extension;
                 settings.GenerationType = _maskAlgs.Sample();
+            }
+            else
+            {
+                settings.MaskName = "";
+                settings.Extension = "";
+                settings.GenerationType = GenerationType.Random;
             }
 
             settings.GridSize = new(20, 20);
@@ -129,8 +138,6 @@ namespace Project.Services
 
         private static void SetNightmareSettings(CustomMazeSettingsSO settings)
         {
-            settings.GenerationType = GenerationType.Random;
-
             //If we have 75% chance, we add a mask and we change the gen type
             //to an algorithm that can handle dead cells in the maze.
             int randMaskChance = 4.Sample();
@@ -140,6 +147,12 @@ namespace Project.Services
                 settings.MaskName = maskName;
                 settings.Extension = extension;
                 settings.GenerationType = _maskAlgs.Sample();
+            }
+            else
+            {
+                settings.MaskName = "";
+                settings.Extension = "";
+                settings.GenerationType = GenerationType.Random;
             }
 
             settings.GridSize = new(25, 25);
