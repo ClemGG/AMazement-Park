@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Custom
   m_EditorClassIdentifier: 
   <DrawMode>k__BackingField: 1
-  <GenerationType>k__BackingField: 0
-  <GridSize>k__BackingField: {x: 10, y: 10}
+  <GenerationType>k__BackingField: 14
+  <GridSize>k__BackingField: {x: 30, y: 30}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
-  <RoomSize>k__BackingField: {x: 5, y: 5}
-  <BiasTowardsRooms>k__BackingField: 0
+  <RoomSize>k__BackingField: {x: 20, y: 20}
+  <BiasTowardsRooms>k__BackingField: 1
   <LambdaSelection>k__BackingField: 0
   <Inset>k__BackingField: 0
   <BraidRate>k__BackingField: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
   <ImageMask>k__BackingField: {fileID: 0}
   <AsciiMask>k__BackingField: {fileID: 0}
   <Extension>k__BackingField: .png
-  <DifficultyLevel>k__BackingField: 4
   <MaskName>k__BackingField: 
   <ActivityLevels>k__BackingField: 0300000003000000030000000300000002000000
   <ActiveItems>k__BackingField: 010101
-  <PlayerFOV>k__BackingField: 8
+  <PlayerFOV>k__BackingField: 7
+  <MaxNumberOfRuns>k__BackingField: 2147483647

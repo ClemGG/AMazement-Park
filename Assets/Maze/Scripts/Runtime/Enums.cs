@@ -32,7 +32,7 @@ namespace Project.Procedural.MazeGeneration
 
     public enum GrowingTreeLambda : byte
     {
-        Random,
+        RandomCell,
         LastCell,
         FirstCell,
         FirstAndLastMix,

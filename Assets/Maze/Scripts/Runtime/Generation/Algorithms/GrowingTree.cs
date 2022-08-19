@@ -26,7 +26,7 @@ namespace Project.Procedural.MazeGeneration
         private Func<List<Cell>, Cell> SetLambda(GrowingTreeLambda lambdaType) => lambdaType switch
         {
             //Selects a cell at random (executes Simple Prim)
-            GrowingTreeLambda.Random => (active) => active.Sample(),
+            GrowingTreeLambda.RandomCell => (active) => active.Sample(),
             //Selects the last cell (executes Recursive Backtracker)
             GrowingTreeLambda.LastCell => (active) => active.Last(),
             //Selects the first cell (creates elongated corridors)

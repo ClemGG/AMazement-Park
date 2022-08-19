@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 665a4014d07c24d4193809f69bdfe451, type: 3}
-  m_Name: Difficult
+  m_Name: Hard
   m_EditorClassIdentifier: 
   <DrawMode>k__BackingField: 1
   <GenerationType>k__BackingField: 2

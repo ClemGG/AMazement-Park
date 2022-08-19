@@ -51,7 +51,9 @@ namespace Project.ViewModels.Generation
         //In the 2D scene, generates the level when the player presses the "Generate Maze" button
         public void Execute(Difficulty difficulty, DrawMode drawMode) 
         {
-            MazeSettingsService.SetupSettings(Settings, difficulty, drawMode);
+            Settings = MazeSettingsService.SetupSettings(difficulty);
+            Settings.DrawMode = drawMode;
+            GameSession.Settings = Settings;
             ExecuteAsync();
         }
 

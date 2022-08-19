@@ -10,6 +10,7 @@ Shader "Custom/Triplanar"
 
         _Glossiness("Specular", Range(0, 1)) = 0.5
         [Gamma] _Metallic("Metallic", Range(0, 1)) = 0
+        _Emission("Emission", Range(0, 2)) = 1
 
         _BumpScale("Normal Strength", Float) = 1
         _BumpMap("Normal Map", 2D) = "bump" {}
@@ -37,6 +38,7 @@ Shader "Custom/Triplanar"
 
         half _Glossiness;
         half _Metallic;
+        half _Emission;
 
         half _BumpScale;
         sampler2D _BumpMap;
@@ -77,6 +79,7 @@ Shader "Custom/Triplanar"
             half4 color = (cx + cy + cz) * _Color;
             o.Albedo = color.rgb;
             o.Alpha = color.a;
+            o.Emission = _Emission * color;
 
         #ifdef _NORMALMAP
             // Normal map

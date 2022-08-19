@@ -12,7 +12,7 @@ namespace Project.Services
         private static readonly List<string> _allowedExtensions = new() { ".txt", ".png", ".jpg", ".jpeg", ".jpe", ".jfif" };
         private static readonly List<string> _names = new();
 
-        public static string GetRandomMask(string nameContent = "")
+        public static (string, string) GetRandomMask(string nameContent = "")
         {
             _names.Clear();
             string path = $"{Application.streamingAssetsPath}/Masks/";
@@ -28,15 +28,15 @@ namespace Project.Services
                      * This ensure the size of the mask fits the dimension specified
                      * in the difficulty mode.
                      */
-                    string fileName = f.Name.Replace(extension, "");
-                    if (nameContent == "" ^ fileName.Contains(nameContent))
+                    if (nameContent == "" ^ f.Name.Contains(nameContent))
                     {
-                        _names.Add(fileName);
+                        _names.Add(f.Name);
                     }
                 }
             }
-
-            return _names.Sample();
+            string randomName = _names.Sample();
+            string ext = $".{randomName.Split('.')[1]}";
+            return (randomName.Replace(ext, ""), ext);
         }
     }
 }
