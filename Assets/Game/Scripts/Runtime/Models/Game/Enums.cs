@@ -5,7 +5,7 @@ namespace Project.Models.Game.Enums
         Easy,
         Normal,
         Hard,
-        NightMare,
+        Nightmare,
         Custom,
     }
 }

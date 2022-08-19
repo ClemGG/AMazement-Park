@@ -9,6 +9,7 @@ using static Project.Procedural.MazeGeneration.Distances;
 using Project.Models.Game;
 using System.Collections.Generic;
 using Project.ViewModels.Maze;
+using Project.Services;
 
 namespace Project.ViewModels.Generation
 {
@@ -50,11 +51,9 @@ namespace Project.ViewModels.Generation
         //In the 2D scene, generates the level when the player presses the "Generate Maze" button
         public void Execute(Difficulty difficulty, DrawMode drawMode) 
         {
-            Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/{difficulty}");
-            Settings.DrawMode = drawMode;
+            MazeSettingsService.SetupSettings(Settings, difficulty, drawMode);
             ExecuteAsync();
         }
-
 
         public void Cleanup()
         {

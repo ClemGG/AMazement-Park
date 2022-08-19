@@ -48,7 +48,7 @@ namespace Project.Procedural.MazeGeneration
 
 #if UNITY_EDITOR
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             //Above 30, we start to see slowdows because of the UI instantiation
             GridSize = new(Mathf.Clamp(GridSize.x, 1, 30), Mathf.Clamp(GridSize.y, 1, 30));

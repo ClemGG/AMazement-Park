@@ -1,7 +1,11 @@
 {
     "name": "Project.Services",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:5e0dffe594df1624d983288630909556",
+        "GUID:e2731c6cd936d5b46a40e9c587953761",
+        "GUID:4fca93d082dc73544b70f77c6f9269e5"
+    ],
     "includePlatforms": [
         "Editor",
         "WindowsStandalone32",

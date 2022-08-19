@@ -7,7 +7,6 @@ namespace Project.Models.Maze
     [CreateAssetMenu(fileName = "New Custom Maze Settings", menuName = "ScriptableObjects/Custom Maze Settings (Use this)", order = 1)]
     public class CustomMazeSettingsSO : GenerationSettingsSO
     {
-        [field: SerializeField] public Difficulty DifficultyLevel { get; set; } = Difficulty.Custom;
         [field: SerializeField] public string MaskName { get; set; }
 
         //In order : Hunter, Omniscient, Embuscade, Useless Moron, Cheater
@@ -30,5 +29,15 @@ namespace Project.Models.Maze
 
         [field: SerializeField, Range(3f, 9f)] public float PlayerFOV { get; set; } = 7f;
 
+
+        //The number of runs to complete a full session.
+        //Set to maxValue by default for an endless session in custom Mode.
+        [field: SerializeField] public int MaxNumberOfRuns { get; set; } = int.MaxValue;
+
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            Inset = Mathf.Min(Inset, .35f);
+        }
     }
 }

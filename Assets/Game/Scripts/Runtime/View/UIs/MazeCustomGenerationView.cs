@@ -433,7 +433,7 @@ public class MazeCustomGenerationView : MonoBehaviour
         if (!File.Exists(path) || (!_allowedExtensions.Contains(extension)))
         {
             print(File.Exists(path) + " " + _allowedExtensions.Contains(extension));
-            MaskLabel.text = "<color=#ff0000>Wrong file name</color>";
+            MaskLabel.text = "<color=#ff0000>Wrong file name or extension</color>";
         }
         else
         {
@@ -521,7 +521,7 @@ public class MazeCustomGenerationView : MonoBehaviour
     {
         Generator.ShowBestPaths = ShowBestPaths;
         Generator.ShowHeatMap = ShowHeatMap;
-        Generator.Execute(GameSession.DifficultyLevel, DrawMode.UIImage);
+        Generator.Execute(Difficulty.Custom, DrawMode.UIImage);
     }
 
     public void OnShowPathsFieldValueChanged()

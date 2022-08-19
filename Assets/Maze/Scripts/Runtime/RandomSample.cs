@@ -45,6 +45,11 @@ namespace Project.Procedural.MazeGeneration
             return Random.Range(start, length);
         }
 
+        public static bool RandomBool()
+        {
+            int rand = 1.Sample();
+            return rand == 1;
+        }
 
         public static List<T> Shuffle<T>(this List<T> list)
         {
