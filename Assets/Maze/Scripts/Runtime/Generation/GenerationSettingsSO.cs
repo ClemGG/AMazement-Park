@@ -52,7 +52,7 @@ namespace Project.Procedural.MazeGeneration
         {
             //Above 30, we start to see slowdows because of the UI instantiation
             GridSize = new(Mathf.Clamp(GridSize.x, 1, 30), Mathf.Clamp(GridSize.y, 1, 30));
-            RoomSize = new(Mathf.Clamp(RoomSize.x, 1, 30), Mathf.Clamp(RoomSize.y, 1, 30));
+            RoomSize = new(Mathf.Clamp(RoomSize.x, 1, GridSize.x/2), Mathf.Clamp(RoomSize.y, 1, GridSize.y/2));
         }
 
 #endif

@@ -10,7 +10,7 @@ namespace Project.Procedural.MazeGeneration
         {
 
         }
-        public MaskedGrid(GenerationSettingsSO generationSettings) : base(generationSettings)
+        public MaskedGrid(GenerationSettingsSO settings) : base(settings)
         {
 
         }

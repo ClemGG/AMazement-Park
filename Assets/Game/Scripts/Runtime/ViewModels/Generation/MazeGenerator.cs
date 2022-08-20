@@ -121,7 +121,7 @@ namespace Project.ViewModels.Generation
             Progress = new();
             Progress.ProgressChanged += OnGenerationProgressChanged;
             yield return StartCoroutine(genAlg.ExecuteAsync(Grid, Progress));
-            Grid.Braid();
+            Grid.Braid(Settings.BraidRate);
 
 
             //Displays the entities in the maze

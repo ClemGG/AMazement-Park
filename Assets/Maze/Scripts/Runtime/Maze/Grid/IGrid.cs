@@ -7,7 +7,6 @@ namespace Project.Procedural.MazeGeneration
     {
         int Rows { get; }
         int Columns { get; }
-        float BraidRate { get; }
 
         int Size();
         Cell RandomCell();
@@ -20,7 +19,7 @@ namespace Project.Procedural.MazeGeneration
         IEnumerable<Cell> EachCell();
 
         List<Cell> GetDeadends();
-        void Braid();
+        void Braid(float braidRate = 0f);
         void LinkAll();
         void UnlinkAll();
     }
