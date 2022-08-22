@@ -253,7 +253,7 @@ namespace Project.ViewModels.Draw
             CellHolder ch = MazeManager.GetCellHolder(cell);
             if (ch.Occupied)
             {
-                DrawGameCell(new Vector2(cellSize, cellSize),
+                DrawEntityCell(new Vector2(cellSize, cellSize),
                              new Vector3(x2, -y2, 0),
                              ch);
             }
@@ -388,7 +388,7 @@ namespace Project.ViewModels.Draw
             CellHolder ch = MazeManager.GetCellHolder(i, j);
             if (ch.Occupied)
             {
-                DrawGameCell(new Vector2(cellSize, cellSize),
+                DrawEntityCell(new Vector2(cellSize, cellSize),
                              new Vector3(cellSize * j, -cellSize * i, 0),
                              ch);
             }
@@ -467,7 +467,7 @@ namespace Project.ViewModels.Draw
         }
 
         //Used if there is a Character or an Item to display on this Cell
-        private void DrawGameCell(Vector2 size, Vector3 anchoredPos, CellHolder cellHolder)
+        private void DrawEntityCell(Vector2 size, Vector3 anchoredPos, CellHolder cellHolder)
         {
             Image cellImg = DrawCell(size, anchoredPos, Color.white);
             Sprite s = cellHolder.ObjectsOnThisCell[^1].Icon;

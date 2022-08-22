@@ -13,6 +13,7 @@ namespace Project.ViewModels.Draw
         #region Mesh Fields
 
         private Transform _mazeObj;
+        private Transform _props;
 
         private Transform MazeObj
         {
@@ -20,6 +21,14 @@ namespace Project.ViewModels.Draw
             {
                 if (!_mazeObj) _mazeObj = GameObject.Find("Maze").transform;
                 return _mazeObj;
+            }
+        }
+        private Transform Props
+        {
+            get
+            {
+                if (!_props) _props = MazeObj.Find("Props");
+                return _props;
             }
         }
 
@@ -56,6 +65,17 @@ namespace Project.ViewModels.Draw
                 if (mc == null) continue;
                 if (mc.sharedMesh is not null)
                     Object.DestroyImmediate(mc.sharedMesh);
+            }
+
+            //Destroys the characters & items in the scene
+            GameObject[] prefabsToDestroy = Props.GetComponentsInChildren<GameObject>();
+            int length = prefabsToDestroy.Length;
+            for (int i = 0; i < length; i++)
+            {
+                if (prefabsToDestroy[i] != Props.gameObject)
+                {
+                    Object.DestroyImmediate(prefabsToDestroy[i]);
+                }
             }
         }
 
@@ -130,7 +150,7 @@ namespace Project.ViewModels.Draw
         {
             float cellWidth = _meshCellSize.x;
             float cellHeight = _meshCellSize.y;
-            _inset = cellWidth * _inset;
+            _inset *= cellWidth;
 
             int count = 0;
 
@@ -143,6 +163,7 @@ namespace Project.ViewModels.Draw
                     if (cell is null) continue;
 
 
+
                     if (!Mathf.Approximately(_inset, 0f) && !Mathf.Approximately(_inset, .5f * cellWidth))
                     {
                         float x = cell.Column * cellWidth;
@@ -152,6 +173,16 @@ namespace Project.ViewModels.Draw
                         {
                             case 0:
                                 AddFloorWithInset(cell, cellWidth, x, z);
+
+                                //spawn entity
+                                CellHolder ch = MazeManager.GetCellHolder(cell);
+                                if (ch.Occupied)
+                                {
+                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                        new Vector3(x + _inset, 0, -(z + _inset)),
+                                        Quaternion.identity,
+                                        Props);
+                                }
                                 break;
                             case 1:
                                 AddCeilingWithInset(cell, cellWidth, cellHeight, x, z);
@@ -169,6 +200,16 @@ namespace Project.ViewModels.Draw
                         {
                             case 0:
                                 AddFloorWithoutInset(cell, cellWidth, cellHeight, i - grid.Rows + 1, j);
+
+                                //spawn entity
+                                CellHolder ch = MazeManager.GetCellHolder(cell);
+                                if (ch.Occupied)
+                                {
+                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                        new Vector3(j * cellWidth, 0, -(i - grid.Rows + 1) * cellWidth),
+                                        Quaternion.identity,
+                                        Props);
+                                }
                                 break;
                             case 1:
                                 AddCeilingWithoutInset(cell, cellWidth, cellHeight, i - grid.Rows + 1, j);
@@ -256,6 +297,7 @@ namespace Project.ViewModels.Draw
                     if (cell is null) continue;
 
 
+
                     if (!Mathf.Approximately(_inset, 0f) && !Mathf.Approximately(_inset, .5f * cellWidth))
                     {
                         float x = cell.Column * cellWidth;
@@ -265,6 +307,16 @@ namespace Project.ViewModels.Draw
                         {
                             case 0:
                                 AddFloorWithInset(cell, cellWidth, x, z);
+
+                                //spawn entity
+                                CellHolder ch = MazeManager.GetCellHolder(cell);
+                                if (ch.Occupied)
+                                {
+                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                        new Vector3(x + _inset, 0, -(z + _inset)),
+                                        Quaternion.identity,
+                                        Props);
+                                }
                                 break;
                             case 1:
                                 AddCeilingWithInset(cell, cellWidth, cellHeight, x, z);
@@ -282,6 +334,16 @@ namespace Project.ViewModels.Draw
                         {
                             case 0:
                                 AddFloorWithoutInset(cell, cellWidth, cellHeight, i - grid.Rows + 1, j);
+
+                                //spawn entity
+                                CellHolder ch = MazeManager.GetCellHolder(cell);
+                                if (ch.Occupied)
+                                {
+                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                        new Vector3(j * cellWidth, 0, -(i - grid.Rows + 1) * cellWidth),
+                                        Quaternion.identity,
+                                        Props);
+                                }
                                 break;
                             case 1:
                                 AddCeilingWithoutInset(cell, cellWidth, cellHeight, i - grid.Rows + 1, j);
@@ -322,19 +384,15 @@ namespace Project.ViewModels.Draw
         private void AddFloorWithInset(Cell cell, float cellSize, float x, float z)
         {
             (Vector4 xc, Vector4 zc) = CellCoordsWithInset(x, z, cellSize);
-            float x1 = xc.x;
             float x2 = xc.y;
             float x3 = xc.z;
-            float x4 = xc.w;
 
             float z1 = zc.x;
             float z2 = zc.y;
-            float z3 = zc.z;
-            float z4 = zc.w;
 
-            cellSize -= _inset * 2f;
+            float doubleI = _inset * 2f;
+            cellSize -= doubleI;
             float halfCs = cellSize / 2f;
-            float halfI = _inset / 2f;
             Quaternion rot = Quaternion.LookRotation(Vector3.up);
 
             // center
@@ -343,14 +401,6 @@ namespace Project.ViewModels.Draw
                               rot,
                               new Vector3(cellSize, cellSize, 1)));
 
-            //spawn entity
-            CellHolder ch = MazeManager.GetCellHolder(cell);
-            if (ch.Occupied)
-            {
-                Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab, 
-                    new Vector3(cell.Column * cellSize, 0f, cell.Row * cellSize), 
-                    Quaternion.identity);
-            }
 
 
             //Draws 4 imgs to fill the outer regions of the cell
@@ -359,33 +409,29 @@ namespace Project.ViewModels.Draw
                 AddQuad(
                 Matrix4x4.TRS(new Vector3(x2, 0, -z1 + halfCs),
                               rot,
-                              new Vector3(cellSize, _inset * 2f, 1)));
+                              new Vector3(cellSize, doubleI, 1)));
             }
             if (cell.IsLinked(cell.East))
             {
                 AddQuad(
                 Matrix4x4.TRS(new Vector3(x3 - halfCs + _inset, 0, -z2),
                               rot,
-                              new Vector3(_inset * 2f, cellSize, 1)));
+                              new Vector3(doubleI, cellSize, 1)));
             }
         }
 
         private void AddCeilingWithInset(Cell cell, float cellSize, float cellHeight, float x, float z)
         {
             (Vector4 xc, Vector4 zc) = CellCoordsWithInset(x, z, cellSize);
-            float x1 = xc.x;
             float x2 = xc.y;
             float x3 = xc.z;
-            float x4 = xc.w;
 
             float z1 = zc.x;
             float z2 = zc.y;
-            float z3 = zc.z;
-            float z4 = zc.w;
 
-            cellSize -= _inset * 2f;
+            float doubleI = _inset * 2f;
+            cellSize -= doubleI;
             float halfCs = cellSize / 2f;
-            float halfI = _inset / 2f;
             Quaternion rot = Quaternion.LookRotation(Vector3.down);
 
 
@@ -401,29 +447,26 @@ namespace Project.ViewModels.Draw
                 AddQuad(
                 Matrix4x4.TRS(new Vector3(x2, cellHeight, -z1 + halfCs),
                               rot,
-                              new Vector3(cellSize, _inset * 2f, 1)));
+                              new Vector3(cellSize, doubleI, 1)));
             }
             if (cell.IsLinked(cell.East))
             {
                 AddQuad(
                 Matrix4x4.TRS(new Vector3(x3 - halfCs + _inset, cellHeight, -z2),
                               rot,
-                              new Vector3(_inset * 2f, cellSize, 1)));
+                              new Vector3(doubleI, cellSize, 1)));
             }
         }
 
         private void AddWallsWithInset(Cell cell, float cellWidth, float cellHeight, float x, float z)
         {
             (Vector4 xc, Vector4 zc) = CellCoordsWithInset(x, z, cellWidth);
-            float x1 = xc.x;
             float x2 = xc.y;
             float x3 = xc.z;
-            float x4 = xc.w;
 
             float z1 = zc.x;
             float z2 = zc.y;
             float z3 = zc.z;
-            float z4 = zc.w;
 
             float doubleI = _inset * 2f;
             float cellSize = cellWidth - doubleI;
@@ -534,15 +577,6 @@ namespace Project.ViewModels.Draw
                               Quaternion.LookRotation(Vector3.up),
                               new Vector3(cellWidth, cellWidth, 1)));
 
-
-            //spawn entity
-            CellHolder ch = MazeManager.GetCellHolder(cell);
-            if (ch.Occupied)
-            {
-                Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
-                    new Vector3(cell.Column * cellWidth, 0f, cell.Row * cellWidth),
-                    Quaternion.identity);
-            }
         }
 
         private void AddCeilingWithoutInset(Cell cell, float cellWidth, float cellHeight, int i, int j)

@@ -37,7 +37,7 @@ namespace Project.Models.Maze
         protected override void OnValidate()
         {
             base.OnValidate();
-            Inset = Mathf.Min(Inset, .35f);
+            Inset = Mathf.Min(Inset, .25f);
         }
     }
 }

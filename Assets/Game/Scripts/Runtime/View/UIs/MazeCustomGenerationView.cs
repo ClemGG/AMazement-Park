@@ -390,7 +390,7 @@ namespace Project.View
         public void OnInsetNumberFieldEndEdit()
         {
             float value = float.Parse(InsetNumberField.text);
-            value = Mathf.Clamp(value, 0f, .35f);
+            value = Mathf.Clamp(value, 0f, .25f);
             InsetNumberField.text = value.ToString();
             InsetField.value = value;
 

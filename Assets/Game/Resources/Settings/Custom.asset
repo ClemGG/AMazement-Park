@@ -16,16 +16,16 @@ MonoBehaviour:
   <GenerationType>k__BackingField: 12
   <GridSize>k__BackingField: {x: 10, y: 10}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
-  <RoomSize>k__BackingField: {x: 5, y: 5}
+  <RoomSize>k__BackingField: {x: 1, y: 1}
   <BiasTowardsRooms>k__BackingField: 0
   <LambdaSelection>k__BackingField: 0
-  <Inset>k__BackingField: 0.35
+  <Inset>k__BackingField: 0
   <BraidRate>k__BackingField: 1
   <HoustonSwapPercent>k__BackingField: 0.5
   <ImageMask>k__BackingField: {fileID: 0}
   <AsciiMask>k__BackingField: {fileID: 0}
-  <Extension>k__BackingField: .png
-  <MaskName>k__BackingField: mask_circle_crossed_20x20
+  <Extension>k__BackingField: 
+  <MaskName>k__BackingField: 
   <ActivityLevels>k__BackingField: 0300000003000000030000000300000002000000
   <ActiveItems>k__BackingField: 010101
   <PlayerFOV>k__BackingField: 7
