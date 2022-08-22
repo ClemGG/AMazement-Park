@@ -179,7 +179,7 @@ namespace Project.ViewModels.Draw
 
 
             float cellSize = Mathf.Min(Bg.rect.width / grid.Columns, Bg.rect.height / grid.Rows);
-            _inset = cellSize * _inset;
+            float scaledInset = cellSize * _inset;
 
             //Used to resize the lineUIs if they get too big for the grid resolution
             float gridLongestSide = Mathf.Max(grid.Columns, grid.Rows);
@@ -193,13 +193,13 @@ namespace Project.ViewModels.Draw
                     if (cell is null) continue;
                     Color color = grid.Draw(cell);
 
-                    if (!Mathf.Approximately(_inset, 0f) && !Mathf.Approximately(_inset, .5f * cellSize))
+                    if (!Mathf.Approximately(_inset, 0f) && !Mathf.Approximately(_inset, .5f))
                     {
                         float x = cell.Column * cellSize;
                         float y = cell.Row * cellSize;
 
-                        DisplayCellImgWithInset(cell, cellSize, x, y, _inset, color);
-                        DisplayLineImgWithInset(cell, cellSize, x, y, _inset, gridLongestSide);
+                        DisplayCellImgWithInset(cell, cellSize, x, y, scaledInset, color);
+                        DisplayLineImgWithInset(cell, cellSize, x, y, scaledInset, gridLongestSide);
                     }
                     else
                     {

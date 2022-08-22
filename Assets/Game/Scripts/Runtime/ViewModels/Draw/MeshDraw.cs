@@ -48,7 +48,7 @@ namespace Project.ViewModels.Draw
         {
             Settings = settings as CustomMazeSettingsSO;
             _meshCellSize = settings.MeshCellSize;
-            _inset = settings.Inset;
+            _inset = Settings.Inset * _meshCellSize.x;
         }
 
         public void Cleanup()
@@ -150,7 +150,6 @@ namespace Project.ViewModels.Draw
         {
             float cellWidth = _meshCellSize.x;
             float cellHeight = _meshCellSize.y;
-            _inset *= cellWidth;
 
             int count = 0;
 

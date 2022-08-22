@@ -19,7 +19,7 @@ MonoBehaviour:
   <RoomSize>k__BackingField: {x: 1, y: 1}
   <BiasTowardsRooms>k__BackingField: 0
   <LambdaSelection>k__BackingField: 0
-  <Inset>k__BackingField: 0
+  <Inset>k__BackingField: 0.25
   <BraidRate>k__BackingField: 1
   <HoustonSwapPercent>k__BackingField: 0.5
   <ImageMask>k__BackingField: {fileID: 0}
