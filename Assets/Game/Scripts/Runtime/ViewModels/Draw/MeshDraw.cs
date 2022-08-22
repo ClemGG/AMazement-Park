@@ -285,7 +285,6 @@ namespace Project.ViewModels.Draw
         {
             float cellWidth = _meshCellSize.x;
             float cellHeight = _meshCellSize.y;
-            _inset = cellWidth * _inset;
 
             for (int i = 0; i < grid.Rows; i++)
             {
