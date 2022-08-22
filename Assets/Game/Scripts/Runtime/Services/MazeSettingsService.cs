@@ -27,6 +27,7 @@ namespace Project.Services
         public static CustomMazeSettingsSO SetupSettings(Difficulty difficulty)
         {
             var settings = Resources.Load<CustomMazeSettingsSO>($"Settings/{difficulty}");
+            settings.MaxNumberOfRuns = 10;
 
             switch (difficulty)
             {
@@ -66,7 +67,6 @@ namespace Project.Services
             settings.PlayerFOV = 9f * settings.MeshCellSize.x;
             settings.ActiveItems = new[] { true, true, true };
             settings.ActivityLevels = new[] { 3, 0, 0, 0, 2 };
-            settings.MaxNumberOfRuns = 10;
         }
 
         private static void SetNormalSettings(CustomMazeSettingsSO settings)
@@ -100,7 +100,6 @@ namespace Project.Services
             settings.PlayerFOV = 7f * settings.MeshCellSize.x;
             settings.ActiveItems = new[] { true, true, true };
             settings.ActivityLevels = new[] { 3, 3, 3, 3, 2 };
-            settings.MaxNumberOfRuns = 10;
         }
 
         private static void SetHardSettings(CustomMazeSettingsSO settings)
@@ -133,7 +132,6 @@ namespace Project.Services
             settings.PlayerFOV = 5f * settings.MeshCellSize.x;
             settings.ActiveItems = new[] { true, false, false };
             settings.ActivityLevels = new[] { 4, 4, 4, 4, 2 };
-            settings.MaxNumberOfRuns = 10;
         }
 
         private static void SetNightmareSettings(CustomMazeSettingsSO settings)
@@ -166,7 +164,6 @@ namespace Project.Services
             settings.PlayerFOV = 3f * settings.MeshCellSize.x;
             settings.ActiveItems = new[] { true, false, false };
             settings.ActivityLevels = new[] { 5, 5, 5, 5, 2 };
-            settings.MaxNumberOfRuns = 20;
         }
 
     }

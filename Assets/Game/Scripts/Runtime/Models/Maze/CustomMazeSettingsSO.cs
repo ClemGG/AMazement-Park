@@ -31,8 +31,8 @@ namespace Project.Models.Maze
 
 
         //The number of runs to complete a full session.
-        //Set to maxValue by default for an endless session in custom Mode.
-        [field: SerializeField] public int MaxNumberOfRuns { get; set; } = int.MaxValue;
+        //Set to 10 by default for a normal session in custom Mode.
+        [field: SerializeField] public int MaxNumberOfRuns { get; set; } = 10;
 
         protected override void OnValidate()
         {

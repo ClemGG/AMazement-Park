@@ -238,10 +238,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5658829802753194387, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1384,10 +1380,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5658829802753194387, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1560,10 +1552,6 @@ PrefabInstance:
     - target: {fileID: 5658829802753194387, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658829802753194387, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Pivot.x
@@ -7002,7 +6990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 119264104736010412, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Value
-      value: 6.97
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 119264104736010412, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_MaxValue
@@ -7071,10 +7059,6 @@ PrefabInstance:
     - target: {fileID: 5658829802753194387, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658829802753194387, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Pivot.x

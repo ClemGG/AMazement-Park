@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665a4014d07c24d4193809f69bdfe451, type: 3}
   m_Name: Custom
   m_EditorClassIdentifier: 
-  <DrawMode>k__BackingField: 1
-  <GenerationType>k__BackingField: 4
+  <DrawMode>k__BackingField: 2
+  <GenerationType>k__BackingField: 12
   <GridSize>k__BackingField: {x: 10, y: 10}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
   <RoomSize>k__BackingField: {x: 5, y: 5}
@@ -25,8 +25,8 @@ MonoBehaviour:
   <ImageMask>k__BackingField: {fileID: 0}
   <AsciiMask>k__BackingField: {fileID: 0}
   <Extension>k__BackingField: .png
-  <MaskName>k__BackingField: mask_triangle_20x20
+  <MaskName>k__BackingField: mask_circle_crossed_20x20
   <ActivityLevels>k__BackingField: 0300000003000000030000000300000002000000
   <ActiveItems>k__BackingField: 010101
   <PlayerFOV>k__BackingField: 7
-  <MaxNumberOfRuns>k__BackingField: 2147483647
+  <MaxNumberOfRuns>k__BackingField: 10
