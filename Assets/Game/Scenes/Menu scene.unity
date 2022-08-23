@@ -491,7 +491,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 1
-  m_UseGeometry: 1
+  m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
@@ -997,6 +997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185425c71b63c4b4bb7f47a6e1a72e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <RadiusToWallOffset>k__BackingField: 0.5
+  <Settings>k__BackingField: {fileID: 11400000, guid: df1572e4c6549ec41b391d2cb5515f6e, type: 2}
 --- !u!195 &3134864445077937974
 NavMeshAgent:
   m_ObjectHideFlags: 0
