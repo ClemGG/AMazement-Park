@@ -11,7 +11,7 @@ using static Project.Services.StringFormatterService;
 using System.IO;
 using Project.ViewModels;
 
-namespace Project.View
+namespace Project.View.UIs
 {
     public class MazeCustomGenerationView : MonoBehaviour
     {
@@ -88,6 +88,16 @@ namespace Project.View
         [SerializeField] private TextMeshProUGUI MaskLabel;
         [SerializeField] private Toggle ShowLongestPathsField;
         [SerializeField] private Toggle ShowHeatMapField;
+
+        private static GameObject _progressCanvas;
+        private static GameObject ProgressCanvas
+        {
+            get
+            {
+                if (!_progressCanvas) _progressCanvas = GameObject.Find("Progress canvas");
+                return _progressCanvas;
+            }
+        }
 
         #endregion
 
@@ -188,6 +198,7 @@ namespace Project.View
 
 
             Generator = FindObjectOfType<ViewModels.Generation.MazeGenerator>();
+            ProgressCanvas.SetActive(false);
 
 
             SetAlgorithmOptions();
@@ -486,7 +497,7 @@ namespace Project.View
 
         public void OnPlayerFOVFieldValueChanged()
         {
-            Settings.PlayerFOV = PlayerFOVField.value;
+            Settings.PlayerFOV = PlayerFOVField.value * Settings.MeshCellSize.x;
             PlayerFOVNumberField.text = $"{PlayerFOVField.value:0}";
         }
         public void OnPlayerFOVNumberFieldEndEdit()
@@ -496,7 +507,7 @@ namespace Project.View
             PlayerFOVNumberField.text = value.ToString();
             PlayerFOVField.value = value;
 
-            Settings.PlayerFOV = value;
+            Settings.PlayerFOV = value * Settings.MeshCellSize.x;
         }
 
 
@@ -522,6 +533,8 @@ namespace Project.View
         {
             Generator.ShowBestPaths = ShowBestPaths;
             Generator.ShowHeatMap = ShowHeatMap;
+
+            ProgressCanvas.SetActive(true);
             Generator.Execute(Difficulty.Custom, DrawMode.UIImage);
         }
 

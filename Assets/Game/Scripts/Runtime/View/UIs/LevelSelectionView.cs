@@ -3,7 +3,7 @@ using Project.ViewModels;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Project.View
+namespace Project.View.UIs
 {
     public class LevelSelectionView : MonoBehaviour
     {

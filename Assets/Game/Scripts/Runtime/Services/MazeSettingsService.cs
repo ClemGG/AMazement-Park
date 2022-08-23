@@ -31,6 +31,9 @@ namespace Project.Services
 
             switch (difficulty)
             {
+                case Difficulty.Random:
+                    SetRandomSettings(settings);
+                    break;
                 case Difficulty.Easy:
                     SetEasySettings(settings);
                     break;
@@ -46,6 +49,41 @@ namespace Project.Services
             }
 
             return settings;
+        }
+
+
+        //The random mode is only used in the Main Menu,
+        //but this method is set up to be used for a regular run as well.
+        private static void SetRandomSettings(CustomMazeSettingsSO settings)
+        {
+            //If we have 50% chance, we add a mask and we change the gen type
+            //to an algorithm that can handle dead cells in the maze.
+            int randMaskChance = 4.Sample();
+            if (randMaskChance < 2)
+            {
+                (string maskName, string extension) = FileService.GetRandomMask();
+                settings.MaskName = maskName;
+                settings.Extension = extension;
+                settings.GenerationType = _maskAlgs.Sample();
+            }
+            else
+            {
+                settings.MaskName = "";
+                settings.Extension = "";
+                settings.GenerationType = GenerationType.Random;
+            }
+
+            settings.GridSize = new(30.Sample(5), 30.Sample(5));
+            settings.RoomSize = new(settings.GridSize.x.Sample(), settings.GridSize.y.Sample());
+            settings.BiasTowardsRooms = RandomSample.RandomBool();
+            settings.LambdaSelection = ValuesOf<GrowingTreeLambda>().Sample();
+            settings.Inset = .25f.Sample();
+            settings.BraidRate = .9f.Sample(.75f);
+            settings.HoustonSwapPercent = 1f.Sample();
+
+            settings.PlayerFOV = 9f.Sample(3f) * settings.MeshCellSize.x;
+            settings.ActiveItems = new[] { true, RandomSample.RandomBool(), RandomSample.RandomBool() };
+            settings.ActivityLevels = new[] { 5.Sample(2), 5.Sample(1), 5.Sample(1), 5.Sample(1), 2.Sample(1) };
         }
 
         //Easy mode doesn't use masks, all mazes have the default shape.

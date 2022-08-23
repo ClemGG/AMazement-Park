@@ -1,15 +1,16 @@
-using Project.ViewModels.Generation;
+using Project.Models.Game.Enums;
+using Project.Procedural.MazeGeneration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Project.View
+namespace Project.View.UIs
 {
     public class MainMenuView : MonoBehaviour
     {
         [field: SerializeField] private GameObject MenuCam { get; set; }
         
-        private MazeGenerator Generator { get; set; }
+        private ViewModels.Generation.MazeGenerator Generator { get; set; }
 
         #region UI Fields
 
@@ -21,8 +22,11 @@ namespace Project.View
         private void Awake()
         {
             MenuCam.SetActive(false);
-            Generator = FindObjectOfType<MazeGenerator>();
+            Generator = FindObjectOfType<ViewModels.Generation.MazeGenerator>();
             Generator.OnMazeDone += OnMazeDone;
+
+            //Generates a randome maze for the Menu Cam to roam in
+            Generator.Execute(Difficulty.Random, DrawMode.Mesh);
         }
 
         // Start is called before the first frame update
@@ -44,7 +48,7 @@ namespace Project.View
 
 
         //We start the camera's movement process across the maze once it's complete
-        private void OnMazeDone(object sender, Procedural.MazeGeneration.GenerationProgressReport e)
+        private void OnMazeDone(object sender, GenerationProgressReport e)
         {
             if (Mathf.Approximately(e.ProgressPercentage, 1f))
             {
