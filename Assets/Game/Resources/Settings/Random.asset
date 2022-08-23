@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DrawMode>k__BackingField: 2
   <GenerationType>k__BackingField: 12
-  <GridSize>k__BackingField: {x: 10, y: 10}
+  <GridSize>k__BackingField: {x: 5, y: 13}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
-  <RoomSize>k__BackingField: {x: 1, y: 1}
+  <RoomSize>k__BackingField: {x: 0, y: 12}
   <BiasTowardsRooms>k__BackingField: 0
-  <LambdaSelection>k__BackingField: 0
+  <LambdaSelection>k__BackingField: 1
   <Inset>k__BackingField: 0.25
-  <BraidRate>k__BackingField: 1
-  <HoustonSwapPercent>k__BackingField: 0.5
+  <BraidRate>k__BackingField: 0.9769093
+  <HoustonSwapPercent>k__BackingField: 0.64476144
   <ImageMask>k__BackingField: {fileID: 0}
   <AsciiMask>k__BackingField: {fileID: 0}
-  <Extension>k__BackingField: 
-  <MaskName>k__BackingField: 
-  <ActivityLevels>k__BackingField: 0300000003000000030000000300000002000000
-  <ActiveItems>k__BackingField: 010101
-  <PlayerFOV>k__BackingField: 7
+  <Extension>k__BackingField: .txt
+  <MaskName>k__BackingField: asciimask
+  <ActivityLevels>k__BackingField: 0300000004000000030000000100000001000000
+  <ActiveItems>k__BackingField: 010000
+  <PlayerFOV>k__BackingField: 18.867817
   <MaxNumberOfRuns>k__BackingField: 10

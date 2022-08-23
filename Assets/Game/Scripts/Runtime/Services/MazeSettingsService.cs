@@ -77,7 +77,11 @@ namespace Project.Services
             settings.RoomSize = new(settings.GridSize.x.Sample(), settings.GridSize.y.Sample());
             settings.BiasTowardsRooms = RandomSample.RandomBool();
             settings.LambdaSelection = ValuesOf<GrowingTreeLambda>().Sample();
-            settings.Inset = .25f.Sample();
+            settings.Inset = .25f.Sample(); 
+            if (settings.Inset < .10f)
+            {
+                settings.Inset = 0f;
+            }
             settings.BraidRate = 1f.Sample(.75f);
             settings.HoustonSwapPercent = 1f.Sample();
 
@@ -132,6 +136,11 @@ namespace Project.Services
             settings.BiasTowardsRooms = RandomSample.RandomBool();
             settings.LambdaSelection = ValuesOf<GrowingTreeLambda>().Sample();
             settings.Inset = .25f.Sample();
+            if(settings.Inset < .10f)
+            {
+                settings.Inset = 0f;
+            }
+
             settings.BraidRate = 1f.Sample(.85f);
             settings.HoustonSwapPercent = 1f.Sample();
 
@@ -164,6 +173,10 @@ namespace Project.Services
             settings.BiasTowardsRooms = RandomSample.RandomBool();
             settings.LambdaSelection = ValuesOf<GrowingTreeLambda>().Sample();
             settings.Inset = .25f.Sample();
+            if (settings.Inset < .10f)
+            {
+                settings.Inset = 0f;
+            }
             settings.BraidRate = 1f.Sample(.85f);
             settings.HoustonSwapPercent = 1f.Sample();
 
@@ -195,7 +208,11 @@ namespace Project.Services
             settings.RoomSize = new(settings.GridSize.x.Sample(), settings.GridSize.y.Sample());
             settings.BiasTowardsRooms = RandomSample.RandomBool();
             settings.LambdaSelection = ValuesOf<GrowingTreeLambda>().Sample();
-            settings.Inset = .25f.Sample();
+            settings.Inset = .25f.Sample(); 
+            if (settings.Inset < .10f)
+            {
+                settings.Inset = 0f;
+            }
             settings.BraidRate = .9f.Sample(.75f);
             settings.HoustonSwapPercent = 1f.Sample();
 

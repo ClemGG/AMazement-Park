@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 1.26
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -498,9 +498,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.25
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 594cc64e3f3089f41a2ebad5ce100097, type: 2}
 --- !u!1 &1079024206
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +922,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 762968444}
     m_Modifications:
+    - target: {fileID: 3134864445077937974, guid: c5585fa49e4863042985b69ba7eef716, type: 3}
+      propertyPath: m_Radius
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3669196322402244270, guid: c5585fa49e4863042985b69ba7eef716, type: 3}
       propertyPath: starterAssetsInputs
       value: 
@@ -974,10 +978,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu cam
       objectReference: {fileID: 0}
-    - target: {fileID: 7753028232806379805, guid: c5585fa49e4863042985b69ba7eef716, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5585fa49e4863042985b69ba7eef716, type: 3}
 --- !u!4 &3134864445077937972 stripped
@@ -985,42 +985,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5985997115335271309, guid: c5585fa49e4863042985b69ba7eef716, type: 3}
   m_PrefabInstance: {fileID: 3134864445077937971}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3134864445077937973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978893977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185425c71b63c4b4bb7f47a6e1a72e67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <RadiusToWallOffset>k__BackingField: 0.5
-  <Settings>k__BackingField: {fileID: 11400000, guid: df1572e4c6549ec41b391d2cb5515f6e, type: 2}
---- !u!195 &3134864445077937974
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978893977}
-  m_Enabled: 1
-  m_AgentTypeID: -334000983
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0.1
-  m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &6438777877635161736
 PrefabInstance:
   m_ObjectHideFlags: 0

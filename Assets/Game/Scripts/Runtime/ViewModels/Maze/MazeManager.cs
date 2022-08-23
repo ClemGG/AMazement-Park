@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Project.Models.Game;
 using Project.Models.Maze;
 using Project.Procedural.MazeGeneration;
+using UnityEngine;
 
 namespace Project.ViewModels.Maze
 {
@@ -95,5 +96,15 @@ namespace Project.ViewModels.Maze
 
         #endregion
 
+
+        #region Used by AIs
+
+        public static Vector3 GetRandomPosition()
+        {
+            Cell c = Grid.RandomCell();
+            return new(c.Column, 0, c.Row);
+        }
+
+        #endregion
     }
 }
