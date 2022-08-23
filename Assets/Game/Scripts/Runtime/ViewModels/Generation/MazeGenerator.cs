@@ -129,9 +129,10 @@ namespace Project.ViewModels.Generation
             Grid.Braid(Settings.BraidRate);
 
 
+            //Displays the entities in the maze
+            MazeManager.Init(Grid);
             if (GenerateEntities)
             {
-                //Displays the entities in the maze
                 Cell start = Grid.RandomCell();
                 _occupiedCells.Clear();
                 AddMonstersAndItemsToGrid(start);
@@ -141,8 +142,6 @@ namespace Project.ViewModels.Generation
 
         private void AddMonstersAndItemsToGrid(Cell start)
         {
-            MazeManager.Init(Grid);
-
 
             var entities = Resources.LoadAll("Entities");
             Character[] characters = new Character[6];
