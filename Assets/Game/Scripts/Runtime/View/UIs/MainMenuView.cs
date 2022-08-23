@@ -71,7 +71,7 @@ namespace Project.View.UIs
 
         public void PlayBtn()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         }
 
         public void QuitBtn()

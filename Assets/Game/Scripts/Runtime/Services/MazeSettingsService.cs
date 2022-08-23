@@ -78,7 +78,7 @@ namespace Project.Services
             settings.BiasTowardsRooms = RandomSample.RandomBool();
             settings.LambdaSelection = ValuesOf<GrowingTreeLambda>().Sample();
             settings.Inset = .25f.Sample();
-            settings.BraidRate = .9f.Sample(.75f);
+            settings.BraidRate = 1f.Sample(.75f);
             settings.HoustonSwapPercent = 1f.Sample();
 
             settings.PlayerFOV = 9f.Sample(3f) * settings.MeshCellSize.x;

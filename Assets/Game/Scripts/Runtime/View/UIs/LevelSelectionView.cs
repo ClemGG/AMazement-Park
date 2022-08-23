@@ -7,9 +7,12 @@ namespace Project.View.UIs
 {
     public class LevelSelectionView : MonoBehaviour
     {
+        //This level will be loaded aynchronously and
+        //the ui placed on top of the main menu one.
+        //So we just unload this scene.
         public void ReturnToMenuBtn()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.UnloadSceneAsync(1);
         }
 
         public void LoadEasyModeBtn()
