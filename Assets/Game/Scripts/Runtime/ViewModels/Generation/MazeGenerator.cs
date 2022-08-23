@@ -20,12 +20,12 @@ namespace Project.ViewModels.Generation
         #region Fields
 
         [field: SerializeField] public bool GenerateOnStart { get; set; } = false;
+        [field: SerializeField] public bool GenerateEntities { get; set; } = true;
         [field: SerializeField] public bool ShowBestPaths { get; set; } = false;
         [field: SerializeField] public bool ShowHeatMap { get; set; } = false;
         [field: SerializeField, ReadOnly] public CustomMazeSettingsSO Settings { get; set; }
         public IDrawableGrid Grid { get; set; }
         public IDrawMethod DrawMethod { get; set; }
-
 
         //This class will draw the maze asynchronously.
         //As the maze gets bigger, the game might freeze for a long time.
@@ -33,6 +33,11 @@ namespace Project.ViewModels.Generation
         private Progress<GenerationProgressReport> Progress { get; set; }
         private ProgressVisualizer ProgressVisualizer { get; set; } = new();
         private List<Cell> _occupiedCells = new(9); //used to combine the paths
+        
+        //Used by other scripts to register events when the maze is drawn in DrawAsync
+        public event EventHandler<GenerationProgressReport> OnMazeDone;
+
+
 
         #endregion
 
@@ -124,11 +129,14 @@ namespace Project.ViewModels.Generation
             Grid.Braid(Settings.BraidRate);
 
 
-            //Displays the entities in the maze
-            Cell start = Grid.RandomCell();
-            _occupiedCells.Clear();
-            AddMonstersAndItemsToGrid(start);
-            Grid.SetDistances(GetDistancesOfAllEntities(start));
+            if (GenerateEntities)
+            {
+                //Displays the entities in the maze
+                Cell start = Grid.RandomCell();
+                _occupiedCells.Clear();
+                AddMonstersAndItemsToGrid(start);
+                Grid.SetDistances(GetDistancesOfAllEntities(start));
+            }
         }
 
         private void AddMonstersAndItemsToGrid(Cell start)
@@ -230,6 +238,7 @@ namespace Project.ViewModels.Generation
 
             Progress = new();
             Progress.ProgressChanged += OnDrawProgressChanged;
+            Progress.ProgressChanged += OnMazeDone;
             StartCoroutine(DrawMethod.DrawAsync(Grid, Progress));
         }
 
@@ -260,7 +269,10 @@ namespace Project.ViewModels.Generation
         private void OnDrawProgressDone()
         {
             if(Progress != null)
+            {
                 Progress.ProgressChanged -= OnDrawProgressChanged;
+                Progress.ProgressChanged -= OnMazeDone;
+            }
         }
         private void OnGenerationProgressDone()
         {
