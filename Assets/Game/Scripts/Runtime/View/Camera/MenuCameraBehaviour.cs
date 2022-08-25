@@ -59,7 +59,10 @@ namespace Project.View.Camera
             //This will give us an AI going roughly through the center of each cell
 
             Agent.radius = Settings.MeshCellSize.x / Mathf.Lerp(2f, 4f, Settings.Inset / .25f);
-            Agent.radius -= RadiusToWallOffset; 
+            Agent.radius -= RadiusToWallOffset;
+
+            Agent.angularSpeed = Mathf.Lerp(60f, 720f, Settings.Inset / .25f);
+            Agent.acceleration = Mathf.Lerp(4f, 40, Settings.Inset / .25f);
 
             //Make sure the NavMeshSurface has been baked previously
             //in edit mode so that it binds the agent to it.
