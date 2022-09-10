@@ -1,4 +1,5 @@
 using UnityEngine;
+using Project.Core;
 
 namespace Project.View.UIs
 {
@@ -7,14 +8,8 @@ namespace Project.View.UIs
     /// Contrôle l'apparition du Tooltip à l'écran
     /// quand on survole un élément de la scène
     /// </summary>
-    public class TooltipView : MonoBehaviour
+    public class TooltipView : SingletonBehaviour<TooltipView>
     {
-        #region Static Fields
-
-        public static TooltipView s_Instance { get; private set; }
-
-        #endregion
-
         #region Public Fields
 
         [field: SerializeField]
@@ -24,32 +19,24 @@ namespace Project.View.UIs
 
         #region Mono
 
-        private void Awake()
+        protected override sealed void OnAwake()
         {
-            if (s_Instance is not null)
-            {
-                Destroy(gameObject);
-            }
-
-            s_Instance = this;
-            DontDestroyOnLoad(gameObject);
             Hide();
         }
 
         #endregion
 
-
         #region Static Methods
 
         public static void Show(string header = "", string content = "")
         {
-            s_Instance.Tooltip.SetText(header, content);
-            s_Instance.Tooltip.gameObject.SetActive(true);
+            Instance.Tooltip.SetText(header, content);
+            Instance.Tooltip.gameObject.SetActive(true);
         }
 
         public static void Hide()
         {
-            s_Instance.Tooltip.gameObject.SetActive(false);
+            Instance.Tooltip.gameObject.SetActive(false);
         }
 
         #endregion

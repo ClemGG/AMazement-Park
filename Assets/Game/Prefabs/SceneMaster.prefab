@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8563444938978194030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8563444938978194031}
+  - component: {fileID: 8563444938978194028}
+  - component: {fileID: 6573385476332600091}
+  m_Layer: 0
+  m_Name: SceneMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8563444938978194031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563444938978194030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8563444938978194028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563444938978194030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974000e21b46a2240b29ed6b0f2a1200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PersistBetweenScenes>k__BackingField: 0
+  <InitialFirstActiveScene>k__BackingField:
+    <SceneToLoad>k__BackingField: {fileID: 0}
+    <LoadSceneMode>k__BackingField: 1
+    <AllowDuplicates>k__BackingField: 0
+    <SetAsActiveScene>k__BackingField: 0
+  <InitialAdditiveScenes>k__BackingField: []
+--- !u!114 &6573385476332600091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563444938978194030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ff3448f941847419e1c6070559aaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes:
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    text: "Cette sc\xE8ne est utilis\xE9e pour g\xE9rer les transitions entre les
+      sc\xE8nes. Le SceneLoader contient 1 sc\xE8ne \xE0 charger par d\xE9faut, et
+      peut contenir plusieurs sc\xE8nes \xE0 charger en mode Additif."
+    header: Info
