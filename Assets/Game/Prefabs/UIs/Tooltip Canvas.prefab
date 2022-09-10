@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8978867205318798810}
   - component: {fileID: 8978867205318798791}
   - component: {fileID: 8978867205318798788}
-  - component: {fileID: 8978867205318798789}
   - component: {fileID: 2612127899428903022}
   m_Layer: 0
   m_Name: Tooltip Canvas
@@ -85,23 +84,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &8978867205318798789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8978867205318798811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &2612127899428903022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,10 +389,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 10
-    m_Bottom: 10
+    m_Left: 30
+    m_Right: 30
+    m_Top: 30
+    m_Bottom: 30
   m_ChildAlignment: 0
   m_Spacing: 20
   m_ChildForceExpandWidth: 0
@@ -441,7 +423,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8978867205766254277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
@@ -469,7 +451,7 @@ MonoBehaviour:
   <HeaderField>k__BackingField: {fileID: 8978867205737154073}
   <ContentField>k__BackingField: {fileID: 8978867206238867600}
   <LayoutElement>k__BackingField: {fileID: 8978867205766254274}
-  <CharWrapLimit>k__BackingField: 80
+  <CharWrapLimit>k__BackingField: 120
 --- !u!1 &8978867206238867606
 GameObject:
   m_ObjectHideFlags: 0
