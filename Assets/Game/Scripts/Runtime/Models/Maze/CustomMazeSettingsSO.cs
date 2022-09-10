@@ -1,6 +1,5 @@
-using UnityEngine;
 using Project.Procedural.MazeGeneration;
-using Project.Models.Game.Enums;
+using UnityEngine;
 
 namespace Project.Models.Maze
 {

@@ -128,6 +128,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1588696746, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
   m_PrefabInstance: {fileID: 1765562894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &26441942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 2032816224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &68012139
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +659,27 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 171828485}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &171828487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 171828485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &171828488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171828487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: Determines how many Tiles you can see in front of you
+    at the start of the game. You Field of View gradually decreases over time (except
+    in Easy Mode).
 --- !u!1 &176626712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1757,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322253296}
     m_Modifications:
+    - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
+      propertyPath: <InitialAdditiveScenes>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
+      propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[0].<SceneToLoad>k__BackingField
+      value: 
+      objectReference: {fileID: 102900000, guid: f74867488ffed174082c79578befd257, type: 3}
     - target: {fileID: 8563444938978194030, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: m_Name
       value: SceneMaster
@@ -2820,6 +2854,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
+--- !u!1 &663828507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+  m_PrefabInstance: {fileID: 663828504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &663828508 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -2831,6 +2870,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &663828509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663828507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
+    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
+    when the player is in their FOV. (for the Changeling, it always stays disguised
+    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
+    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
+    4 : Same as Level 3, but the countdowns between each of the monsters' actions
+    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
+    5 : The monsters are always in Attack mode and their countdonws are reduced to
+    the minimum (used in Nightmare mode).\r\n"
 --- !u!1 &667551392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
@@ -3500,6 +3561,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
+--- !u!1 &764499156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+  m_PrefabInstance: {fileID: 764499153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &764499157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -3511,6 +3577,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &764499158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764499156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
+    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
+    when the player is in their FOV. (for the Changeling, it always stays disguised
+    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
+    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
+    4 : Same as Level 3, but the countdowns between each of the monsters' actions
+    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
+    5 : The monsters are always in Attack mode and their countdonws are reduced to
+    the minimum (used in Nightmare mode).\r\n"
 --- !u!1 &791959063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4250,11 +4338,67 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 912248234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &912248236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 912248234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &912248237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912248236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: 'The generation sub-algorithm used by the Growing Tree
+    algorithm (This field is exclusive to that algorithm)
+
+
+    - Random Cell : Gives
+    a random layout (Simple Prim algorithm)
+
+
+    - Last Cell : Defaults to the Recursive
+    Backtracker algorithm
+
+
+    - First Cell : Creates only elongated parallel corridors
+
+
+    -
+    First and Last Mix : Mixes between the Recursive Backtracker and the Simple Prim'
 --- !u!1 &948307917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1830075504, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
   m_PrefabInstance: {fileID: 1765562894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &996802489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 382796321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &996802492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996802489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: I've spent way too much time and energy on this stupid
+    generator. I don't care if it's useless, <i>everything</i> will end up in the
+    game.
 --- !u!1001 &1029997021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4638,6 +4782,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
+--- !u!1 &1029997024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+  m_PrefabInstance: {fileID: 1029997021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1029997025 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -4649,6 +4798,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1029997026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029997024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
+    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
+    when the player is in their FOV. (for the Changeling, it always stays disguised
+    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
+    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
+    4 : Same as Level 3, but the countdowns between each of the monsters' actions
+    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
+    5 : The monsters are always in Attack mode and their countdonws are reduced to
+    the minimum (used in Nightmare mode).\r\n"
 --- !u!1001 &1049841839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5061,6 +5232,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 1121798678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1121798680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 1121798678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1121798681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121798680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: The size of the rooms generated by the Recursive Division
+    algorithm (This field is exclusive to that algorithm)
 --- !u!1001 &1155179236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5653,6 +5844,27 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 1392211897}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1392211899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 1392211897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1392211900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392211899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: Removes deadens to create loops in the maze. It is recommended
+    to leave this at 1 for beginners. This field is a percentage (1 = 100% of dead
+    ends will be removed).
 --- !u!1 &1434736779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5975,6 +6187,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 1456767323}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1456767325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 1456767323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1456767326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456767325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: Should the Recursive algorithm favor rooms and create
+    fewer corridors? (This field is exclusive to that algorithm)
 --- !u!1 &1470567645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6420,6 +6652,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 1579265379}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1579265381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 1579265379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1579265382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579265381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: Narrows the corridors to make the maze more claustrophobic
+    (0 = no narrowing).
 --- !u!224 &1588696746 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1588696746, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -6580,12 +6832,38 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8104085604160709159, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 1732695719}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1732695722}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1732695722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 1732695719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1732695723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732695722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: "You can reference a mask file to make the alogithm ignore
+    certain cells during generation. Not all algorithms support masks. To use a mask,
+    enter its name with the extension and press 'Browse'. \n\nYou can find  all available
+    masks at the path '[You exe folder]\\AMAzement-Park_Data\\StreamingAssets\\Masks'.
+    To use your own mask, use the color black to hide cells (if image) or the 'X'
+    character (if text file), then place it in that folder. Masks with dimensions
+    superior to 30x30 are not allowed.\n\nAllowed file extensions : .txt, .png, .jpg,
+    .jpeg, .jpe, .jfif"
 --- !u!1001 &1765562894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6980,6 +7258,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3199469094992664163, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
   m_PrefabInstance: {fileID: 1765562894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1765562896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+  m_PrefabInstance: {fileID: 1765562894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1765562897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -6991,6 +7274,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1765562898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765562896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: 'The Cheater only has 2 states : Enabled or Disabled.'
 --- !u!1 &1791988117
 GameObject:
   m_ObjectHideFlags: 0
@@ -7671,6 +7968,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 1880646617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1880646620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+  m_PrefabInstance: {fileID: 1880646617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1880646621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880646620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: If enabled, the map of the maze will be enabled by default.
+    If disabled, you will need to pick up the Map item to the the maze on the HUD.
 --- !u!1001 &1910967762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7777,6 +8094,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 1910967762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1910967764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 1910967762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1910967765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910967764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: 'Adjusts the level of mixing between the two sub-alogirthms
+    used by the Houston algorithm : Aldous-Broder and Wilson. AB starts fast, ends
+    slow ; Wilson is the opposite.
+
+
+    It is recommended to leave it at 0.5 to
+    avoid potential long generation times (0 = Aldous-Broder alogithm ; 1 = Wilson
+    algorithm).'
 --- !u!1 &1944534355
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,6 +8554,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 2032816224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2032816228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26441942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: I've spent way too much time and energy on this stupid
+    generator. I don't care if it's useless, <i>everything</i> will end up in the
+    game.
 --- !u!1001 &2048777106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8579,6 +8938,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 2136621506}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2136621509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+  m_PrefabInstance: {fileID: 2136621506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2136621510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136621509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: If enabled, the monsters will be visible by default on
+    the map. If disabled, you will have to pick up the Motion Tracker to see them.
 --- !u!1001 &2100548829823229870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9051,6 +9430,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2508568008702257189, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 3003727303056272756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3003727303056272758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+  m_PrefabInstance: {fileID: 3003727303056272756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3003727303056272759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003727303056272758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: If enabled, the exit of the maze will be enabled by default.
+    If disabled, you will need to pick up the Key item to open it.
 --- !u!1001 &3199469094601482640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9250,6 +9649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9268,6 +9671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+--- !u!1 &3199469094601482641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+  m_PrefabInstance: {fileID: 3199469094601482640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3199469094601482642 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -9279,6 +9687,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3199469094601482643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199469094601482641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
+    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
+    when the player is in their FOV. (for the Changeling, it always stays disguised
+    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
+    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
+    4 : Same as Level 3, but the countdowns between each of the monsters' actions
+    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
+    5 : The monsters are always in Attack mode and their countdonws are reduced to
+    the minimum (used in Nightmare mode).\r\n"
 --- !u!1001 &4181738222424148680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9721,6 +10151,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+--- !u!1 &8104085602337290937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
+  m_PrefabInstance: {fileID: 8104085602337290936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8104085602337290938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104085602337290937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Header>k__BackingField: 
+  <Content>k__BackingField: 'Determines the generation type of the maze, ie its shape.
+
+
+    If
+    you want to better see the differences between them, set the Braid Rate to 0
+    before clicking on Generate.'
 --- !u!114 &8887056246482796832
 MonoBehaviour:
   m_ObjectHideFlags: 0

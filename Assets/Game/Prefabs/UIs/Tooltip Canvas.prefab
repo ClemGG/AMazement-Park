@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511ae042955254b45be279dfbbc80835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PersistBetweenScenes>k__BackingField: 1
   <Tooltip>k__BackingField: {fileID: 8978867205766254285}
 --- !u!1 &8978867205737154079
 GameObject:
@@ -431,7 +432,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 500
+  m_PreferredWidth: 800
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
