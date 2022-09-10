@@ -10,6 +10,8 @@ using static Enums;
 using static Project.Services.StringFormatterService;
 using System.IO;
 using Project.ViewModels;
+using Project.ViewModels.Scenes;
+using Project.Models.Scenes;
 
 namespace Project.View.UIs
 {
@@ -21,8 +23,9 @@ namespace Project.View.UIs
         [field: SerializeField] private bool ShowBestPaths { get; set; } = false;
         [field: SerializeField] private bool ShowHeatMap { get; set; } = false;
         [field: SerializeField] private Gradient MonsteJaugeGradient { get; set; }
-
-        private ViewModels.Generation.MazeGenerator Generator { get; set; }
+        [field: SerializeField] private SceneToLoadParams GameScene { get; set; }
+        [field: SerializeField] private SceneToLoadParams MainMenuScene { get; set; }
+        [field: Space(10)]
 
         #endregion
 
@@ -104,6 +107,8 @@ namespace Project.View.UIs
 
         #region Private Fields
 
+        private ViewModels.Generation.MazeGenerator Generator { get; set; }
+
         //_maskAlgNames contains only the algorithms compatible with masks
         private List<TMP_Dropdown.OptionData> _allAlgOptions = new();
         private List<TMP_Dropdown.OptionData> _maskAlgOptions = new();
@@ -174,6 +179,7 @@ namespace Project.View.UIs
                 return _lambdaOptions;
             }
         }
+
 
         private List<string> _allowedExtensions = new() { ".txt", ".png", ".jpg", ".jpeg", ".jpe", ".jfif" };
 
@@ -515,13 +521,13 @@ namespace Project.View.UIs
         public void PlayMazeBtn()
         {
             Generator.Cleanup();
-            SceneManager.LoadSceneAsync("3D scene");
+            SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 
         public void ReturnToMenuBtn()
         {
             Generator.Cleanup();
-            SceneManager.LoadSceneAsync("Menu scene");
+            SceneMaster.Instance.LoadSingleSceneAsync(MainMenuScene);
         }
 
         public void CancelGenerationBtn()

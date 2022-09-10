@@ -1,48 +1,64 @@
 using Project.Models.Game.Enums;
+using Project.Models.Scenes;
 using Project.ViewModels;
+using Project.ViewModels.Scenes;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Project.View.UIs
 {
     public class LevelSelectionView : MonoBehaviour
     {
+        #region Public Fields
+
+        [field: SerializeField]
+        private SceneToLoadParams LevelSelectScene { get; set; }
+        [field: SerializeField]
+        private SceneToLoadParams GameScene { get; set; }
+        [field: SerializeField]
+        private SceneToLoadParams CustomModeScene { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
         //This level will be loaded aynchronously and
         //the ui placed on top of the main menu one.
         //So we just unload this scene.
         public void ReturnToMenuBtn()
         {
-            SceneManager.UnloadSceneAsync(1);
+            SceneMaster.Instance.UnloadSceneAsync(LevelSelectScene);
         }
 
         public void LoadEasyModeBtn()
         {
             GameSession.DifficultyLevel = Difficulty.Easy;
-            SceneManager.LoadSceneAsync(3);
+            SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 
         public void LoadNormalModeBtn()
         {
             GameSession.DifficultyLevel = Difficulty.Normal;
-            SceneManager.LoadSceneAsync(3);
+            SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 
         public void LoadHardModeBtn()
         {
             GameSession.DifficultyLevel = Difficulty.Hard;
-            SceneManager.LoadSceneAsync(3);
+            SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 
         public void LoadNightmareModeBtn()
         {
             GameSession.DifficultyLevel = Difficulty.Nightmare;
-            SceneManager.LoadSceneAsync(3);
+            SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 
         public void LoadCustomModeBtn()
         {
             GameSession.DifficultyLevel = Difficulty.Custom;
-            SceneManager.LoadSceneAsync(2);
+            SceneMaster.Instance.LoadSingleSceneAsync(CustomModeScene);
         }
+
+        #endregion
     }
 }

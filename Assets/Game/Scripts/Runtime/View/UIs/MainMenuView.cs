@@ -1,16 +1,27 @@
 using Project.Models.Game.Enums;
+using Project.Models.Scenes;
 using Project.Procedural.MazeGeneration;
+using Project.ViewModels.Scenes;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Project.View.UIs
 {
     public class MainMenuView : MonoBehaviour
     {
+        #region Public Fields
+
         [field: SerializeField] private GameObject MenuCam { get; set; }
-        
+        [field: SerializeField] private SceneToLoadParams LevelSelectScene { get; set; }
+
+        #endregion
+
+        #region Private Fields
+
         private ViewModels.Generation.MazeGenerator Generator { get; set; }
+
+        #endregion
+
 
         #region UI Fields
 
@@ -71,7 +82,7 @@ namespace Project.View.UIs
 
         public void PlayBtn()
         {
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            SceneMaster.Instance.LoadAdditiveScenesAsync(LevelSelectScene);
         }
 
         public void QuitBtn()

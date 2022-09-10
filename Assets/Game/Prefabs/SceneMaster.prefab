@@ -46,11 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PersistBetweenScenes>k__BackingField: 0
-  <InitialFirstActiveScene>k__BackingField:
-    <SceneToLoad>k__BackingField: {fileID: 0}
-    <LoadSceneMode>k__BackingField: 1
-    <AllowDuplicates>k__BackingField: 0
-    <SetAsActiveScene>k__BackingField: 0
   <InitialAdditiveScenes>k__BackingField: []
 --- !u!114 &6573385476332600091
 MonoBehaviour:

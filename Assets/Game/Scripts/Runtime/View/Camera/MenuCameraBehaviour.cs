@@ -61,8 +61,8 @@ namespace Project.View.Camera
             Agent.radius = Settings.MeshCellSize.x / Mathf.Lerp(2f, 4f, Settings.Inset / .25f);
             Agent.radius -= RadiusToWallOffset;
 
-            Agent.angularSpeed = Mathf.Lerp(120f, 720f, Settings.Inset / .25f);
-            Agent.acceleration = Mathf.Lerp(4f, 40f, Settings.Inset / .25f);
+            Agent.angularSpeed = Mathf.Lerp(450f, 720f, Settings.Inset / .25f);
+            Agent.acceleration = Mathf.Lerp(20f, 40f, Settings.Inset / .25f);
 
             //Make sure the NavMeshSurface has been baked previously
             //in edit mode so that it binds the agent to it.

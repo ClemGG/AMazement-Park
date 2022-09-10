@@ -18,19 +18,6 @@ namespace Project.Models.Scenes
         public Object SceneToLoad { get; set; }
 
         /// <summary>
-        /// Si à SINGLE, cette scène écrasera toutes les autres.
-        /// Si à ADDITIVE, elle s'ajoutera à la suite des autres.
-        /// </summary>
-        [field: SerializeField]
-        public LoadSceneMode LoadSceneMode { get; set; } = LoadSceneMode.Additive;
-
-        /// <summary>
-        /// Peut-il y avoir plusieurs copies de cette scène à la fois ?
-        /// </summary>
-        [field: SerializeField]
-        public bool AllowDuplicates { get; set; } = false;
-
-        /// <summary>
         /// Si à TRUE, cette scène doit être la scène active (principale).
         /// </summary>
         [field: SerializeField]
