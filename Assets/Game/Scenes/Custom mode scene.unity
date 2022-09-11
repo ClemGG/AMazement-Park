@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -2854,11 +2854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
---- !u!1 &663828507 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
-  m_PrefabInstance: {fileID: 663828504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &663828508 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -2870,28 +2865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &663828509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663828507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
-    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
-    when the player is in their FOV. (for the Changeling, it always stays disguised
-    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
-    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
-    4 : Same as Level 3, but the countdowns between each of the monsters' actions
-    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
-    5 : The monsters are always in Attack mode and their countdonws are reduced to
-    the minimum (used in Nightmare mode).\r\n"
 --- !u!1 &667551392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
@@ -3561,11 +3534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
---- !u!1 &764499156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
-  m_PrefabInstance: {fileID: 764499153}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &764499157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -3577,28 +3545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &764499158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764499156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
-    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
-    when the player is in their FOV. (for the Changeling, it always stays disguised
-    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
-    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
-    4 : Same as Level 3, but the countdowns between each of the monsters' actions
-    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
-    5 : The monsters are always in Attack mode and their countdonws are reduced to
-    the minimum (used in Nightmare mode).\r\n"
 --- !u!1 &791959063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4396,9 +4342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Header>k__BackingField: 
-  <Content>k__BackingField: I've spent way too much time and energy on this stupid
-    generator. I don't care if it's useless, <i>everything</i> will end up in the
-    game.
+  <Content>k__BackingField: Displays the shortest paths between the different monsters
+    and items in the game.
 --- !u!1001 &1029997021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4782,11 +4727,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
---- !u!1 &1029997024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
-  m_PrefabInstance: {fileID: 1029997021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1029997025 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -4798,28 +4738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1029997026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029997024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
-    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
-    when the player is in their FOV. (for the Changeling, it always stays disguised
-    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
-    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
-    4 : Same as Level 3, but the countdowns between each of the monsters' actions
-    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
-    5 : The monsters are always in Attack mode and their countdonws are reduced to
-    the minimum (used in Nightmare mode).\r\n"
 --- !u!1001 &1049841839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8567,9 +8485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Header>k__BackingField: 
-  <Content>k__BackingField: I've spent way too much time and energy on this stupid
-    generator. I don't care if it's useless, <i>everything</i> will end up in the
-    game.
+  <Content>k__BackingField: Displays a visual of the algorithm's bias (pattern) from
+    the starting cell.
 --- !u!1001 &2048777106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9671,11 +9588,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
---- !u!1 &3199469094601482641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3199469095371400819, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
-  m_PrefabInstance: {fileID: 3199469094601482640}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3199469094601482642 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3297050691341288836, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -9687,28 +9599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3199469094601482643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3199469094601482641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
-    Disabled\r.\n - 2 : The monstes are always in their Wait mode and only activate
-    when the player is in their FOV. (for the Changeling, it always stays disguised
-    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
-    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
-    4 : Same as Level 3, but the countdowns between each of the monsters' actions
-    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
-    5 : The monsters are always in Attack mode and their countdonws are reduced to
-    the minimum (used in Nightmare mode).\r\n"
 --- !u!1001 &4181738222424148680
 PrefabInstance:
   m_ObjectHideFlags: 0
