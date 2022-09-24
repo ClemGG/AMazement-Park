@@ -540,12 +540,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[0].<SceneToLoad>k__BackingField
       value: 
       objectReference: {fileID: 102900000, guid: bf2a662ba9af9a24d8be899ce239d51e, type: 3}
+    - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
+      propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[1].<SceneToLoad>k__BackingField
+      value: 
+      objectReference: {fileID: 102900000, guid: 95b2df3df7c3136488719944bd406b72, type: 3}
     - target: {fileID: 8563444938978194030, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: m_Name
       value: SceneMaster

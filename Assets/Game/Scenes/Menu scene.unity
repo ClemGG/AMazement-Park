@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.08
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -206,17 +206,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186223669}
   m_Mesh: {fileID: 0}
---- !u!114 &186946011 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6412163040175403811, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
-  m_PrefabInstance: {fileID: 6438777877635161736}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &256298309
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +299,7 @@ MonoBehaviour:
   <LevelSelectScene>k__BackingField:
     <SceneToLoad>k__BackingField: {fileID: 102900000, guid: 93a894d05af418140b5325e9974cc6f7, type: 3}
     <SetAsActiveScene>k__BackingField: 0
-  _volumeSlider: {fileID: 186946011}
+  _volumeSlider: {fileID: 0}
   _mouseSlider: {fileID: 461003087}
 --- !u!1 &762968443
 GameObject:
@@ -928,12 +917,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[0].<SceneToLoad>k__BackingField
       value: 
       objectReference: {fileID: 102900000, guid: f74867488ffed174082c79578befd257, type: 3}
+    - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
+      propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[1].<SceneToLoad>k__BackingField
+      value: 
+      objectReference: {fileID: 102900000, guid: 95b2df3df7c3136488719944bd406b72, type: 3}
     - target: {fileID: 8563444938978194030, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: m_Name
       value: SceneMaster

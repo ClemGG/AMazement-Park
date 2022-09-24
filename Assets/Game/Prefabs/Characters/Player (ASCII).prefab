@@ -93,7 +93,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 955735051, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 955735051, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: <Fog>k__BackingField
@@ -111,9 +111,13 @@ PrefabInstance:
       propertyPath: <FogDensity>k__BackingField
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 955735051, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
+      propertyPath: <BgColTransp>k__BackingField
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 1029558609990316574, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: m_Name
-      value: Player (ASCII) Variant
+      value: Player (ASCII)
       objectReference: {fileID: 0}
     - target: {fileID: 3106006350808465126, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
