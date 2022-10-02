@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 3199469095371400820}
   - component: {fileID: 3199469095371400822}
   - component: {fileID: 3199469095371400821}
-  - component: {fileID: 8509230069117714980}
+  - component: {fileID: 813872024927044073}
   m_Layer: 0
   m_Name: Monster Image
   m_TagString: Untagged
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.35
---- !u!114 &8509230069117714980
+--- !u!114 &813872024927044073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1100,17 +1100,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3199469095371400819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
+  <Header>k__BackingField: Agressivity Level
   <Content>k__BackingField: "The Hostility levels for each monster.\r\n\r\n - 1 :
-    Disabled\r \n - 2 : The monstes are always in their Wait mode and only activate
+    Disabled\r\n\n - 2 : The monstes are always in their Wait mode and only activate
     when the player is in their FOV. (for the Changeling, it always stays disguised
-    and justs flies away, and the Cheater is always at 1 maximum).\r\n - 3 : The
-    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n-
+    and justs flies away, and the Cheater is always at 1 maximum).\r\n\n - 3 : The
+    default activity level for all hostile monsters (used in Easy and Normal modes).\r\n\n-
     4 : Same as Level 3, but the countdowns between each of the monsters' actions
-    decreases over time, making them more aggressive over time (used in Hard mode).\r\n-
+    decreases over time, making them more aggressive over time (used in Hard mode).\r\n\n-
     5 : The monsters are always in Attack mode and their countdonws are reduced to
     the minimum (used in Nightmare mode).\r\n"
 --- !u!1001 &3199469095496201512

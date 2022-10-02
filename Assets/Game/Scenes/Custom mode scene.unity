@@ -673,13 +673,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 171828487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Determines how many Tiles you can see in front of you
-    at the start of the game. You Field of View gradually decreases over time (except
-    in Easy Mode).
+  <Header>k__BackingField: Player FOV
+  <Content>k__BackingField: "The number of Cells the Player can see in front of him.
+    \nIt decreases over time in all modes except Easy mode."
 --- !u!1 &176626712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,12 +1777,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 472382944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Click the 'Generate button' to display a sample of what
-    king of maze will be created by your custom settings.
+  <Header>k__BackingField: Preview
+  <Content>k__BackingField: Clicking on Generate will display a 2D preview of the
+    kind of maze you will be running through in your session.
 --- !u!1001 &525396306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1793,12 +1792,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[0].<SceneToLoad>k__BackingField
       value: 
-      objectReference: {fileID: 102900000, guid: f74867488ffed174082c79578befd257, type: 3}
+      objectReference: {fileID: 102900000, guid: 65ed1fdcf7a2be248ad9f3e14e56632b, type: 3}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[1].<SceneToLoad>k__BackingField
       value: 
@@ -4336,27 +4335,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 912248236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: 'The generation sub-algorithm used by the Growing Tree
-    algorithm (This field is exclusive to that algorithm)
-
-
-    - Random Cell : Gives
-    a random layout (Simple Prim algorithm)
-
-
-    - Last Cell : Defaults to the Recursive
-    Backtracker algorithm
-
-
-    - First Cell : Creates only elongated parallel corridors
-
-
-    -
-    First and Last Mix : Mixes between the Recursive Backtracker and the Simple Prim'
+  <Header>k__BackingField: Lambda Selection
+  <Content>k__BackingField: "Different patterns used by the Growing Tree algorithm
+    : \n\n- Simple Cell : Spreads out from the starting Cell of the maze\n\n- Last
+    Cell : Creates elongated corridors\n\n- First Cell : Creates long, paralle corridors\n\n-
+    First and Last Mix : Randomly switches at any point between the last 2 patterns."
 --- !u!1 &948307917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1830075504, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -4367,7 +4353,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8104085604160709157, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 382796321}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &996802492
+--- !u!114 &996802495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4376,12 +4362,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 996802489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Displays the shortest paths between the different monsters
-    and items in the game.
+  <Header>k__BackingField: Show best paths
+  <Content>k__BackingField: Shows the best paths between the Player, the enemies
+    and the items in the maze.
 --- !u!1001 &1029997021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5202,12 +5188,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121798680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: The size of the rooms generated by the Recursive Division
-    algorithm (This field is exclusive to that algorithm)
+  <Header>k__BackingField: Room Size
+  <Content>k__BackingField: The max size of the Rooms generated by the Recursive
+    Backtracker algorithm.
 --- !u!1001 &1155179236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5814,13 +5800,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1392211899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Removes deadens to create loops in the maze. It is recommended
-    to leave this at 1 for beginners. This field is a percentage (1 = 100% of dead
-    ends will be removed).
+  <Header>k__BackingField: Braid Rate
+  <Content>k__BackingField: Determines the percntage of dead ends in the maze (For
+    beginners, it's best to leave this at 1, ie. no deadends).
 --- !u!1 &1434736779
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,12 +6142,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456767325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Should the Recursive algorithm favor rooms and create
-    fewer corridors? (This field is exclusive to that algorithm)
+  <Header>k__BackingField: Bias Towards Rooms
+  <Content>k__BackingField: If checked, the Recursive Backtracker will tend to create
+    more rooms than corridors.
 --- !u!1 &1470567645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,12 +6607,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579265381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Narrows the corridors to make the maze more claustrophobic
-    (0 = no narrowing).
+  <Header>k__BackingField: Inset
+  <Content>k__BackingField: Reduces the corridors' width to give a more claustrophobic
+    feel to the maze.
 --- !u!224 &1588696746 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1588696746, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -6808,18 +6793,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732695722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: "You can reference a mask file to make the alogithm ignore
-    certain cells during generation. Not all algorithms support masks. To use a mask,
-    enter its name with the extension and press 'Browse'. \n\nYou can find  all available
-    masks at the path '[You exe folder]\\AMAzement-Park_Data\\StreamingAssets\\Masks'.
-    To use your own mask, use the color black to hide cells (if image) or the 'X'
-    character (if text file), then place it in that folder. Masks with dimensions
-    superior to 30x30 are not allowed.\n\nAllowed file extensions : .txt, .png, .jpg,
-    .jpeg, .jpe, .jfif"
+  <Header>k__BackingField: Mask
+  <Content>k__BackingField: 'Masks hide some Cells of the maze from the algorithms
+    to make them unusable during the generation process. To add a mask, copy-paste
+    the link to its file in the field below.
+
+
+    You can find premade masks at
+    [Your_game_folder_location]/AMazement-Park_Data/StreamingAssets/Masks.
+
+
+    Allowed
+    extensions: .txt, .png, .jpg, .jpeg, .jpe, .jfif'
 --- !u!1001 &1765562894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6978,6 +6966,10 @@ PrefabInstance:
     - target: {fileID: 1930860797, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 813872024927044073, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
+      propertyPath: <Content>k__BackingField
+      value: The Cheater can only be active or inactive.
       objectReference: {fileID: 0}
     - target: {fileID: 2807808658295820969, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
       propertyPath: m_Text
@@ -7242,8 +7234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: 'The Cheater only has 2 states : Enabled or Disabled.'
 --- !u!1 &1791988117
 GameObject:
   m_ObjectHideFlags: 0
@@ -7912,6 +7902,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: <Header>k__BackingField
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: <Content>k__BackingField
+      value: "If enabled, the player will have to pick it up to display the maze.
+        \nIf disabled, the Map is enabled by default."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
 --- !u!224 &1880646618 stripped
@@ -7924,26 +7923,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 1880646617}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1880646620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
-  m_PrefabInstance: {fileID: 1880646617}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1880646621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880646620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: If enabled, the map of the maze will be enabled by default.
-    If disabled, you will need to pick up the Map item to the the maze on the HUD.
 --- !u!1001 &1910967762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8064,18 +8043,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910967764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: 'Adjusts the level of mixing between the two sub-alogirthms
-    used by the Houston algorithm : Aldous-Broder and Wilson. AB starts fast, ends
-    slow ; Wilson is the opposite.
-
-
-    It is recommended to leave it at 0.5 to
-    avoid potential long generation times (0 = Aldous-Broder alogithm ; 1 = Wilson
-    algorithm).'
+  <Header>k__BackingField: Houston Swap Percent
+  <Content>k__BackingField: 'The Houston algorithm is a mix between 2 random algorithms
+    : the Aldous-Broder (starts fast, ends slow) and the Wilson (Starts slow, ends
+    fast). This percentage determines the bias towards one or another (It''s best
+    to leave it at 0.5 for best performances).'
 --- !u!1 &1944534355
 GameObject:
   m_ObjectHideFlags: 0
@@ -8510,7 +8485,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
   m_PrefabInstance: {fileID: 2032816224}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2032816228
+--- !u!114 &2032816231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8519,12 +8494,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 26441942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: Displays a visual of the algorithm's bias (pattern) from
-    the starting cell.
+  <Header>k__BackingField: Show heat map
+  <Content>k__BackingField: Shows on the preview how the algorithm developed over
+    the course of the generation.
 --- !u!1001 &2048777106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8881,6 +8856,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: <Header>k__BackingField
+      value: Tracker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: <Content>k__BackingField
+      value: "If enabled, the player will have to pick it up to hear and see the
+        monsters on the HUD. \nIf disabled, the Tracker is enabled by default."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
 --- !u!224 &2136621507 stripped
@@ -8893,26 +8877,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 2136621506}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2136621509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
-  m_PrefabInstance: {fileID: 2136621506}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2136621510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136621509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: If enabled, the monsters will be visible by default on
-    the map. If disabled, you will have to pick up the Motion Tracker to see them.
 --- !u!1001 &2100548829823229870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9378,6 +9342,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: <Header>k__BackingField
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: <Content>k__BackingField
+      value: "If enabled, the Player will have to pick it up to activate the exit.
+        \nIf disabled, the exit is active by default."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
 --- !u!224 &3003727303056272757 stripped
@@ -9385,26 +9358,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2508568008702257189, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 3003727303056272756}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3003727303056272758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
-  m_PrefabInstance: {fileID: 3003727303056272756}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3003727303056272759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3003727303056272758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: If enabled, the exit of the maze will be enabled by default.
-    If disabled, you will need to pick up the Key item to open it.
 --- !u!1001 &3199469094601482640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10093,16 +10046,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8104085602337290937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9894b3f41003e86438f3cae4398f2bd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c221028e4324c14c95e036894219653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Header>k__BackingField: 
-  <Content>k__BackingField: 'Determines the generation type of the maze, ie its shape.
-
-
-    If
-    you want to better see the differences between them, set the Braid Rate to 0
-    before clicking on Generate.'
+  <Header>k__BackingField: Algorithm Type
+  <Content>k__BackingField: 'Generates different patterns depending on the type :
+    Elongated corridors, big rooms, random generation, etc.'
 --- !u!114 &8887056246482796832
 MonoBehaviour:
   m_ObjectHideFlags: 0

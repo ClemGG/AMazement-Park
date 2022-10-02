@@ -21,12 +21,9 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/3D scene.unity
     guid: 0c0523b0218637b40a00a949ea4f5f72
   - enabled: 1
-    path: Assets/Game/Scenes/Additional scenes/Tooltip scene.unity
-    guid: f74867488ffed174082c79578befd257
-  - enabled: 1
     path: Assets/Game/Scenes/Additional scenes/Pause scene.unity
     guid: bf2a662ba9af9a24d8be899ce239d51e
   - enabled: 1
-    path: Assets/Game/Scenes/Additional scenes/Audio Scene.unity
-    guid: 95b2df3df7c3136488719944bd406b72
+    path: Assets/Game/Scenes/Additional scenes/Tooltip scene.unity
+    guid: 65ed1fdcf7a2be248ad9f3e14e56632b
   m_configObjects: {}

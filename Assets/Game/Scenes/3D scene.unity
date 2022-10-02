@@ -540,7 +540,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[0].<SceneToLoad>k__BackingField

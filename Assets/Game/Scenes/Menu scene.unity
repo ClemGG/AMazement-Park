@@ -917,12 +917,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[0].<SceneToLoad>k__BackingField
       value: 
-      objectReference: {fileID: 102900000, guid: f74867488ffed174082c79578befd257, type: 3}
+      objectReference: {fileID: 102900000, guid: 65ed1fdcf7a2be248ad9f3e14e56632b, type: 3}
     - target: {fileID: 8563444938978194028, guid: bc48ba4cec318d74583f7b8346fe2282, type: 3}
       propertyPath: <InitialAdditiveScenes>k__BackingField.Array.data[1].<SceneToLoad>k__BackingField
       value: 
