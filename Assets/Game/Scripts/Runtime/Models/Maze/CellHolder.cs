@@ -10,8 +10,8 @@ namespace Project.Models.Maze
     public class CellHolder
     {
         public Cell Cell { get; set; }
-        public List<IEntity> ObjectsOnThisCell { get; set; } = new();
-        public bool Occupied { get => ObjectsOnThisCell.Count > 0; }
+        public List<IEntity> EntitiesOnThisCell { get; set; } = new();
+        public bool Occupied { get => EntitiesOnThisCell.Count > 0; }
 
         public CellHolder(Cell c)
         {

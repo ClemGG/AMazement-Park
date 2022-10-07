@@ -62,12 +62,12 @@ namespace Project.ViewModels.Maze
         {
             CellHolder ch = GetCellHolder(c);
             ch.Cell = c;
-            ch.ObjectsOnThisCell.Add(e);
+            ch.EntitiesOnThisCell.Add(e);
         }
 
         public static void RemoveEntityFromCell(Cell c, IEntity e)
         {
-            GetCellHolder(c).ObjectsOnThisCell.Remove(e);
+            GetCellHolder(c).EntitiesOnThisCell.Remove(e);
         }
 
         public static void MoveEntity(IEntity e, Cell from, Cell to)

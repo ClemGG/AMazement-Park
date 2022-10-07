@@ -33,6 +33,13 @@ namespace Project.Models.Maze
         //Set to 10 by default for a normal session in custom Mode.
         [field: SerializeField] public int MaxNumberOfRuns { get; set; } = 10;
 
+
+        /// <summary>
+        /// Le temps en secondes avant que les monstres ne restent actifs jusqu'à la fin de la partie
+        /// (15 minutes par défaut)
+        /// </summary>
+        [field: SerializeField] public float ActiveTimeLimit { get; set; } = 900f;
+
         protected override void OnValidate()
         {
             base.OnValidate();

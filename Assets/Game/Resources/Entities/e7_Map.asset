@@ -16,3 +16,4 @@ MonoBehaviour:
   <Name>k__BackingField: Map
   <Icon>k__BackingField: {fileID: 21300000, guid: 49099387fc342264ab0f9694539c28d2, type: 3}
   <Prefab>k__BackingField: {fileID: 2180981832501314308, guid: 8fab007f0f47e3e48958fe2e5a8812ea, type: 3}
+  <EntityType>k__BackingField: 2

@@ -177,7 +177,7 @@ namespace Project.ViewModels.Draw
                                 CellHolder ch = MazeManager.GetCellHolder(cell);
                                 if (ch.Occupied)
                                 {
-                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                    Object.Instantiate(ch.EntitiesOnThisCell[^1].Prefab,
                                         new Vector3(x + _inset, 0, -(z + _inset)),
                                         Quaternion.identity,
                                         Props);
@@ -204,7 +204,7 @@ namespace Project.ViewModels.Draw
                                 CellHolder ch = MazeManager.GetCellHolder(cell);
                                 if (ch.Occupied)
                                 {
-                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                    Object.Instantiate(ch.EntitiesOnThisCell[^1].Prefab,
                                         new Vector3(j * cellWidth, 0, -(i - grid.Rows + 1) * cellWidth),
                                         Quaternion.identity,
                                         Props);
@@ -310,7 +310,7 @@ namespace Project.ViewModels.Draw
                                 CellHolder ch = MazeManager.GetCellHolder(cell);
                                 if (ch.Occupied)
                                 {
-                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                    Object.Instantiate(ch.EntitiesOnThisCell[^1].Prefab,
                                         new Vector3(x + _inset, 0, -(z + _inset)),
                                         Quaternion.identity,
                                         Props);
@@ -337,7 +337,7 @@ namespace Project.ViewModels.Draw
                                 CellHolder ch = MazeManager.GetCellHolder(cell);
                                 if (ch.Occupied)
                                 {
-                                    Object.Instantiate(ch.ObjectsOnThisCell[^1].Prefab,
+                                    Object.Instantiate(ch.EntitiesOnThisCell[^1].Prefab,
                                         new Vector3(j * cellWidth, 0, -(i - grid.Rows + 1) * cellWidth),
                                         Quaternion.identity,
                                         Props);

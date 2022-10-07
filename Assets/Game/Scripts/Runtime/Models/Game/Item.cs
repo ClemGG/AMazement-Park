@@ -1,3 +1,4 @@
+using Project.Models.Game.Enums;
 using UnityEngine;
 
 namespace Project.Models.Game
@@ -9,5 +10,6 @@ namespace Project.Models.Game
         [field: SerializeField] public string Name { get; set; }
         [field: SerializeField] public Sprite Icon { get; set; }
         [field: SerializeField] public GameObject Prefab { get; set; }
+        [field: SerializeField] public EntityType EntityType { get; set; }
     }
 }

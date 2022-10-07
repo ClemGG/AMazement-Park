@@ -470,7 +470,7 @@ namespace Project.ViewModels.Draw
         private void DrawEntityCell(Vector2 size, Vector3 anchoredPos, CellHolder cellHolder)
         {
             Image cellImg = DrawCell(size, anchoredPos, Color.white);
-            Sprite s = cellHolder.ObjectsOnThisCell[^1].Icon;
+            Sprite s = cellHolder.EntitiesOnThisCell[^1].Icon;
             cellImg.sprite = s;
         }
 
