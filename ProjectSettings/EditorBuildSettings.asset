@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Additional scenes/Tooltip scene.unity
     guid: 65ed1fdcf7a2be248ad9f3e14e56632b
+  - enabled: 1
+    path: Assets/Game/Scenes/Defeat scene.unity
+    guid: 2c65da05b362108449f467044bc84ba5
+  - enabled: 1
+    path: Assets/Game/Scenes/Victory scene.unity
+    guid: d8cfeddc93e45534e84c7416812cdd9b
   m_configObjects: {}

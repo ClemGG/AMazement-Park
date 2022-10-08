@@ -771,6 +771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSessionManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2892308045800488219, guid: f8b4d723e588c094cab2a82157853807, type: 3}
+      propertyPath: <VictoryScene>k__BackingField.<SceneToLoad>k__BackingField
+      value: 
+      objectReference: {fileID: 102900000, guid: d8cfeddc93e45534e84c7416812cdd9b, type: 3}
     - target: {fileID: 3074856364097494175, guid: f8b4d723e588c094cab2a82157853807, type: 3}
       propertyPath: m_RootOrder
       value: 2

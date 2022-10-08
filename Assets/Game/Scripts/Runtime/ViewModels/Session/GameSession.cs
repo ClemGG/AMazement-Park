@@ -1,5 +1,7 @@
+using System;
 using Project.Models.Game.Enums;
 using Project.Models.Maze;
+using UnityEngine;
 
 namespace Project.ViewModels
 {
@@ -22,6 +24,11 @@ namespace Project.ViewModels
         /// </summary>
         public static bool IsActiveTimeReached { get; set; } = false;
 
+        /// <summary>
+        /// TRUE si le Tricheur a été utilisé pour finir le dédale
+        /// </summary>
+        public static bool WasCheaterUsed { get; set; } = false;
+
         #endregion
 
         #region Accessors
@@ -29,7 +36,12 @@ namespace Project.ViewModels
         /// <summary>
         /// Combien de niveaux a-t'on traversé ?
         /// </summary>
-        public static int NbLevelWon { get; private set; } = 0;
+        public static int NbLevelsWon { get; private set; } = 0;
+
+        public static string TimeInMinutesSeconds
+        {
+            get => TimeSpan.FromSeconds(ElapsedTime).ToString("m\\:ss");
+        }
 
         #endregion
 
@@ -41,6 +53,17 @@ namespace Project.ViewModels
         public static void InitNewSession()
         {
             ElapsedTime = 0f;
+            IsActiveTimeReached = DifficultyLevel == Difficulty.Nightmare;
+            WasCheaterUsed = false;
+        }
+
+        /// <summary>
+        /// Quand le joueur a réussi un dédale
+        /// </summary>
+        public static void OnVictory()
+        {
+            NbLevelsWon++;
+            PlayerPrefs.SetInt($"{DifficultyLevel}_victories", NbLevelsWon);
         }
 
         #endregion

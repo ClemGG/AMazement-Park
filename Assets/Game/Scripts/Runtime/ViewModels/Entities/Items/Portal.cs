@@ -1,3 +1,4 @@
+using System;
 using Project.Models.Game;
 using Project.Models.Game.Enums;
 using UnityEngine;
@@ -12,10 +13,20 @@ namespace Project.ViewModels.Entities.Items
     [RequireComponent(typeof(BoxCollider))]
     public class Portal : EntityTrigger, IItemTrigger
     {
+        #region Events
+
+        /// <summary>
+        /// Quand le portail est atteint
+        /// </summary>
+        public EventHandler<bool> OnPortalReachedEvent = delegate { };
+
+        #endregion
+
         #region Public Fields
 
         [field: SerializeField]
         public Item Item { get; set; }
+
         public bool IsUnlocked { get; set; } = false;
 
         #endregion
@@ -25,7 +36,9 @@ namespace Project.ViewModels.Entities.Items
         private void Start()
         {
             //Par défaut le portail est désactivé, sauf en mode Facile
-            IsUnlocked = GameSession.DifficultyLevel == Models.Game.Enums.Difficulty.Easy;
+            //ou en Mode Custom avec la clé désactivée
+            IsUnlocked = GameSession.DifficultyLevel == Models.Game.Enums.Difficulty.Easy ||
+                         GameSession.DifficultyLevel == Difficulty.Custom && GameSession.Settings.ActiveItems[0] == false;
         }
 
         #endregion
@@ -36,9 +49,11 @@ namespace Project.ViewModels.Entities.Items
         {
             // Quand atteint, termine la Session, incrément le nombre de victoires
             // et lance la scène de transition vers le niveau suivant
-            if(entity.EntityType == EntityType.Player)
+            if (entity.EntityType == EntityType.Player)
             {
-
+                //AF: Afficher un message en jeu pour indiquer
+                //au joueur qu'il doit ramasser la clé
+                OnPortalReachedEvent(this, IsUnlocked);
             }
         }
 

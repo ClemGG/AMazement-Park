@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Custom
   m_EditorClassIdentifier: 
   <DrawMode>k__BackingField: 2
-  <GenerationType>k__BackingField: 12
+  <GenerationType>k__BackingField: 1
   <GridSize>k__BackingField: {x: 10, y: 10}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
   <RoomSize>k__BackingField: {x: 1, y: 1}
   <BiasTowardsRooms>k__BackingField: 0
   <LambdaSelection>k__BackingField: 0
-  <Inset>k__BackingField: 0.25
+  <Inset>k__BackingField: 0
   <BraidRate>k__BackingField: 1
   <HoustonSwapPercent>k__BackingField: 0.5
   <ImageMask>k__BackingField: {fileID: 0}
@@ -30,3 +30,4 @@ MonoBehaviour:
   <ActiveItems>k__BackingField: 010101
   <PlayerFOV>k__BackingField: 7
   <MaxNumberOfRuns>k__BackingField: 10
+  <ActiveTimeLimit>k__BackingField: 900
