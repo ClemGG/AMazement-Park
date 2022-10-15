@@ -53,10 +53,9 @@ public class VictoryView : MonoBehaviour
          */
 
         WaitForSeconds delay = new(5f);
-        bool levelNbIsEven = GameSession.NbLevelsWon % 2 == 0;
-        bool wasLastLevel = GameSession.NbLevelsWon == GameSession.Settings.MaxNumberOfRuns;
+        bool levelNbIsEven = GameSession.NbLevelsWon % (GameSession.NbItemsUsed > 1 ? 2 : 4) == 0;
 
-        if (GameSession.WasCheaterUsed || wasLastLevel)
+        if (GameSession.WasCheaterUsed || GameSession.HasReachedTimeLimit || GameSession.WasLastLevel)
         {
             VictoryField.SetText(string.Format(AngryVictoryMsg, GameSession.TimeInMinutesSeconds));
         }
@@ -67,14 +66,20 @@ public class VictoryView : MonoBehaviour
 
         yield return delay;
 
-        if (levelNbIsEven && !wasLastLevel)
+        //Un fois tous les deux niveaux, ou si le Tricheur a été utilisé,
+        //on rajoute un monstre au hasard
+        if (levelNbIsEven && !GameSession.WasLastLevel || GameSession.ShouldSpawnNewMonster)
         {
             VictoryField.SetText(NewMonsterVictoryMsg);
+            GameSession.AddNewRandomMonster();
             yield return delay;
         }
 
+        //Permet d'ajouter un nouveau monstre à la prochaine victoire
+        GameSession.WasMonsterSpawnedLastLevel = false;
+
         //Une fois le message affiché, on peut retourner au jeu
-        if (wasLastLevel)
+        if (GameSession.WasLastLevel)
         {
             SceneMaster.Instance.LoadSingleSceneAsync(MenuScene);
         }

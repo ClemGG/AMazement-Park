@@ -45,7 +45,7 @@ namespace Project.ViewModels
 
         private void Start()
         {
-            GameSession.InitNewSession();
+            GameSession.InitNewRun();
         }
 
         private void Update()

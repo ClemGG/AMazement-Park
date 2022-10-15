@@ -1,17 +1,16 @@
-using Project.Models.Maze;
-using Project.Procedural.MazeGeneration;
-using UnityEngine;
-using UnityEngine.UI;
-using Project.Models.Game.Enums;
-using UnityEngine.SceneManagement;
-using TMPro;
 using System.Collections.Generic;
-using static Enums;
-using static Project.Services.StringFormatterService;
 using System.IO;
+using Project.Models.Game.Enums;
+using Project.Models.Maze;
+using Project.Models.Scenes;
+using Project.Procedural.MazeGeneration;
 using Project.ViewModels;
 using Project.ViewModels.Scenes;
-using Project.Models.Scenes;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using static Enums;
+using static Project.Services.StringFormatterService;
 
 namespace Project.View.UIs
 {
@@ -478,6 +477,13 @@ namespace Project.View.UIs
         public void OnMonsterFieldValueChanged(int index)
         {
             int value = (int)MonsterFields[index].value;
+            //Si c'est le Chasseur, on ne met au minimum au niveau 2
+            //pour ne jamais le désactiver
+            if(index == 0)
+            {
+                value = Mathf.Max(value, 2);
+                MonsterFields[index].value = value;
+            }
             Settings.ActivityLevels[index] = value;
             UpdateMonsterJauges(index);
         }

@@ -142,7 +142,7 @@ namespace Project.Services
 
             settings.PlayerFOV = 7f * settings.MeshCellSize.x;
             settings.ActiveItems = new[] { true, true, true };
-            settings.ActivityLevels = new[] { 3, 3, 3, 3, 2 };
+            settings.ActivityLevels = new[] { 3, 0, 0, 0, 2 };
         }
 
         private static void SetHardSettings(CustomMazeSettingsSO settings)
@@ -178,7 +178,7 @@ namespace Project.Services
 
             settings.PlayerFOV = 5f * settings.MeshCellSize.x;
             settings.ActiveItems = new[] { true, false, false };
-            settings.ActivityLevels = new[] { 4, 4, 4, 4, 2 };
+            settings.ActivityLevels = new[] { 4, 0, 0, 0, 2 };
         }
 
         private static void SetNightmareSettings(CustomMazeSettingsSO settings)

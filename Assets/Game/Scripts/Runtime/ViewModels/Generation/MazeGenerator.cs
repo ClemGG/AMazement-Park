@@ -180,7 +180,7 @@ namespace Project.ViewModels.Generation
             //Add monsters
             for (int i = 1; i < characters.Length; i++)
             {
-                if (Settings.ActivityLevels[i - 1] > 1)
+                if (GameSession.ActivityLevels[i - 1] > 1)
                 {
                     IEntity monster = characters[i];
 

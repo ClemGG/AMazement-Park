@@ -1,6 +1,7 @@
 using Project.Models.Game.Enums;
 using Project.Models.Scenes;
 using Project.Procedural.MazeGeneration;
+using Project.ViewModels;
 using Project.ViewModels.Scenes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,9 @@ namespace Project.View.UIs
 
         private void Awake()
         {
+            //Nettoie le GameSession quand on revient sur cet écran
+            GameSession.ResetGameSession();
+
             MenuCam.SetActive(false);
             Generator = FindObjectOfType<ViewModels.Generation.MazeGenerator>();
             Generator.OnMazeDone += OnMazeDone;
