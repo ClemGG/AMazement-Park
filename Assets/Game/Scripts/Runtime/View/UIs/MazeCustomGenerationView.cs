@@ -237,6 +237,7 @@ namespace Project.View.UIs
             Settings.ActivityLevels = new int[5] { 3, 3, 3, 3, 2 };
             Settings.ActiveItems = new bool[3] { true, true, true };
             Settings.PlayerFOV = 7f;
+            GameSession.ActivityLevels = new int[5] { 2, 2, 2, 2, 2 };
         }
 
         #endregion
@@ -527,6 +528,7 @@ namespace Project.View.UIs
         public void PlayMazeBtn()
         {
             Generator.Cleanup();
+            GameSession.ResetGameSession();
             SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 

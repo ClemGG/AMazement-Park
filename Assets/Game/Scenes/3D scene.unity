@@ -772,6 +772,14 @@ PrefabInstance:
       value: GameSessionManager
       objectReference: {fileID: 0}
     - target: {fileID: 2892308045800488219, guid: f8b4d723e588c094cab2a82157853807, type: 3}
+      propertyPath: <PersistBetweenScenes>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892308045800488219, guid: f8b4d723e588c094cab2a82157853807, type: 3}
+      propertyPath: <DefeatScene>k__BackingField.<SceneToLoad>k__BackingField
+      value: 
+      objectReference: {fileID: 102900000, guid: 2c65da05b362108449f467044bc84ba5, type: 3}
+    - target: {fileID: 2892308045800488219, guid: f8b4d723e588c094cab2a82157853807, type: 3}
       propertyPath: <VictoryScene>k__BackingField.<SceneToLoad>k__BackingField
       value: 
       objectReference: {fileID: 102900000, guid: d8cfeddc93e45534e84c7416812cdd9b, type: 3}

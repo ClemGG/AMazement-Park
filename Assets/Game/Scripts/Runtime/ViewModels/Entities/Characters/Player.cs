@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using Project.Models.Game;
+using Project.ViewModels;
 using Project.ViewModels.Entities.Items;
 using UnityEngine;
 

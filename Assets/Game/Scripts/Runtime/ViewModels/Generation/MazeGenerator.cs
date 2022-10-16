@@ -45,7 +45,7 @@ namespace Project.ViewModels.Generation
         #region Mono
 
         //In the Game scene, automatically loads the level
-        private void Start()
+        private void Awake()
         {
             if (GenerateOnStart)
             {
@@ -180,7 +180,14 @@ namespace Project.ViewModels.Generation
             //Add monsters
             for (int i = 1; i < characters.Length; i++)
             {
-                if (GameSession.ActivityLevels[i - 1] > 1)
+                //On doit faire la différence entre les modes
+                //car le GameSession.ActivityLevels est mis à 0 quand on génère un nouveau dédale,
+                //ce qui empêche les icones d'apparaître en mode Custom
+                bool shouldAddMonster =
+                    GameSession.ActivityLevels[i - 1] > 1 && GameSession.DifficultyLevel != Difficulty.Custom ||
+                    Settings.ActivityLevels[i - 1] > 1 && GameSession.DifficultyLevel == Difficulty.Custom;
+                
+                if (shouldAddMonster)
                 {
                     IEntity monster = characters[i];
 

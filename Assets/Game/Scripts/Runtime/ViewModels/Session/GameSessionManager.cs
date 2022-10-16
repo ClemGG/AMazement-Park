@@ -1,4 +1,4 @@
-using System.Reflection.Emit;
+using Project.Core;
 using Project.Models.Scenes;
 using Project.Procedural.MazeGeneration;
 using Project.ViewModels.Entities.Items;
@@ -12,12 +12,15 @@ namespace Project.ViewModels
     /// Assigne les correctes valeurs aux monstres, items et joueurs,
     /// et màj la GamSession en cours
     /// </summary>
-    public class GameSessionManager : MonoBehaviour
+    public class GameSessionManager : SingletonBehaviour<GameSessionManager>
     {
         #region Public Fields
 
         [field: SerializeField]
         public SceneToLoadParams VictoryScene { get; set; }
+
+        [field: SerializeField]
+        public SceneToLoadParams DefeatScene { get; set; }
 
         #endregion
 
@@ -51,6 +54,17 @@ namespace Project.ViewModels
         private void Update()
         {
             ComputeElapsedTime();
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        //Appelé quand le joueur perd la partie
+        public void OnDefeat()
+        {
+            GameSession.OnDefeat();
+            SceneMaster.Instance.LoadSingleSceneAsync(DefeatScene);
         }
 
         #endregion

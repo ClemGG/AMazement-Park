@@ -37,6 +37,18 @@ namespace Project.ViewModels
         /// </summary>
         public static bool WasMonsterSpawnedLastLevel { get; set; } = false;
 
+        /// <summary>
+        /// Les valeurs des monstres, copiés à la génération des paramètres.
+        /// </summary>
+        public static int[] ActivityLevels { get; set; } = new int[]
+        {
+            0,
+            0,
+            0,
+            0,
+            0
+        };
+
         #endregion
 
         #region Accessors
@@ -88,18 +100,6 @@ namespace Project.ViewModels
             }
         }
 
-        /// <summary>
-        /// Les valeurs des monstres, copiés à la génération des paramètres.
-        /// </summary>
-        public static int[] ActivityLevels { get; private set; } = new int[]
-        {
-            0,
-            0,
-            0,
-            0,
-            0
-        };
-
         #endregion
 
         #region Private Fields
@@ -118,11 +118,11 @@ namespace Project.ViewModels
         {
             ActivityLevels = new int[]
             {
-                -1,
-                -1,
-                -1,
-                -1,
-                -1
+                0,
+                0,
+                0,
+                0,
+                0
             };
             InitNewRun();
             _isNewSession = true;
@@ -178,6 +178,15 @@ namespace Project.ViewModels
                 int alea = randomIndexes.Sample();
                 randomIndexes[alea] = DifficultyLevel == Difficulty.Normal ? 3 : 4;
             }
+        }
+
+        /// <summary>
+        /// Quand le joueur est tué par le Chasseur
+        /// </summary>
+        public static void OnDefeat()
+        {
+            PlayerPrefs.SetInt($"{DifficultyLevel}_victories", NbLevelsWon);
+            ResetGameSession();
         }
 
         #endregion
