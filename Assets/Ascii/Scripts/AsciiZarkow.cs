@@ -37,10 +37,10 @@ namespace Project.Shaders.AsciiImageEffect
 		private float CharColTransp { get; set; } = 1f;
 		[field: SerializeField, Range(0f, 1f)]
 		private float BgColTransp { get; set; } = 0f;
+        [field: SerializeField]
+        private bool Fog { get; set; } = false;
 		[field: SerializeField]
-		private bool Fog { get; set; } = false;
-		[field: SerializeField, Range(0f, 0.25f)]
-		private float FogDensity { get; set; } = .08f;
+		private float FogDensity { get; set; } = 30f;
 		[field: SerializeField]
 		private Color FogColor { get; set; } = Color.black;
 
@@ -96,9 +96,9 @@ namespace Project.Shaders.AsciiImageEffect
 			//Pour éviter que la prefab ne change les paramètres au lieu de l'instance
 			if (!PrefabModeIsActive(gameObject))
 			{
-				RenderSettings.fog = Fog;
-				RenderSettings.fogColor = FogColor;
-				RenderSettings.fogDensity = FogDensity;
+				//RenderSettings.fog = Fog;
+				//RenderSettings.fogColor = FogColor;
+				//RenderSettings.fogDensity = FogDensity;
 
 				if (enabled && gameObject.activeInHierarchy)
 				{
@@ -124,6 +124,7 @@ namespace Project.Shaders.AsciiImageEffect
 		private void Awake()
 		{
 			_camera = GetComponent<Camera>();
+			_camera.depthTextureMode = DepthTextureMode.DepthNormals;
 
             if (!Shader) {
 				Debug.LogError ("Ascii shader not found.");
@@ -235,8 +236,13 @@ namespace Project.Shaders.AsciiImageEffect
 			_materialToEdit.SetFloat(@"monitorWidthMultiplier", Screen.width / CharSize.x);
 			_materialToEdit.SetFloat(@"monitorHeightMultiplier", Screen.height / CharSize.y);
 
-            //print(Screen.width + " ; " + Screen.height);
-        }
+			//Depth
+			_materialToEdit.SetFloat(@"fogDensity", FogDensity);
+			_materialToEdit.SetFloat(@"useFog", Fog ? 1f : 0f);
+			_materialToEdit.SetColor(@"fogColor", FogColor);
+
+			//print(Screen.width + " ; " + Screen.height);
+		}
 
 
 		private void SetTexturesOnMaterial()

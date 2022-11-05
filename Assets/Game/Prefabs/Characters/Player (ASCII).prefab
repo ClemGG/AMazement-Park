@@ -108,10 +108,6 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 955735051, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
-      propertyPath: <FogDensity>k__BackingField
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 955735051, guid: 28c45489181c5a04cb7310d2c227d58f, type: 3}
       propertyPath: <BgColTransp>k__BackingField
       value: 0.15
       objectReference: {fileID: 0}

@@ -40,6 +40,11 @@ sampler2D Light7Sampler;
 sampler2D Light8Sampler;
 sampler2D Light9Sampler;
 
+float useFog = 1.0f;
+float fogDensity = 1.0f;
+float4 fogColor;
+sampler2D _CameraDepthNormalsTexture;
+
 
 
 struct VertexShaderInput
@@ -89,11 +94,24 @@ float4 PixelShaderFunction(v2f_img i) : COLOR // was float2 texCoord : TEXCOORD0
   float4 col = tex2D(_MainTex, grayPixelPos);	//You can use i.uv instead of grayPixelPos for smooth colors on chars instead of hard colors
   float3 pixel = col.rgb;
 
+
+  //Fog Depth
+  float4 NormalDepth;
+  DecodeDepthNormal(tex2D(_CameraDepthNormalsTexture, i.uv), NormalDepth.w, NormalDepth.xyz);
+  fixed4 fog = (NormalDepth.w * fogDensity) * useFog;
+  fixed4 inverseFog = 1-fog;
+
+  //Adapts the pixel to the fog density before sampling it
+  pixel *= inverseFog.rgb;
+
+
   // gray scale it.
   float gray = (pixel.r + pixel.g + pixel.b) / 3;
 
   float4 tex1 = float4(0, 0, 0, 0); // force color to bright green like old style monitors.
   
+
+
   // set green, if gray is above 0.0f)
   if (gray > 0.0f)
   {
@@ -187,6 +205,11 @@ float4 PixelShaderFunction(v2f_img i) : COLOR // was float2 texCoord : TEXCOORD0
     //tex1.rgb = float3(gray, gray, gray);
   }
 
+  
+  //Fog
+  fog *= fogColor;
+  tex1 *= inverseFog;
+  tex1 += fog;
 
   return tex1;
 }

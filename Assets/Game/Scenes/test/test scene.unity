@@ -1185,13 +1185,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136289017}
     m_Modifications:
+    - target: {fileID: 4860235547161408537, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860235547161408537, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860235547161408542, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6821474052222528118, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6821474052222528118, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10.23
       objectReference: {fileID: 0}
     - target: {fileID: 6821474052222528118, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1199,7 +1211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6821474052222528118, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6821474052222528118, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1232,6 +1244,14 @@ PrefabInstance:
     - target: {fileID: 7359018348747258086, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_Name
       value: Player (ASCII)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: <FogDepth>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: <FogDensity>k__BackingField
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}

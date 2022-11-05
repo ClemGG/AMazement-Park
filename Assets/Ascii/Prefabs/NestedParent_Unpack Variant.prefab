@@ -172,7 +172,7 @@ MonoBehaviour:
   <CharColTransp>k__BackingField: 1
   <BgColTransp>k__BackingField: 0
   <Fog>k__BackingField: 0
-  <FogDensity>k__BackingField: 0.08
+  <FogDensity>k__BackingField: 20
   <FogColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}
   <Light0>k__BackingField: {fileID: 645703837, guid: e856b1d2907c4cf4886814b277a55278, type: 3}
   <Light1>k__BackingField: {fileID: 474272180, guid: e856b1d2907c4cf4886814b277a55278, type: 3}

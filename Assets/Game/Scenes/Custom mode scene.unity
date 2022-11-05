@@ -10071,7 +10071,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Header>k__BackingField: Algorithm Type
   <Content>k__BackingField: 'Generates different patterns depending on the type :
-    Elongated corridors, big rooms, random generation, etc.'
+    Elongated corridors, big rooms, random generation, etc. Play with the settings
+    to see what each of them does!'
 --- !u!114 &8887056246482796832
 MonoBehaviour:
   m_ObjectHideFlags: 0
