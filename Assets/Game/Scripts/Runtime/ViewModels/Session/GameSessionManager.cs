@@ -111,9 +111,9 @@ namespace Project.ViewModels
         /// </summary>
         /// <param name="sender">Le Portal</param>
         /// <param name="isPortalUnlocked">TRUE si le Portal est actif</param>
-        private void OnPortalReached(object sender, bool isPortalUnlocked)
+        private void OnPortalReached(object sender, PortalEventArgs e)
         {
-            if (isPortalUnlocked)
+            if (e.IsUnlocked)
             {
                 GameSession.OnVictory();
                 SceneMaster.Instance.LoadSingleSceneAsync(VictoryScene);

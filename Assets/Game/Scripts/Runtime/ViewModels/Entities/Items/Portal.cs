@@ -18,7 +18,7 @@ namespace Project.ViewModels.Entities.Items
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<bool> OnPortalReachedEvent = delegate { };
+        public EventHandler<PortalEventArgs> OnPortalReachedEvent = delegate { };
 
         #endregion
 
@@ -53,7 +53,7 @@ namespace Project.ViewModels.Entities.Items
             {
                 //AF: Afficher un message en jeu pour indiquer
                 //au joueur qu'il doit ramasser la clé
-                OnPortalReachedEvent(this, IsUnlocked);
+                OnPortalReachedEvent(this, new PortalEventArgs(IsUnlocked));
             }
         }
 

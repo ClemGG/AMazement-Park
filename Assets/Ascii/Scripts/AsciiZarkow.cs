@@ -39,7 +39,7 @@ namespace Project.Shaders.AsciiImageEffect
 		private float BgColTransp { get; set; } = 0f;
         [field: SerializeField]
         private bool Fog { get; set; } = false;
-		[field: SerializeField]
+		[field: SerializeField, Min(0f)]
 		private float FogDensity { get; set; } = 30f;
 		[field: SerializeField]
 		private Color FogColor { get; set; } = Color.black;

@@ -1250,8 +1250,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: <FogColor>k__BackingField.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: <FogColor>k__BackingField.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: <FogColor>k__BackingField.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: <FogDensity>k__BackingField
-      value: 45
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
