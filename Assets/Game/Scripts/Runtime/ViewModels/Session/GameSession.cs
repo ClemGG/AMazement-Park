@@ -91,12 +91,12 @@ namespace Project.ViewModels
             {
                 bool correctDifficulty = DifficultyLevel == Difficulty.Normal ||
                                          DifficultyLevel == Difficulty.Hard;
-                return correctDifficulty && !WasMonsterSpawnedLastLevel && 
+                return correctDifficulty && !WasMonsterSpawnedLastLevel &&
                     (
                        HasReachedTimeLimit ||
                        WasCheaterUsed ||
                        NbLevelsWon % (NbItemsUsed > 1 ? 2 : 4) == 0
-                    ); 
+                    );
             }
         }
 
@@ -161,12 +161,12 @@ namespace Project.ViewModels
         public static void AddNewRandomMonster()
         {
             //S'il reste au moins 1 monstre qui n'a pas été activé
-            if(ActivityLevels.Any(i => i == 0))
+            if (ActivityLevels.Any(i => i == 0))
             {
                 List<int> randomIndexes = new();
                 for (int i = 0; i < ActivityLevels.Length; i++)
                 {
-                    if(ActivityLevels[i] == 0)
+                    if (ActivityLevels[i] == 0)
                     {
                         randomIndexes.Add(i);
                     }

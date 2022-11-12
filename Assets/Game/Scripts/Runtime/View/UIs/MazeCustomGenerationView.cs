@@ -199,7 +199,7 @@ namespace Project.View.UIs
             Settings = Resources.Load<CustomMazeSettingsSO>($"Settings/Custom");
             InitSettings();
             GameSession.DifficultyLevel = Difficulty.Custom;
-
+            GameSession.Settings = Settings;
 
 
             Generator = FindObjectOfType<ViewModels.Generation.MazeGenerator>();
@@ -528,7 +528,10 @@ namespace Project.View.UIs
         public void PlayMazeBtn()
         {
             Generator.Cleanup();
+
+            //Nettoie le GameSession quand on revient sur cet écran
             GameSession.ResetGameSession();
+
             SceneMaster.Instance.LoadSingleSceneAsync(GameScene);
         }
 
