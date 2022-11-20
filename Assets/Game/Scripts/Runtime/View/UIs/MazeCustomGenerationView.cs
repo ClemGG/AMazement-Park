@@ -502,6 +502,13 @@ namespace Project.View.UIs
         public void EnableItemBtn(int index)
         {
             int newValue = (Settings.ActiveItems[index]+1) % 3;
+            
+            //Si c'est la Clé, on ne lui donne que les valeurs 0 et 1
+            if(index == 0)
+            {
+                newValue %= 2;
+            }
+
             Settings.ActiveItems[index] = newValue;
             ItemInputFields[index].text = newValue.ToString();
         }

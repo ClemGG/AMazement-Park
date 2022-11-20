@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Project.Models.Game;
 using Project.Models.Maze;
 using Project.Procedural.MazeGeneration;
@@ -94,6 +95,18 @@ namespace Project.ViewModels.Maze
             }
         }
 
+        public static IEnumerable<Cell> GetAllUnoccupiedCells()
+        {
+            foreach (Cell cell in Grid.EachCell())
+            {
+                CellHolder ch = GetCellHolder(cell);
+                if (!ch.Occupied)
+                {
+                    yield return ch.Cell;
+                }
+            }
+        }
+
         #endregion
 
 
@@ -103,6 +116,19 @@ namespace Project.ViewModels.Maze
         {
             Cell c = Grid.RandomCell();
             return new(c.Column, 0, c.Row);
+        }
+
+        public static Vector3 GetRandomUnoccupiedPosition()
+        {
+            Cell c = GetRandomUnoccupiedCell();
+            return new(c.Column, 0, c.Row);
+        }
+
+        public static Cell GetRandomUnoccupiedCell()
+        {
+            int count = GetAllUnoccupiedCells().Count();
+            Cell c = GetAllUnoccupiedCells().ElementAt(count);
+            return c;
         }
 
         #endregion

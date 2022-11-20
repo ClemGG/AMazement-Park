@@ -201,15 +201,15 @@ namespace Project.ViewModels.Generation
             //Add items
             for (int i = 0; i < items.Length-1; i++)
             {
-                if (Settings.ActiveItems[i] == 1)
-                {
-                    IEntity item = items[i];
+                //Chaque objet doit être instancié pour fonctionner.
+                //Ils seront détruits automatiquement via leurs propres scripts
+                //s'ils doivent être désactivés
+                IEntity item = items[i];
 
-                    randomCell = farthestCells.Sample();
-                    MazeManager.AddEntityToCell(randomCell, item);
-                    farthestCells.Remove(randomCell);
-                    _occupiedCells.Add(randomCell);
-                }
+                randomCell = farthestCells.Sample();
+                MazeManager.AddEntityToCell(randomCell, item);
+                farthestCells.Remove(randomCell);
+                _occupiedCells.Add(randomCell);
             }
         }
 

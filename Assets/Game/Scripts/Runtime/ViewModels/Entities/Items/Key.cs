@@ -39,8 +39,8 @@ namespace Project.ViewModels.Entities.Items
         private void Start()
         {
             if (GameSession.DifficultyLevel == Difficulty.Easy ||
-               GameSession.DifficultyLevel == Difficulty.Custom && 
-               GameSession.Settings.ActiveItems[0] != 1)
+               GameSession.DifficultyLevel == Difficulty.Custom &&
+               GameSession.Settings.ActiveItems[0] == 0)
             {
                 Destroy(gameObject);
             }
