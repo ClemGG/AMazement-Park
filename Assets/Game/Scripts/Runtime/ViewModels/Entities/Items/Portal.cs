@@ -11,14 +11,14 @@ namespace Project.ViewModels.Entities.Items
     /// et lance la scène de transition vers le niveau suivant
     /// </summary>
     [RequireComponent(typeof(BoxCollider))]
-    public class Portal : EntityTrigger, IItemTrigger
+    public class Portal : EntityTrigger, IItemTrigger<PortalEventArgs>
     {
         #region Events
 
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<PortalEventArgs> OnPortalReachedEvent = delegate { };
+        public EventHandler<PortalEventArgs> OnItemReachedEvent { get; set; } = delegate { };
 
         #endregion
 
@@ -53,7 +53,7 @@ namespace Project.ViewModels.Entities.Items
             {
                 //AF: Afficher un message en jeu pour indiquer
                 //au joueur qu'il doit ramasser la clé
-                OnPortalReachedEvent(this, new PortalEventArgs(IsUnlocked));
+                OnItemReachedEvent(this, new PortalEventArgs(IsUnlocked));
             }
         }
 

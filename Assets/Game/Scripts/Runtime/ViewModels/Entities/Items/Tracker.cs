@@ -7,18 +7,17 @@ namespace Project.ViewModels.Entities.Items
 {
 
     /// <summary>
-    /// Le trigger de la clé déverrouillant le portail.
-    /// Présent uniquement en mode Facile ou Perso (si actif).
+    /// Le trigger débloquant la position des ennemis et objets sur la carte
     /// </summary>
     [RequireComponent(typeof(BoxCollider))]
-    public class Key : EntityTrigger, IItemTrigger<KeyEventArgs>
+    public class Tracker : EntityTrigger, IItemTrigger<TrackerEventArgs>
     {
         #region Events
 
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<KeyEventArgs> OnItemReachedEvent { get; set; } = delegate { };
+        public EventHandler<TrackerEventArgs> OnItemReachedEvent { get; set; } = delegate { };
 
         #endregion
 
@@ -32,15 +31,14 @@ namespace Project.ViewModels.Entities.Items
         #region Mono
 
         /// <summary>
-        /// En mode Facile ou en mode Perso avec la clé désactivée,
-        /// on détruit la clé pour ne pas la ramasser,
-        /// puisque le portail est actif par défauts
+        /// En mode Facile ou en mode Perso avec la carte désactivée,
+        /// on ne laisse que la carte par défaut, pas la cate entière
         /// </summary>
         private void Start()
         {
             if (GameSession.DifficultyLevel == Difficulty.Easy ||
                GameSession.DifficultyLevel == Difficulty.Custom &&
-               GameSession.Settings.ActiveItems[0] == 0)
+               GameSession.Settings.ActiveItems[0] != 1)
             {
                 Destroy(gameObject);
             }
@@ -52,16 +50,12 @@ namespace Project.ViewModels.Entities.Items
 
         public void OnTrigger(IEntity entity)
         {
-            // Quand atteint, déverouille le portail
-            // et détruit cet objet
+            // Quand atteint, débloque la position des ennemis et objets sur la carte
             if (entity.EntityType == EntityType.Player)
             {
-                FindObjectOfType<Portal>().IsUnlocked = true;
                 Destroy(gameObject);
 
-                //AF: Afficher un message en jeu pour indiquer
-                //au joueur qu'il doit ramasser la clé
-                OnItemReachedEvent(this, new KeyEventArgs());
+                OnItemReachedEvent(this, new TrackerEventArgs());
             }
         }
 

@@ -43,7 +43,7 @@ namespace Project.ViewModels
         private void OnDestroy()
         {
             _mazeGenerator.OnMazeDone -= OnMazeDone;
-            _portalItem.OnPortalReachedEvent -= OnPortalReached;
+            _portalItem.OnItemReachedEvent -= OnPortalReached;
         }
 
         private void Start()
@@ -101,7 +101,7 @@ namespace Project.ViewModels
             if (Mathf.Approximately(e.ProgressPercentage, 1f))
             {
                 _portalItem = FindObjectOfType<Portal>();
-                _portalItem.OnPortalReachedEvent += OnPortalReached;
+                _portalItem.OnItemReachedEvent += OnPortalReached;
             }
         }
 

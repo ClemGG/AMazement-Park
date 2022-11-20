@@ -1,9 +1,7 @@
-using System;
-
 /// <summary>
 /// Des infos sur le portail lorsque le joueur entre en collision avec lui.
 /// </summary>
-public class PortalEventArgs : EventArgs
+public class PortalEventArgs : ItemEventArgs
 {
     #region Public Fields
 
@@ -13,7 +11,6 @@ public class PortalEventArgs : EventArgs
     public bool IsUnlocked { get; set; }
 
     #endregion
-
 
     #region Constructeurs
 

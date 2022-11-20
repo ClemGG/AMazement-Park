@@ -1,9 +1,15 @@
+using System;
 using Project.Models.Game;
 
 namespace Project.ViewModels.Entities.Items
 {
-    public interface IItemTrigger
+    public interface IItemTrigger<TEventArgs> where TEventArgs : ItemEventArgs
     {
+        /// <summary>
+        /// Quand l'objet est activé
+        /// </summary>
+        public EventHandler<TEventArgs> OnItemReachedEvent { get; set; }
+
         Item Item { get; set; }
 
         /// <summary>
