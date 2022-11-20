@@ -28,7 +28,6 @@ namespace Project.View.UIs
 
         #endregion
 
-
         #region UI Fields
 
         //If a field is not represented here, it means it must be assigned the correct values in the Inspector
@@ -78,7 +77,7 @@ namespace Project.View.UIs
         [SerializeField] private Slider[] MonsterFields;
 
         [SerializeField] private Transform[] MonsterFillJauges;
-        [SerializeField] private GameObject[] ItemCrosses;
+        [SerializeField] private TMP_InputField[] ItemInputFields;
         [SerializeField] private GameObject[] MonsterCrosses;
 
         [Space(10)]
@@ -102,7 +101,6 @@ namespace Project.View.UIs
         }
 
         #endregion
-
 
         #region Private Fields
 
@@ -185,7 +183,6 @@ namespace Project.View.UIs
 
         #endregion
 
-
         #region Init
 
         void Start()
@@ -235,7 +232,7 @@ namespace Project.View.UIs
             Settings.AsciiMask = null;
             Settings.MaskName = "";
             Settings.ActivityLevels = new int[5] { 3, 3, 3, 3, 2 };
-            Settings.ActiveItems = new bool[3] { true, true, true };
+            Settings.ActiveItems = new int[3] { 2, 2, 2 };
             Settings.PlayerFOV = 7f;
             GameSession.ActivityLevels = new int[5] { 2, 2, 2, 2, 2 };
         }
@@ -504,8 +501,9 @@ namespace Project.View.UIs
 
         public void EnableItemBtn(int index)
         {
-            Settings.ActiveItems[index] = !Settings.ActiveItems[index];
-            ItemCrosses[index].SetActive(!ItemCrosses[index].activeSelf);
+            int newValue = (Settings.ActiveItems[index]+1) % 3;
+            Settings.ActiveItems[index] = newValue;
+            ItemInputFields[index].text = newValue.ToString();
         }
 
         public void OnPlayerFOVFieldValueChanged()

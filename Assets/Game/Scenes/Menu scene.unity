@@ -1101,11 +1101,11 @@ PrefabInstance:
       objectReference: {fileID: 484984928}
     - target: {fileID: 6211800295109930147, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitBtn
+      value: PlayBtn
       objectReference: {fileID: 0}
     - target: {fileID: 6211800295109930147, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Project.View.MainMenuView, Project.View
+      value: Project.View.UIs.MainMenuView, Project.View
       objectReference: {fileID: 0}
     - target: {fileID: 6412163039281313060, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1214,6 +1214,18 @@ PrefabInstance:
     - target: {fileID: 6820456635511216260, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Project.View.MainMenuView, Project.View
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237399743928061739, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 484984928}
+    - target: {fileID: 7237399743928061739, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237399743928061739, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Project.View.UIs.MainMenuView, Project.View
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c32c73e3fbd7546bdb39b179a28cdb, type: 3}

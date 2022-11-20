@@ -38,7 +38,7 @@ namespace Project.ViewModels.Entities.Items
             //Par défaut le portail est désactivé, sauf en mode Facile
             //ou en Mode Custom avec la clé désactivée
             IsUnlocked = GameSession.DifficultyLevel == Models.Game.Enums.Difficulty.Easy ||
-                         GameSession.DifficultyLevel == Difficulty.Custom && GameSession.Settings.ActiveItems[0] == false;
+                         GameSession.DifficultyLevel == Difficulty.Custom && GameSession.Settings.ActiveItems[0] != 1;
         }
 
         #endregion

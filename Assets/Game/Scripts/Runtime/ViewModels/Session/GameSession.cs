@@ -147,12 +147,20 @@ namespace Project.ViewModels
 
 
         /// <summary>
-        /// Quand le joueur a réussi un dédale
+        /// Quand le joueur a réussi un dédale,
+        /// on enregistre son score s'il est plus haut
         /// </summary>
         public static void OnVictory()
         {
             NbLevelsWon++;
-            PlayerPrefs.SetInt($"{DifficultyLevel}_victories", NbLevelsWon);
+
+            string key = $"{DifficultyLevel}_victories";
+            int previousVictoriesCount = PlayerPrefs.GetInt(key, 0);
+
+            if(previousVictoriesCount < NbLevelsWon)
+            {
+                PlayerPrefs.SetInt(key, NbLevelsWon);
+            }
         }
 
         /// <summary>
@@ -185,7 +193,13 @@ namespace Project.ViewModels
         /// </summary>
         public static void OnDefeat()
         {
-            PlayerPrefs.SetInt($"{DifficultyLevel}_victories", NbLevelsWon);
+            string key = $"{DifficultyLevel}_victories";
+            int previousVictoriesCount = PlayerPrefs.GetInt(key, 0);
+
+            if (previousVictoriesCount < NbLevelsWon)
+            {
+                PlayerPrefs.SetInt(key, NbLevelsWon);
+            }
             ResetGameSession();
         }
 

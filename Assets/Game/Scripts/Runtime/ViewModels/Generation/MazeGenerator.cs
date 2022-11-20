@@ -201,7 +201,7 @@ namespace Project.ViewModels.Generation
             //Add items
             for (int i = 0; i < items.Length-1; i++)
             {
-                if (Settings.ActiveItems[i] is true)
+                if (Settings.ActiveItems[i] == 1)
                 {
                     IEntity item = items[i];
 

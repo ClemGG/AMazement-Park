@@ -86,7 +86,7 @@ namespace Project.Services
             settings.HoustonSwapPercent = 1f.Sample();
 
             settings.PlayerFOV = 9f.Sample(3f) * settings.MeshCellSize.x;
-            settings.ActiveItems = new[] { true, RandomSample.RandomBool(), RandomSample.RandomBool() };
+            settings.ActiveItems = new int[] { 1.Sample(), 2.Sample(), 2.Sample() };
             settings.ActivityLevels = new[] { 5.Sample(2), 5.Sample(1), 5.Sample(1), 5.Sample(1), 2.Sample(1) };
         }
 
@@ -107,7 +107,7 @@ namespace Project.Services
 
             settings.MaskName = "";
             settings.PlayerFOV = 9f * settings.MeshCellSize.x;
-            settings.ActiveItems = new[] { true, true, true };
+            settings.ActiveItems = new[] { 2, 2, 2 };
             settings.ActivityLevels = new[] { 3, 0, 0, 0, 2 };
         }
 
@@ -141,7 +141,7 @@ namespace Project.Services
             settings.HoustonSwapPercent = 1f.Sample();
 
             settings.PlayerFOV = 7f * settings.MeshCellSize.x;
-            settings.ActiveItems = new[] { true, true, true };
+            settings.ActiveItems = new[] { 1, 1, 1 };
             settings.ActivityLevels = new[] { 3, 0, 0, 0, 2 };
         }
 
@@ -177,7 +177,7 @@ namespace Project.Services
             settings.HoustonSwapPercent = 1f.Sample();
 
             settings.PlayerFOV = 5f * settings.MeshCellSize.x;
-            settings.ActiveItems = new[] { true, false, false };
+            settings.ActiveItems = new[] { 1, 0, 0 };
             settings.ActivityLevels = new[] { 4, 0, 0, 0, 2 };
         }
 
@@ -213,7 +213,7 @@ namespace Project.Services
             settings.HoustonSwapPercent = 1f.Sample();
 
             settings.PlayerFOV = 3f * settings.MeshCellSize.x;
-            settings.ActiveItems = new[] { true, false, false };
+            settings.ActiveItems = new[] { 1, 0, 0 };
             settings.ActivityLevels = new[] { 5, 5, 5, 5, 2 };
         }
 

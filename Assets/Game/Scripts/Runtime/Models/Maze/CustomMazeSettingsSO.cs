@@ -23,7 +23,10 @@ namespace Project.Models.Maze
 
 
         //In order : Key, Map and Tracker
-        [field: SerializeField] public bool[] ActiveItems { get; set; } = new bool[3];
+        // 0 : L'objet est désactivé et ne peut pas être ramassé (Pour la clé, 0 et 2 donnent le même résultat)
+        // 1 : L'objet doit être ramassé pour être activé
+        // 2 : L'objet est actif par défaut
+        [field: SerializeField] public int[] ActiveItems { get; set; } = new int[3];
 
 
         [field: SerializeField, Range(3f, 9f)] public float PlayerFOV { get; set; } = 7f;

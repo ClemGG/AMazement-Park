@@ -33,15 +33,15 @@ namespace Project.View.UIs
 
         private void Awake()
         {
-            //Nettoie le GameSession quand on revient sur cet écran
-            GameSession.ResetGameSession();
-
             MenuCam.SetActive(false);
             Generator = FindObjectOfType<ViewModels.Generation.MazeGenerator>();
             Generator.OnMazeDone += OnMazeDone;
 
             //Generates a randome maze for the Menu Cam to roam in
             Generator.Execute(Difficulty.Random, DrawMode.Mesh);
+
+            //Nettoie le GameSession quand on revient sur cet écran
+            GameSession.ResetGameSession();
         }
 
         // Start is called before the first frame update

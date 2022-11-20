@@ -574,11 +574,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_AnchorMin.x
@@ -586,15 +586,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -65
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 35
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -626,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709158, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -646,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709159, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_text
-      value: 'Player FOV (meters):'
+      value: 'Tiles visible:'
       objectReference: {fileID: 0}
     - target: {fileID: 8104085604160709159, guid: 6ab12fe9c234c174dacba07bc98270f2, type: 3}
       propertyPath: m_fontSize
@@ -2908,11 +2908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &667551392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
-  m_PrefabInstance: {fileID: 3003727303056272756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &736462995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +2946,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -650}
-  m_SizeDelta: {x: 500, y: 150}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &736462997
 MonoBehaviour:
@@ -2968,9 +2963,9 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 20
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -4117,7 +4112,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588125749037653515, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_text
-      value: "0\u200B"
+      value: "7\u200B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588125749037653515, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3873089308121233248, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_Name
@@ -4137,23 +4136,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4189,11 +4188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7457215721274666792, guid: fd09d35d98a0c294b81a8298a2dc64b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6266,8 +6265,8 @@ MonoBehaviour:
   - {fileID: 1369329706}
   - {fileID: 297564981}
   - {fileID: 17541865}
-  ItemCrosses:
-  - {fileID: 667551392}
+  ItemInputFields:
+  - {fileID: 3003727303056272758}
   - {fileID: 1880646619}
   - {fileID: 2136621508}
   MonsterCrosses:
@@ -7262,6 +7261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1791988118}
   - component: {fileID: 1791988119}
+  - component: {fileID: 1791988120}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7287,11 +7287,11 @@ RectTransform:
   m_Father: {fileID: 2112056830}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -800}
-  m_SizeDelta: {x: 500, y: 120}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -270}
+  m_SizeDelta: {x: 500, y: 100}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1791988119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7312,6 +7312,32 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1791988120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791988117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1830075504 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1830075504, guid: 313459449e96bce4bacf6bc1d0435541, type: 3}
@@ -7398,7 +7424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_Pivot.y
@@ -7410,11 +7436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -7422,11 +7448,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -230
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_SizeDelta.y
@@ -7462,11 +7488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551057751557243731, guid: 723c33e2818549d45aec9767930e50a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7788,6 +7814,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 49099387fc342264ab0f9694539c28d2, type: 3}
+    - target: {fileID: 46771812516738502, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034947992562940664, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: m_text
+      value: "2\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
       propertyPath: m_Name
       value: Map btn
@@ -7926,8 +7960,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
       propertyPath: <Content>k__BackingField
-      value: "If enabled, the player will have to pick it up to display the maze.
-        \nIf disabled, the Map is enabled by default."
+      value: '- 0 : The item is disabled
+
+        - 1 : The item needs to be picked
+        up to be activated
+
+        - 2 : The item is activated by default'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
@@ -7936,11 +7974,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2508568008702257189, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 1880646617}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1880646619 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+--- !u!114 &1880646619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 46771812516738502, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 1880646617}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910967762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8742,6 +8786,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cec43929646ae1f4f94a760cea304680, type: 3}
+    - target: {fileID: 46771812516738502, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034947992562940664, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: m_text
+      value: "2\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
       propertyPath: m_Name
       value: Tracker btn
@@ -8880,8 +8932,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
       propertyPath: <Content>k__BackingField
-      value: "If enabled, the player will have to pick it up to hear and see the
-        monsters on the HUD. \nIf disabled, the Tracker is enabled by default."
+      value: '- 0 : The item is disabled
+
+        - 1 : The item needs to be picked
+        up to be activated
+
+        - 2 : The item is activated by default'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
@@ -8890,11 +8946,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2508568008702257189, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 2136621506}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2136621508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 667551392, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+--- !u!114 &2136621508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 46771812516738502, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 2136621506}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2100548829823229870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9240,6 +9302,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4eb5478394e4c99408cf08e1532240ca, type: 3}
+    - target: {fileID: 46771812516738502, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034947992562940664, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+      propertyPath: m_text
+      value: "2\u200B"
+      objectReference: {fileID: 0}
     - target: {fileID: 2094649354412111737, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
       propertyPath: m_Name
       value: Key btn
@@ -9366,8 +9436,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6699009302114551984, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
       propertyPath: <Content>k__BackingField
-      value: "If enabled, the Player will have to pick it up to activate the exit.
-        \nIf disabled, the exit is active by default."
+      value: '- 0 : The key is active by default
+
+        - 1 : The Key needs to
+        be picked up to open the exit'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
@@ -9376,6 +9448,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2508568008702257189, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
   m_PrefabInstance: {fileID: 3003727303056272756}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3003727303056272758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 46771812516738502, guid: cae889f4f902df04abe54d4fa29df6b1, type: 3}
+  m_PrefabInstance: {fileID: 3003727303056272756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3199469094601482640
 PrefabInstance:
   m_ObjectHideFlags: 0
