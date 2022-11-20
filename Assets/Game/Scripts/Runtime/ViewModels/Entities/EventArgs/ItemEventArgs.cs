@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemEventArgs : System.EventArgs
+namespace Project.ViewModels.Entities.EventArgs
 {
+    public class ItemEventArgs : System.EventArgs
+    {
 
+    }
 }

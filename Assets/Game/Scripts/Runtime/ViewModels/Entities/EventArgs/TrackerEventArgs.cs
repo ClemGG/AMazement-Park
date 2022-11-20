@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackerEventArgs : ItemEventArgs
+namespace Project.ViewModels.Entities.EventArgs
 {
+    public class TrackerEventArgs : ItemEventArgs
+    {
 
+    }
 }

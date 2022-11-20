@@ -1,6 +1,7 @@
 using System;
 using Project.Models.Game;
 using Project.Models.Game.Enums;
+using Project.ViewModels.Entities.EventArgs;
 using UnityEngine;
 
 namespace Project.ViewModels.Entities.Items

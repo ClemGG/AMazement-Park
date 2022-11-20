@@ -1,6 +1,7 @@
 using Project.Core;
 using Project.Models.Scenes;
 using Project.Procedural.MazeGeneration;
+using Project.ViewModels.Entities.EventArgs;
 using Project.ViewModels.Entities.Items;
 using Project.ViewModels.Scenes;
 using UnityEngine;

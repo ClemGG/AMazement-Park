@@ -23,6 +23,8 @@ namespace Project.View.UIs
 
         private MazeGenerator _generator;
         private Key _key;
+        private Map _map;
+        private Tracker _tracker;
 
         #endregion
 
