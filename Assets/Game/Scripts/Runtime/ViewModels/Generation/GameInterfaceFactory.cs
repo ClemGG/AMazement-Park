@@ -3,7 +3,7 @@ using Project.Procedural.MazeGeneration;
 
 namespace Project.ViewModels.Generation
 {
-    //Will create all the interfaces we need (IGeneration, IDraw & ISolwing) for the maze.
+    //Will create all the interfaces we need (IGeneration, IDraw & ISolving) for the maze.
     public static class GameInterfaceFactory
     {
         //Same as the previous method but uses a different namespace to take care
