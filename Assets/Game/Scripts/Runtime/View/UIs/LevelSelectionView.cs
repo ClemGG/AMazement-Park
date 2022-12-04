@@ -17,6 +17,9 @@ namespace Project.View.UIs
         [field: SerializeField]
         private SceneToLoadParams CustomModeScene { get; set; }
 
+        [field: SerializeField]
+        private SceneToLoadParams TooltipScene { get; set; }
+
         #endregion
 
         #region Public Methods

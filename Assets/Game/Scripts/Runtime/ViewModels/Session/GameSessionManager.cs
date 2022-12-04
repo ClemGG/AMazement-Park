@@ -30,6 +30,7 @@ namespace Project.ViewModels
         //S'abonner à eux pour appeler leurs events au bon moment
         private MazeGenerator _mazeGenerator;
         private Portal _portalItem;
+        private bool _gameStarted;
 
         #endregion
 
@@ -86,7 +87,11 @@ namespace Project.ViewModels
                 GameSession.IsActiveTimeReached = true;
                 return;
             }
-            GameSession.ElapsedTime += Time.deltaTime;
+
+            if (_gameStarted)
+            {
+                GameSession.ElapsedTime += Time.deltaTime;
+            }
         }
 
 
@@ -99,10 +104,13 @@ namespace Project.ViewModels
         /// <param name="e">Pour savoir si le dédale est généré</param>
         private void OnMazeDone(object sender, GenerationProgressReport e)
         {
+
             if (Mathf.Approximately(e.ProgressPercentage, 1f))
             {
                 _portalItem = FindObjectOfType<Portal>();
                 _portalItem.OnItemReachedEvent += OnPortalReached;
+
+                _gameStarted = true;
             }
         }
 
@@ -112,9 +120,10 @@ namespace Project.ViewModels
         /// </summary>
         /// <param name="sender">Le Portal</param>
         /// <param name="isPortalUnlocked">TRUE si le Portal est actif</param>
-        private void OnPortalReached(object sender, PortalEventArgs e)
+        private void OnPortalReached(object sender, ItemEventArgs e)
         {
-            if (e.IsUnlocked)
+            PortalEventArgs pe = e as PortalEventArgs;
+            if (pe.IsUnlocked)
             {
                 GameSession.OnVictory();
                 SceneMaster.Instance.LoadSingleSceneAsync(VictoryScene);

@@ -12,14 +12,14 @@ namespace Project.ViewModels.Entities.Items
     /// et lance la scène de transition vers le niveau suivant
     /// </summary>
     [RequireComponent(typeof(BoxCollider))]
-    public class Portal : EntityTrigger, IItemTrigger<PortalEventArgs>
+    public class Portal : EntityTrigger, IItemTrigger
     {
         #region Events
 
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<PortalEventArgs> OnItemReachedEvent { get; set; } = delegate { };
+        public EventHandler<ItemEventArgs> OnItemReachedEvent { get; set; } = delegate { };
 
         #endregion
 

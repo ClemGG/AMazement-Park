@@ -16,7 +16,7 @@ namespace Project.ViewModels.Entities.EventArgs
 
         #region Constructeurs
 
-        public PortalEventArgs(bool isUnlocked)
+        public PortalEventArgs(bool isUnlocked) : base(3)
         {
             IsUnlocked = isUnlocked;
         }

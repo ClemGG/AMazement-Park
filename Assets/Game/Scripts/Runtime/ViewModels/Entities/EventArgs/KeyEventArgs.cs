@@ -5,6 +5,8 @@ namespace Project.ViewModels.Entities.EventArgs
     /// </summary>
     public class KeyEventArgs : ItemEventArgs
     {
-
+        public KeyEventArgs() : base(0)
+        {
+        }
     }
 }

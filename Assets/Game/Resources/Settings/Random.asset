@@ -16,7 +16,7 @@ MonoBehaviour:
   <GenerationType>k__BackingField: 12
   <GridSize>k__BackingField: {x: 5, y: 13}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
-  <RoomSize>k__BackingField: {x: 0, y: 12}
+  <RoomSize>k__BackingField: {x: 1, y: 6}
   <BiasTowardsRooms>k__BackingField: 0
   <LambdaSelection>k__BackingField: 1
   <Inset>k__BackingField: 0.25
@@ -27,6 +27,7 @@ MonoBehaviour:
   <Extension>k__BackingField: .txt
   <MaskName>k__BackingField: asciimask
   <ActivityLevels>k__BackingField: 0300000004000000030000000100000001000000
-  <ActiveItems>k__BackingField: 010000
+  <ActiveItems>k__BackingField: 000000000000000000000000
   <PlayerFOV>k__BackingField: 18.867817
   <MaxNumberOfRuns>k__BackingField: 10
+  <ActiveTimeLimit>k__BackingField: 900

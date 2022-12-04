@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2756703239350320302, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
       propertyPath: m_Name
-      value: Motion Tracker
+      value: Motion Tracker Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3591450606738835185, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +57,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
+--- !u!1 &5176528024454324328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756703239350320302, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
+  m_PrefabInstance: {fileID: 7032228097580637382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2398841775884341023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176528024454324328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7ef4f09cc83994bbb6f28eb7cae4fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Item>k__BackingField: {fileID: 11400000, guid: 498fbae6c03a4434b964b8830bdc0477, type: 2}

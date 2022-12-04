@@ -12,14 +12,14 @@ namespace Project.ViewModels.Entities.Items
     /// (Par défaut, seules les cases déjà visitées sont affichées)
     /// </summary>
     [RequireComponent(typeof(BoxCollider))]
-    public class Map : EntityTrigger, IItemTrigger<MapEventArgs>
+    public class Map : EntityTrigger, IItemTrigger
     {
         #region Events
 
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<MapEventArgs> OnItemReachedEvent { get; set; } = delegate { };
+        public EventHandler<ItemEventArgs> OnItemReachedEvent { get; set; } = delegate { };
 
         #endregion
 

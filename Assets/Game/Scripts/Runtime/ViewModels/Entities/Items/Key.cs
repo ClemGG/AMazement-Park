@@ -12,14 +12,14 @@ namespace Project.ViewModels.Entities.Items
     /// Présent uniquement en mode Facile ou Perso (si actif).
     /// </summary>
     [RequireComponent(typeof(BoxCollider))]
-    public class Key : EntityTrigger, IItemTrigger<KeyEventArgs>
+    public class Key : EntityTrigger, IItemTrigger
     {
         #region Events
 
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<KeyEventArgs> OnItemReachedEvent { get; set; } = delegate { };
+        public EventHandler<ItemEventArgs> OnItemReachedEvent { get; set; } = delegate { };
 
         #endregion
 

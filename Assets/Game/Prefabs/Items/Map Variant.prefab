@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2756703239350320302, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
       propertyPath: m_Name
-      value: Map
+      value: Map Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3591450606738835185, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +57,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
+--- !u!1 &2180981832501314308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2756703239350320302, guid: 25fa6811697071542bb7f12ce7c510f9, type: 3}
+  m_PrefabInstance: {fileID: 4036810307957866410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-776531082946928124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180981832501314308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32482acedb1afe489f6cbc5c2f9a717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Item>k__BackingField: {fileID: 11400000, guid: 1926fcadc51e8f742b00ad33e1ce2e2d, type: 2}

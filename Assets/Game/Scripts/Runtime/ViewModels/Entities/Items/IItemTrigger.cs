@@ -12,13 +12,10 @@ namespace Project.ViewModels.Entities.Items
         /// Quand le script de l'entité appelle son OnTriggerEnter
         /// </summary>
         void OnTrigger(IEntity entity);
-    }
 
-    public interface IItemTrigger<TEventArgs> : IItemTrigger where TEventArgs : ItemEventArgs
-    {
         /// <summary>
         /// Quand l'objet est activé
         /// </summary>
-        public EventHandler<TEventArgs> OnItemReachedEvent { get; set; }
+        EventHandler<ItemEventArgs> OnItemReachedEvent { get; set; }
     }
 }

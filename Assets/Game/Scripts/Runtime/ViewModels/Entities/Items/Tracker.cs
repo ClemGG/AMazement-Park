@@ -11,14 +11,14 @@ namespace Project.ViewModels.Entities.Items
     /// Le trigger débloquant la position des ennemis et objets sur la carte
     /// </summary>
     [RequireComponent(typeof(BoxCollider))]
-    public class Tracker : EntityTrigger, IItemTrigger<TrackerEventArgs>
+    public class Tracker : EntityTrigger, IItemTrigger
     {
         #region Events
 
         /// <summary>
         /// Quand le portail est atteint
         /// </summary>
-        public EventHandler<TrackerEventArgs> OnItemReachedEvent { get; set; } = delegate { };
+        public EventHandler<ItemEventArgs> OnItemReachedEvent { get; set; } = delegate { };
 
         #endregion
 

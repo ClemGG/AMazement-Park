@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665a4014d07c24d4193809f69bdfe451, type: 3}
   m_Name: Custom
   m_EditorClassIdentifier: 
-  <DrawMode>k__BackingField: 2
-  <GenerationType>k__BackingField: 1
+  <DrawMode>k__BackingField: 1
+  <GenerationType>k__BackingField: 0
   <GridSize>k__BackingField: {x: 10, y: 10}
   <MeshCellSize>k__BackingField: {x: 5, y: 5}
-  <RoomSize>k__BackingField: {x: 1, y: 1}
+  <RoomSize>k__BackingField: {x: 5, y: 5}
   <BiasTowardsRooms>k__BackingField: 0
   <LambdaSelection>k__BackingField: 0
   <Inset>k__BackingField: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   <Extension>k__BackingField: 
   <MaskName>k__BackingField: 
   <ActivityLevels>k__BackingField: 0300000003000000030000000300000002000000
-  <ActiveItems>k__BackingField: 010101
+  <ActiveItems>k__BackingField: 020000000200000002000000
   <PlayerFOV>k__BackingField: 7
   <MaxNumberOfRuns>k__BackingField: 10
   <ActiveTimeLimit>k__BackingField: 900
