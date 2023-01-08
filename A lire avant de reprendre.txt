@@ -1,0 +1,5 @@
+08 Janvier 2023 : 
+
+- Je vais abandonner le projet pour l'instant, dû à une perte d'intérêt et d'attention qui me pourrit la vie. Ce qu'il reste à faire, c'est coder le UI pour les objets, la carte, et faire les IAs du joueur et des monstres. J'aurais dû prévoir plus simple avec juste un monstre et sans objets, mais j'ai franchement pas envie de le reprendre pour le moment.
+
+- Il faut faire des projets plus petits, quasiment minimalistes, de sorte à les finir rapidement et de pouvoir rajouter du contenu par la suite si besoin. On va d'abord essayer de faire des jeux en une seule journée comme le jeu des poissons, mais sans assets autre que les assets de base, comme ça on n'aura pas à créer de ssprites ou des modèles 3D. Plus tard quand on sera plus concentré on fera des assets ultra simples et on augmentera la cadence et la quantité à partir de là. La qualité viendra d'elle-même.
