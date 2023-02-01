@@ -1185,9 +1185,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136289017}
     m_Modifications:
+    - target: {fileID: 2589230044639272758, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589230044639272758, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4860235547161408537, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860235547161408537, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.375
       objectReference: {fileID: 0}
     - target: {fileID: 4860235547161408537, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1246,6 +1258,10 @@ PrefabInstance:
       value: Player (ASCII)
       objectReference: {fileID: 0}
     - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523762541084071667, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
       propertyPath: <FogDepth>k__BackingField
       value: 0
       objectReference: {fileID: 0}
@@ -1267,3 +1283,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+--- !u!1 &2731454298596770841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4860235547161408540, guid: 4dcaf13f8cbe5ed43aaa6fc2c0b18197, type: 3}
+  m_PrefabInstance: {fileID: 2731454298596770840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2731454298596770842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731454298596770841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca18ff77fa51e548ae32dc2a4266bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Shader>k__BackingField: {fileID: 4800000, guid: 5d97ff349483e99418731dc4404d4644, type: 3}
+  <Fog>k__BackingField: 1
+  <FogDensity>k__BackingField: 15
+  <FogColor>k__BackingField: {r: 0, g: 0, b: 0, a: 1}

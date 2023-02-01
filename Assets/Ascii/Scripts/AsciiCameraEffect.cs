@@ -15,17 +15,16 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 #endif
 
-namespace Project.Shaders.AsciiImageEffect
+namespace Project.Shaders
 {
     /// <summary>
     /// Ascii - Image Effect.
     /// </summary>
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
-	[AddComponentMenu("Image Effects/Ascii Camera Effect")]
-	public sealed class AsciiZarkow : MonoBehaviour
+	[AddComponentMenu("Image Effects/Ascii")]
+	public sealed class AsciiCameraEffect : MonoBehaviour
 	{
-
 		#region Public Properties
 
 		[field: SerializeField]

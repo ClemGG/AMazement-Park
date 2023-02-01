@@ -649,7 +649,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: AMazement-Park
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -657,7 +657,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: AMazement-Park
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: AMazement-Park
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
