@@ -1,6 +1,6 @@
 
 // http://unity3d.com/support/documentation/Components/SL-Shader.html
-Shader "Custom/Camera/Ascii Image Effect"
+Shader "Custom/Camera/Linear Fog Image Effect"
 {
 	// http://unity3d.com/support/documentation/Components/SL-Properties.html
 	Properties

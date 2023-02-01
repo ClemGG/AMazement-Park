@@ -18,12 +18,12 @@ using UnityEditor.SceneManagement;
 namespace Project.Shaders
 {
     /// <summary>
-    /// Ascii - Image Effect.
+    /// Ascii With Fog - Image Effect.
     /// </summary>
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
-	[AddComponentMenu("Image Effects/Ascii")]
-	public sealed class AsciiCameraEffect : MonoBehaviour
+	[AddComponentMenu("Image Effects/Ascii With Fog")]
+	public sealed class AsciiWithFogCameraEffect : MonoBehaviour
 	{
 		#region Public Properties
 
@@ -31,11 +31,18 @@ namespace Project.Shaders
 		private Shader Shader { get; set; }
 
 		[field: SerializeField] 
-		private Vector2 CharSize { get; set; } = new Vector2(16f, 16f);
+		private Vector2 CharSize { get; set; } = new Vector2(12f, 12f);
 		[field: SerializeField, Range(0f, 1f)]
 		private float CharColTransp { get; set; } = 1f;
 		[field: SerializeField, Range(0f, 1f)]
 		private float BgColTransp { get; set; } = 0f;
+        [field: SerializeField]
+        private bool Fog { get; set; } = false;
+		[field: SerializeField, Min(0f)]
+		private float FogDensity { get; set; } = 30f;
+		[field: SerializeField]
+		private Color FogColor { get; set; } = Color.black;
+
 
 		//Light0 : the brightest ; Light9 : the darkest
 		[field: SerializeField] 
@@ -88,6 +95,10 @@ namespace Project.Shaders
 			//Pour éviter que la prefab ne change les paramètres au lieu de l'instance
 			if (!PrefabModeIsActive(gameObject))
 			{
+				//RenderSettings.fog = Fog;
+				//RenderSettings.fogColor = FogColor;
+				//RenderSettings.fogDensity = FogDensity;
+
 				if (enabled && gameObject.activeInHierarchy)
 				{
 					Awake();
@@ -100,6 +111,10 @@ namespace Project.Shaders
 			bool isObjInPrefabMode = PrefabStageUtility.GetPrefabStage(gameobject) != null;
 			bool isPrefabModeActive = PrefabStageUtility.GetCurrentPrefabStage() != null;
 			return isObjInPrefabMode || isPrefabModeActive;
+			//PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+			//bool isValidPrefabStage = prefabStage != null && prefabStage.stageHandle.IsValid();
+			//bool prefabConnected = PrefabUtility.GetPrefabInstanceStatus(gameObject) == PrefabInstanceStatus.Connected;
+			//return isValidPrefabStage || !prefabConnected;
 		}
 
 #endif
@@ -219,6 +234,11 @@ namespace Project.Shaders
 			//We use Mathf.Abs in case we use split screen cameras
 			_materialToEdit.SetFloat(@"monitorWidthMultiplier", Screen.width / CharSize.x);
 			_materialToEdit.SetFloat(@"monitorHeightMultiplier", Screen.height / CharSize.y);
+
+			//Depth
+			_materialToEdit.SetFloat(@"fogDensity", FogDensity);
+			_materialToEdit.SetFloat(@"useFog", Fog ? 1f : 0f);
+			_materialToEdit.SetColor(@"fogColor", FogColor);
 
 			//print(Screen.width + " ; " + Screen.height);
 		}

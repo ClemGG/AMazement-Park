@@ -40,12 +40,6 @@ sampler2D Light7Sampler;
 sampler2D Light8Sampler;
 sampler2D Light9Sampler;
 
-float useFog = 1.0f;
-float fogDensity = 1.0f;
-float4 fogColor;
-sampler2D _CameraDepthNormalsTexture;
-
-
 
 struct VertexShaderInput
 {
@@ -63,10 +57,6 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 {
     VertexShaderOutput output = (VertexShaderOutput)0;
 
-    //float4 worldPosition = mul(input.Position, World);
-    //float4 viewPosition = mul(worldPosition, View);
-    //output.Position = mul(viewPosition, Projection);
-
     // copy the existing position into the output.
     output.Position = input.Position;
     output.UV = input.UV;
@@ -76,8 +66,6 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 
 float4 PixelShaderFunction(v2f_img i) : COLOR // was float2 texCoord : TEXCOORD0) : COLOR0
 {
-  // float4 tex1 = tex2D(_MainTex, texCoord); // input.UV
-  
   // get coordinates of this pxl
   float2 texCoord = i.uv;
 
@@ -93,17 +81,6 @@ float4 PixelShaderFunction(v2f_img i) : COLOR // was float2 texCoord : TEXCOORD0
   // get pixel colors
   float4 col = tex2D(_MainTex, grayPixelPos);	//You can use i.uv instead of grayPixelPos for smooth colors on chars instead of hard colors
   float3 pixel = col.rgb;
-
-
-  //Fog Depth
-  float4 NormalDepth;
-  DecodeDepthNormal(tex2D(_CameraDepthNormalsTexture, i.uv), NormalDepth.w, NormalDepth.xyz);
-  fixed4 fog = (NormalDepth.w * fogDensity) * useFog;
-  fixed4 inverseFog = 1-fog;
-
-  //Adapts the pixel to the fog density before sampling it
-  pixel *= inverseFog.rgb;
-
 
   // gray scale it.
   float gray = (pixel.r + pixel.g + pixel.b) / 3;
@@ -204,12 +181,6 @@ float4 PixelShaderFunction(v2f_img i) : COLOR // was float2 texCoord : TEXCOORD0
     
     //tex1.rgb = float3(gray, gray, gray);
   }
-
-  
-  //Fog
-  fog *= fogColor;
-  tex1 *= inverseFog;
-  tex1 += fog;
 
   return tex1;
 }
